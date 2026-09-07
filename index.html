@@ -2016,14 +2016,14 @@ footer a:hover{
 
     <!-- CONTACT FORM -->
 
-   <form class="form" id="contactForm"
+<form class="form" id="contactForm"
       action="https://api.web3forms.com/submit"
       method="POST">
 
+  <!-- Web3Forms -->
   <input type="hidden" name="access_key" value="8f74bb64-ad80-42dc-b0bb-97c285612817">
   <input type="hidden" name="subject" value="New Contact Inquiry - Alaric Health Services">
   <input type="hidden" name="from_name" value="Alaric Health Services Website">
-  <input type="hidden" name="redirect" value="https://alarichealthservices.com/">
 
   <div class="form-grid">
 
@@ -2071,7 +2071,9 @@ footer a:hover{
     </div>
 
     <div class="field full">
-      <label for="message">How Can We Help?</label>
+      <label for="message">
+        How Can We Help?
+      </label>
 
       <textarea
         id="message"
@@ -2083,11 +2085,17 @@ footer a:hover{
 
     <div class="field full">
 
-      <button type="submit" class="btn primary">
+      <button
+        type="submit"
+        class="btn primary"
+      >
         Submit Inquiry
       </button>
 
-      <div class="form-status" id="formStatus"></div>
+      <div
+        class="form-status"
+        id="formStatus"
+      ></div>
 
     </div>
 
@@ -2095,94 +2103,6 @@ footer a:hover{
 
 </form>
 
-
-      <div class="form-grid">
-
-        <div class="field">
-          <label for="firstName">First Name</label>
-          <input
-            id="firstName"
-            name="firstName"
-            type="text"
-            placeholder="Your first name"
-            required
-          >
-        </div>
-
-
-        <div class="field">
-          <label for="lastName">Last Name</label>
-          <input
-            id="lastName"
-            name="lastName"
-            type="text"
-            placeholder="Your last name"
-            required
-          >
-        </div>
-
-
-        <div class="field">
-          <label for="email">Email Address</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Your email"
-            required
-          >
-        </div>
-
-
-        <div class="field">
-          <label for="phone">Phone</label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="Your phone number"
-          >
-        </div>
-
-
-        <div class="field full">
-
-          <label for="message">
-            How Can We Help?
-          </label>
-
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Tell us about your healthcare needs"
-            required
-          ></textarea>
-
-        </div>
-
-
-        <div class="field full">
-
-          <button
-            type="submit"
-            class="btn primary"
-          >
-            Submit Inquiry
-          </button>
-
-          <div class="form-status" id="formStatus"></div>
-
-        </div>
-
-      </div>
-
-    </form>
-
-  </div>
-
-</section>
-
-</main>
 
 
 <!-- FOOTER -->
