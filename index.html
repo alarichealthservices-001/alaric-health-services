@@ -953,6 +953,225 @@ footer a:hover{
   border-radius:2px;
 }
 
+/* LIVE VISITORS WIDGET — premium glass card with animated gradient border */
+
+.live-widget{
+  position:fixed;
+  left:22px;
+  bottom:22px;
+  z-index:998;
+  width:246px;
+  padding:2px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#13b8bd,#087b95,#062d46,#13b8bd);
+  background-size:300% 300%;
+  animation:gradient-shift 6s ease infinite;
+  box-shadow:var(--shadow-lg);
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity .5s ease, transform .5s ease;
+}
+
+@keyframes gradient-shift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.live-widget.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.live-widget-inner{
+  position:relative;
+  background:rgba(4,30,48,.97);
+  backdrop-filter:blur(14px);
+  border-radius:16px;
+  padding:17px 19px;
+  color:#fff;
+}
+
+.live-widget-top{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:10px;
+}
+
+.live-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#2ee6a6;
+  box-shadow:0 0 0 4px rgba(46,230,166,.18);
+  animation:pulse-dot 1.6s infinite;
+  flex-shrink:0;
+}
+
+@keyframes pulse-dot{
+  0%{box-shadow:0 0 0 0 rgba(46,230,166,.4)}
+  70%{box-shadow:0 0 0 8px rgba(46,230,166,0)}
+  100%{box-shadow:0 0 0 0 rgba(46,230,166,0)}
+}
+
+.live-widget-label{
+  font-size:10.5px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#9fd6dd;
+}
+
+.live-widget-count{
+  font-size:31px;
+  font-weight:900;
+  line-height:1;
+  margin-bottom:2px;
+  color:#fff;
+  font-variant-numeric:tabular-nums;
+  background:linear-gradient(90deg,#fff,#8fe9ec);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.live-widget-count.bump{
+  animation:count-bump .35s ease;
+}
+
+@keyframes count-bump{
+  0%{transform:scale(1)}
+  40%{transform:scale(1.08)}
+  100%{transform:scale(1)}
+}
+
+.live-widget-sub{
+  font-size:11.5px;
+  color:#a9c1cc;
+  margin-bottom:12px;
+}
+
+.live-widget-sub b{
+  color:#65e2e4;
+}
+
+.live-widget canvas{
+  display:block;
+  width:100%;
+  height:44px;
+}
+
+.live-widget-close{
+  position:absolute;
+  top:8px;
+  right:10px;
+  background:none;
+  border:0;
+  color:#7d9aa5;
+  font-size:14px;
+  cursor:pointer;
+  line-height:1;
+  padding:4px;
+}
+
+.live-widget-close:hover{
+  color:#fff;
+}
+
+/* LOCATION / "WHO'S VIEWING" TOAST NOTIFICATION */
+
+.geo-toast{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:997;
+  width:290px;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  background:#fff;
+  border-radius:14px;
+  padding:14px 16px;
+  box-shadow:var(--shadow-lg);
+  border:1px solid var(--line);
+  opacity:0;
+  transform:translateY(16px) scale(.97);
+  transition:opacity .45s ease, transform .45s ease;
+  pointer-events:none;
+}
+
+.geo-toast.show{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+.geo-toast-avatar{
+  width:42px;
+  height:42px;
+  min-width:42px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--teal),var(--blue));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:17px;
+  color:#fff;
+}
+
+.geo-toast-text{
+  flex:1;
+  min-width:0;
+}
+
+.geo-toast-text .geo-line1{
+  font-size:13.5px;
+  font-weight:800;
+  color:var(--navy);
+  line-height:1.35;
+}
+
+.geo-toast-text .geo-line1 span{
+  color:var(--blue);
+}
+
+.geo-toast-text .geo-line2{
+  font-size:11.5px;
+  color:#8ba0ab;
+  margin-top:2px;
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.geo-toast-text .geo-line2:before{
+  content:"";
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#2ee6a6;
+  display:inline-block;
+}
+
+@media(max-width:600px){
+  .live-widget{
+    left:14px;
+    right:14px;
+    bottom:14px;
+    width:auto;
+  }
+  .geo-toast{
+    left:14px;
+    right:14px;
+    bottom:14px;
+    width:auto;
+  }
+  /* on very small screens avoid stacking both widgets over content */
+  .geo-toast{
+    bottom:100px;
+  }
+}
+
 /* BACK TO TOP */
 
 .to-top{
@@ -1980,6 +2199,29 @@ footer a:hover{
 
 </footer>
 
+<!-- LIVE VISITORS WIDGET -->
+<div class="live-widget" id="liveWidget">
+  <div class="live-widget-inner">
+    <button class="live-widget-close" id="liveWidgetClose" aria-label="Close">✕</button>
+    <div class="live-widget-top">
+      <span class="live-dot"></span>
+      <span class="live-widget-label">Live Activity</span>
+    </div>
+    <div class="live-widget-count" id="liveCount">387</div>
+    <div class="live-widget-sub"><b id="liveDelta">+0</b> visitors in the last 5s</div>
+    <canvas id="liveChart" width="200" height="44"></canvas>
+  </div>
+</div>
+
+<!-- "WHO'S VIEWING" LOCATION TOAST -->
+<div class="geo-toast" id="geoToast">
+  <div class="geo-toast-avatar" id="geoAvatar">📍</div>
+  <div class="geo-toast-text">
+    <div class="geo-line1"><span id="geoCount">1</span> person is viewing from <span id="geoCity">Houston, TX</span></div>
+    <div class="geo-line2" id="geoTime">Just now</div>
+  </div>
+</div>
+
 <div class="to-top" id="toTop" title="Back to top">↑</div>
 
 <script>
@@ -2022,6 +2264,200 @@ contactForm.addEventListener('submit', function (e) {
   formStatus.className = "form-status show ok";
   contactForm.reset();
 });
+
+/* =========================================================
+   LIVE VISITORS WIDGET
+   Simulated "live activity" counter + sparkline graph.
+   Number never drops below MIN_VISITORS. Purely visual —
+   not connected to real analytics.
+   ========================================================= */
+(function () {
+
+  var MIN_VISITORS = 387;
+  var MAX_VISITORS = 620;
+  var HISTORY_LEN = 26;
+
+  var widget = document.getElementById('liveWidget');
+  var closeBtn = document.getElementById('liveWidgetClose');
+  var countEl = document.getElementById('liveCount');
+  var deltaEl = document.getElementById('liveDelta');
+  var canvas = document.getElementById('liveChart');
+  var ctx = canvas ? canvas.getContext('2d') : null;
+
+  if (!widget || !ctx) return;
+
+  var current = MIN_VISITORS + Math.floor(Math.random() * 40);
+  var history = [];
+  for (var i = 0; i < HISTORY_LEN; i++) history.push(current);
+
+  function drawChart() {
+    var w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+
+    var min = Math.min.apply(null, history);
+    var max = Math.max.apply(null, history);
+    var range = Math.max(max - min, 1);
+    var stepX = w / (history.length - 1);
+
+    // filled area
+    ctx.beginPath();
+    history.forEach(function (val, idx) {
+      var x = idx * stepX;
+      var y = h - ((val - min) / range) * (h - 8) - 4;
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.lineTo(w, h);
+    ctx.lineTo(0, h);
+    ctx.closePath();
+    var grad = ctx.createLinearGradient(0, 0, 0, h);
+    grad.addColorStop(0, 'rgba(101,226,228,.35)');
+    grad.addColorStop(1, 'rgba(101,226,228,0)');
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // line
+    ctx.beginPath();
+    history.forEach(function (val, idx) {
+      var x = idx * stepX;
+      var y = h - ((val - min) / range) * (h - 8) - 4;
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = '#65e2e4';
+    ctx.lineWidth = 2;
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+
+    // end dot
+    var lastVal = history[history.length - 1];
+    var lastY = h - ((lastVal - min) / range) * (h - 8) - 4;
+    ctx.beginPath();
+    ctx.arc(w - 2, lastY, 3, 0, Math.PI * 2);
+    ctx.fillStyle = '#65e2e4';
+    ctx.fill();
+  }
+
+  function tick() {
+    // random walk, biased gently back toward the middle of the band
+    var mid = (MIN_VISITORS + MAX_VISITORS) / 2;
+    var pull = (mid - current) * 0.05;
+    var jump = Math.round((Math.random() - 0.5) * 46 + pull);
+
+    var next = current + jump;
+    if (next < MIN_VISITORS) next = MIN_VISITORS + Math.floor(Math.random() * 10);
+    if (next > MAX_VISITORS) next = MAX_VISITORS - Math.floor(Math.random() * 10);
+
+    var delta = next - current;
+    current = next;
+
+    history.push(current);
+    if (history.length > HISTORY_LEN) history.shift();
+
+    countEl.textContent = current;
+    countEl.classList.remove('bump');
+    void countEl.offsetWidth; // restart animation
+    countEl.classList.add('bump');
+
+    deltaEl.textContent = (delta >= 0 ? '+' : '') + delta;
+
+    drawChart();
+  }
+
+  drawChart();
+
+  setTimeout(function () {
+    widget.classList.add('show');
+  }, 900);
+
+  var intervalId = setInterval(tick, 2600);
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      widget.classList.remove('show');
+      clearInterval(intervalId);
+      setTimeout(function () { widget.style.display = 'none'; }, 500);
+    });
+  }
+
+})();
+
+/* =========================================================
+   "WHO'S VIEWING" LOCATION TOAST
+   Rotates through a pool of US cities/states to simulate
+   live visitor activity. Purely visual — not real tracking.
+   ========================================================= */
+(function () {
+
+  var LOCATIONS = [
+    { city: "Houston", state: "TX" },
+    { city: "Maricopa", state: "AZ" },
+    { city: "Los Angeles", state: "CA" },
+    { city: "Phoenix", state: "AZ" },
+    { city: "Dallas", state: "TX" },
+    { city: "Chicago", state: "IL" },
+    { city: "New York", state: "NY" },
+    { city: "Miami", state: "FL" },
+    { city: "Orlando", state: "FL" },
+    { city: "Atlanta", state: "GA" },
+    { city: "Seattle", state: "WA" },
+    { city: "Denver", state: "CO" },
+    { city: "Austin", state: "TX" },
+    { city: "San Antonio", state: "TX" },
+    { city: "Charlotte", state: "NC" },
+    { city: "Nashville", state: "TN" },
+    { city: "Columbus", state: "OH" },
+    { city: "Indianapolis", state: "IN" },
+    { city: "Detroit", state: "MI" },
+    { city: "Boston", state: "MA" },
+    { city: "Portland", state: "OR" },
+    { city: "Las Vegas", state: "NV" },
+    { city: "Tampa", state: "FL" },
+    { city: "Salt Lake City", state: "UT" },
+    { city: "Philadelphia", state: "PA" }
+  ];
+
+  var toast = document.getElementById('geoToast');
+  var cityEl = document.getElementById('geoCity');
+  var countEl = document.getElementById('geoCount');
+  var timeEl = document.getElementById('geoTime');
+  var avatarEl = document.getElementById('geoAvatar');
+
+  if (!toast) return;
+
+  var lastIndex = -1;
+  var timeAgoOptions = ["Just now", "Just now", "1 minute ago", "2 minutes ago"];
+
+  function pickLocation() {
+    var idx;
+    do {
+      idx = Math.floor(Math.random() * LOCATIONS.length);
+    } while (idx === lastIndex);
+    lastIndex = idx;
+    return LOCATIONS[idx];
+  }
+
+  function showToast() {
+    var loc = pickLocation();
+    var count = 1 + Math.floor(Math.random() * 4);
+
+    cityEl.textContent = loc.city + ", " + loc.state;
+    countEl.textContent = count;
+    timeEl.textContent = timeAgoOptions[Math.floor(Math.random() * timeAgoOptions.length)];
+    avatarEl.textContent = loc.state.charAt(0);
+
+    toast.classList.add('show');
+
+    setTimeout(function () {
+      toast.classList.remove('show');
+    }, 4200);
+  }
+
+  // first appearance after a short delay, then repeat on a cycle
+  setTimeout(function () {
+    showToast();
+    setInterval(showToast, 7000);
+  }, 2600);
+
+})();
 </script>
 
 </body>
