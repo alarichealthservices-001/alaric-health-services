@@ -2249,7 +2249,7 @@ toTop.addEventListener('click', function () {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Contact form (front-end confirmation only)
+// Contact form
 var contactForm = document.getElementById('contactForm');
 var formStatus = document.getElementById('formStatus');
 
@@ -2270,7 +2270,7 @@ contactForm.addEventListener('submit', async function (e) {
     const result = await response.json();
 
     if (result.success) {
-      window.location.href = "https://alarichealthservices.com/thank-you.html";
+      window.location.assign("/thank-you.html");
     } else {
       formStatus.textContent = "Something went wrong. Please try again.";
       formStatus.className = "form-status show error";
