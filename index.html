@@ -2022,6 +2022,8 @@ footer a:hover{
 
   <!-- Web3Forms -->
   <input type="hidden" name="access_key" value="8f74bb64-ad80-42dc-b0bb-97c285612817">
+  <input type="hidden" name="redirect" value="https://alarichealthservices.com/thank-you.html">
+
   <input type="hidden" name="subject" value="New Contact Inquiry - Alaric Health Services">
   <input type="hidden" name="from_name" value="Alaric Health Services Website">
 
@@ -2251,8 +2253,7 @@ toTop.addEventListener('click', function () {
 var contactForm = document.getElementById('contactForm');
 var formStatus = document.getElementById('formStatus');
 
-contactForm.addEventListener('submit', function (e) {
-  contactForm.addEventListener('submit', async function (e) {
+contactForm.addEventListener('submit', async function (e) {
   e.preventDefault();
 
   formStatus.textContent = "Sending...";
@@ -2269,9 +2270,7 @@ contactForm.addEventListener('submit', function (e) {
     const result = await response.json();
 
     if (result.success) {
-      formStatus.textContent = "Thank you! Your inquiry has been received. We'll get back to you soon.";
-      formStatus.className = "form-status show ok";
-      contactForm.reset();
+      window.location.href = "https://alarichealthservices.com/thank-you.html";
     } else {
       formStatus.textContent = "Something went wrong. Please try again.";
       formStatus.className = "form-status show error";
@@ -2283,7 +2282,6 @@ contactForm.addEventListener('submit', function (e) {
   }
 });
 
-});
 
 /* =========================================================
    LIVE VISITORS WIDGET
