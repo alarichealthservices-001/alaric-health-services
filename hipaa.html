@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HIPAA Compliance & Data Security | Alaric Health Services</title>
+
+    <meta name="description"
+        content="Learn how Alaric Health Services protects protected health information and maintains HIPAA-focused privacy and security practices for medical billing and revenue cycle management services.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://alarichealthservices.com/hipaa.html">
+
+    <meta property="og:title"
+        content="HIPAA Compliance & Data Security | Alaric Health Services">
+
+    <meta property="og:description"
+        content="Alaric Health Services is committed to protecting PHI and maintaining appropriate privacy and security safeguards across its medical billing and RCM operations.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url"
+        content="https://alarichealthservices.com/hipaa.html">
+
+    <link rel="icon" href="favicon.ico">
+
+    <style>
+        :root {
+            --primary: #0b5cab;
+            --primary-dark: #084a8a;
+            --text: #263238;
+            --muted: #60717d;
+            --light: #f5f8fb;
+            --border: #dfe7ee;
+            --white: #ffffff;
+            --success: #157347;
+            --success-bg: #edf8f1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .breadcrumb {
+            font-size: 14px;
+            margin-bottom: 22px;
+            opacity: 0.9;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        header h1 {
+            margin: 0 0 14px;
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.15;
+        }
+
+        header p {
+            margin: 0;
+            max-width: 820px;
+            font-size: 17px;
+            opacity: 0.95;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 55px 20px 80px;
+        }
+
+        .last-updated {
+            background: var(--light);
+            border: 1px solid var(--border);
+            padding: 18px 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            color: var(--muted);
+        }
+
+        section {
+            margin-bottom: 44px;
+        }
+
+        h2 {
+            color: var(--primary-dark);
+            font-size: 27px;
+            margin-bottom: 14px;
+        }
+
+        h3 {
+            color: var(--text);
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin: 0 0 15px;
+        }
+
+        ul {
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 9px;
+        }
+
+        a {
+            color: var(--primary);
+        }
+
+        .commitment {
+            background: var(--success-bg);
+            border-left: 5px solid var(--success);
+            padding: 24px;
+            border-radius: 7px;
+            margin: 25px 0;
+        }
+
+        .notice {
+            background: #eef7ff;
+            border-left: 5px solid var(--primary);
+            padding: 22px;
+            border-radius: 7px;
+            margin: 25px 0;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .security-card {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 22px;
+        }
+
+        .security-card h3 {
+            margin-top: 0;
+            color: var(--primary-dark);
+        }
+
+        .contact-box {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        footer {
+            background: #10212b;
+            color: #dce5ea;
+            padding: 35px 20px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #aebdc5;
+        }
+
+        @media (max-width: 700px) {
+            .security-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 45px 18px;
+            }
+
+            main {
+                padding: 40px 18px 60px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+
+        <div class="breadcrumb">
+            <a href="index.html">Alaric Health Services</a>
+            &nbsp; / &nbsp; HIPAA Compliance
+        </div>
+
+        <h1>HIPAA Compliance & Data Security</h1>
+
+        <p>
+            Protecting sensitive healthcare information is an essential
+            part of our medical billing and revenue cycle management
+            operations.
+        </p>
+
+    </div>
+</header>
+
+
+<main>
+
+    <div class="last-updated">
+        <strong>Last Updated:</strong> September 8, 2026
+    </div>
+
+
+    <section>
+        <h2>Our Commitment to HIPAA</h2>
+
+        <p>
+            Alaric Health Services is committed to protecting the privacy,
+            confidentiality, integrity, and security of information entrusted
+            to us through our medical billing and revenue cycle management
+            (RCM) services.
+        </p>
+
+        <p>
+            Where Alaric Health Services performs functions that involve
+            protected health information (PHI) on behalf of a covered entity
+            or other healthcare organization, our responsibilities are
+            governed by applicable law, contractual requirements, and
+            applicable HIPAA obligations.
+        </p>
+
+        <div class="commitment">
+            <strong>Our Security Commitment:</strong>
+            We maintain administrative, physical, and technical safeguards
+            designed to protect information against unauthorized access,
+            use, disclosure, alteration, or destruction.
+        </div>
+    </section>
+
+
+    <section>
+        <h2>What Is Protected Health Information?</h2>
+
+        <p>
+            Protected Health Information (PHI) generally refers to
+            individually identifiable health information that is created,
+            received, maintained, or transmitted by a covered entity or
+            business associate and is protected under HIPAA.
+        </p>
+
+        <p>
+            Depending on the services provided to a healthcare client,
+            information processed through medical billing and RCM activities
+            may include information associated with patients, claims,
+            insurance, billing, eligibility, and reimbursement.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Administrative Safeguards</h2>
+
+        <p>
+            Administrative safeguards are an important part of our privacy
+            and security program.
+        </p>
+
+        <ul>
+            <li>Security and privacy policies and procedures.</li>
+            <li>Risk management practices.</li>
+            <li>Workforce privacy and security awareness.</li>
+            <li>Appropriate access management procedures.</li>
+            <li>Incident response and escalation processes.</li>
+            <li>Ongoing review and improvement of security practices.</li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Technical Safeguards</h2>
+
+        <p>
+            Appropriate technical controls are used to help protect
+            electronic information and limit unauthorized access.
+        </p>
+
+        <div class="security-grid">
+
+            <div class="security-card">
+                <h3>Access Controls</h3>
+                <p>
+                    Access to systems and information is controlled according
+                    to authorized business needs and applicable requirements.
+                </p>
+            </div>
+
+            <div class="security-card">
+                <h3>Authentication</h3>
+                <p>
+                    Appropriate authentication and account-management
+                    practices are used to help prevent unauthorized access.
+                </p>
+            </div>
+
+            <div class="security-card">
+                <h3>System Monitoring</h3>
+                <p>
+                    Security-related activity may be monitored and reviewed
+                    as appropriate to support the protection of information.
+                </p>
+            </div>
+
+            <div class="security-card">
+                <h3>Data Protection</h3>
+                <p>
+                    Appropriate safeguards are used to help protect
+                    information during storage and transmission.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Physical Safeguards</h2>
+
+        <p>
+            Physical security measures are part of our overall information
+            security approach and are designed to help prevent unauthorized
+            physical access to systems and information.
+        </p>
+
+        <p>
+            Access to facilities, equipment, workstations, and information
+            resources is managed according to applicable organizational
+            security policies and requirements.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Access Management</h2>
+
+        <p>
+            Access to sensitive information is limited to authorized
+            personnel who require access to perform legitimate business
+            responsibilities.
+        </p>
+
+        <ul>
+            <li>Role-based access where appropriate.</li>
+            <li>Access authorization procedures.</li>
+            <li>Account management and access review.</li>
+            <li>Removal or modification of access when responsibilities change.</li>
+            <li>Security awareness and confidentiality expectations.</li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Workforce Privacy & Security</h2>
+
+        <p>
+            Personnel with responsibilities involving sensitive information
+            are expected to follow applicable privacy, confidentiality, and
+            information-security policies.
+        </p>
+
+        <p>
+            Security awareness and training practices help personnel
+            understand their responsibilities for protecting confidential
+            and healthcare-related information.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Risk Management</h2>
+
+        <p>
+            Information security risks can change as technology, threats,
+            business operations, and regulatory requirements evolve.
+        </p>
+
+        <p>
+            Alaric Health Services maintains processes intended to identify,
+            evaluate, and address security risks associated with its
+            operations and information systems.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Business Associate Responsibilities</h2>
+
+        <p>
+            When applicable, Alaric Health Services may act as a business
+            associate to healthcare organizations in connection with
+            medical billing, revenue cycle management, claims processing,
+            or related services.
+        </p>
+
+        <p>
+            Where a business associate relationship exists, the parties'
+            responsibilities concerning PHI are governed by applicable
+            HIPAA requirements and the applicable Business Associate
+            Agreement (BAA).
+        </p>
+
+        <p>
+            We work with clients and applicable service providers to support
+            appropriate handling and protection of PHI within the scope of
+            our contractual and legal responsibilities.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Secure Communication</h2>
+
+        <p>
+            Because public website forms and ordinary email are not intended
+            for every type of sensitive healthcare information, visitors
+            should not submit unnecessary PHI through general website
+            contact forms.
+        </p>
+
+        <div class="notice">
+            <strong>Please do not submit sensitive patient information</strong>
+            through the general website contact form, including medical
+            records, Social Security numbers, insurance identification
+            numbers, diagnoses, treatment information, or other unnecessary
+            PHI.
+        </div>
+
+        <p>
+            Clients should use the secure communication methods designated
+            by Alaric Health Services for authorized exchange of sensitive
+            information.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Incident & Breach Response</h2>
+
+        <p>
+            Alaric Health Services maintains processes for identifying,
+            evaluating, responding to, and documenting potential security
+            incidents according to applicable policies, contractual
+            requirements, and law.
+        </p>
+
+        <p>
+            Where HIPAA breach-notification requirements apply, applicable
+            notification and response obligations are addressed in
+            accordance with applicable law and contractual responsibilities.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Data Retention & Disposal</h2>
+
+        <p>
+            Information is retained and disposed of according to applicable
+            business, legal, contractual, and regulatory requirements.
+        </p>
+
+        <p>
+            Appropriate safeguards are used when information is no longer
+            required and is eligible for secure disposal.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Client Responsibilities</h2>
+
+        <p>
+            Healthcare clients and business partners also have important
+            responsibilities when sharing information with Alaric Health
+            Services.
+        </p>
+
+        <ul>
+            <li>Provide only information reasonably necessary for the requested service.</li>
+            <li>Use approved secure communication channels for sensitive information.</li>
+            <li>Maintain appropriate authorization and consent where required.</li>
+            <li>Protect account credentials and system access.</li>
+            <li>Notify appropriate contacts of suspected security incidents.</li>
+        </ul>
+    </section>
+
+
+    <section>
+        <h2>Third-Party Service Providers</h2>
+
+        <p>
+            Certain technology and business functions may be supported by
+            third-party service providers.
+        </p>
+
+        <p>
+            Where applicable, vendors and service providers are evaluated
+            and managed according to our business, security, contractual,
+            and regulatory requirements.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Continuous Improvement</h2>
+
+        <p>
+            Privacy and security are ongoing responsibilities. Alaric Health
+            Services may periodically review and improve its policies,
+            procedures, controls, training, and security practices to address
+            evolving risks and applicable requirements.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Important HIPAA Notice</h2>
+
+        <p>
+            This page provides general information about Alaric Health
+            Services' approach to privacy and information security. It does
+            not replace any applicable Business Associate Agreement,
+            contractual security requirements, formal HIPAA policies,
+            procedures, or legal obligations.
+        </p>
+
+        <p>
+            HIPAA obligations may vary depending on the role performed,
+            services provided, information involved, and applicable
+            agreements and laws.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Contact Us</h2>
+
+        <div class="contact-box">
+
+            <h3>Alaric Health Services</h3>
+
+            <p>
+                <strong>Business:</strong>
+                Medical Billing & Revenue Cycle Management (RCM)
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:alarichealthservices@gmail.com">
+                    alarichealthservices@gmail.com
+                </a>
+            </p>
+
+            <p>
+                For questions regarding privacy, information security, or
+                our HIPAA-related practices, please contact us using the
+                email address above.
+            </p>
+
+        </div>
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="hipaa.html">HIPAA Compliance</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+
+        <div class="copyright">
+            © 2026 Alaric Health Services. All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
