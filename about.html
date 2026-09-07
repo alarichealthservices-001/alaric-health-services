@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn about Alaric Health Services and our approach to healthcare support, revenue cycle management and digital growth.">
+<title>About Us | Alaric Health Services</title>
+
+<style>
+:root{
+  --navy:#062d46;
+  --blue:#087b95;
+  --teal:#13b8bd;
+  --light:#f5fafc;
+  --text:#536979;
+  --white:#fff;
+  --line:#dcebef;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--navy);line-height:1.65}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #edf3f5;
+}
+.nav{
+  height:92px;display:flex;align-items:center;
+  justify-content:space-between;
+}
+.logo img{height:70px;width:auto;max-width:285px;object-fit:contain}
+nav{display:flex;gap:27px;align-items:center}
+nav a{font-size:14px;font-weight:700;color:#385269}
+nav a:hover{color:var(--teal)}
+.btn{
+  display:inline-block;padding:14px 22px;
+  border-radius:7px;font-weight:800;font-size:14px;
+}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{background:var(--blue)}
+
+.hero{
+  padding:105px 0;
+  background:linear-gradient(135deg,#052e47,#087c91);
+  color:#fff;
+}
+.label{
+  color:#69e0e1;text-transform:uppercase;
+  letter-spacing:2px;font-size:12px;font-weight:800;
+  margin-bottom:15px;
+}
+.hero h1{
+  font-size:clamp(44px,6vw,68px);
+  line-height:1.05;letter-spacing:-2px;
+  max-width:780px;margin-bottom:20px;
+}
+.hero p{max-width:700px;color:#d8e9ee;font-size:18px}
+
+section{padding:95px 0}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:75px;
+  align-items:center;
+}
+h2{
+  font-size:clamp(34px,4vw,50px);
+  line-height:1.1;
+  letter-spacing:-1.5px;
+  margin-bottom:18px;
+}
+p{color:var(--text)}
+.visual{
+  min-height:430px;
+  border-radius:18px;
+  background:linear-gradient(145deg,#e0f7f8,#bde5e9);
+  position:relative;
+  overflow:hidden;
+}
+.visual:after{
+  content:"AL";
+  position:absolute;
+  right:-15px;
+  bottom:-75px;
+  font-size:250px;
+  font-weight:900;
+  color:rgba(6,45,70,.08);
+}
+.card{
+  position:absolute;
+  left:30px;
+  bottom:30px;
+  background:#fff;
+  padding:27px;
+  border-radius:12px;
+  box-shadow:0 20px 55px rgba(6,45,70,.14);
+  max-width:300px;
+}
+.card strong{
+  display:block;
+  font-size:25px;
+  margin-bottom:5px;
+}
+
+.light{background:var(--light)}
+.center{text-align:center}
+.head{max-width:720px;margin:0 auto 50px}
+.head p{margin-top:10px}
+.values{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.value{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:32px;
+  border-radius:12px;
+}
+.value span{
+  width:48px;height:48px;border-radius:10px;
+  background:#eaf9fa;color:var(--blue);
+  display:grid;place-items:center;
+  font-weight:900;margin-bottom:18px;
+}
+.value h3{margin-bottom:8px;font-size:20px}
+.value p{font-size:14px}
+
+.cta{
+  background:var(--navy);
+  color:#fff;
+  padding:75px 0;
+}
+.cta-in{
+  display:flex;align-items:center;
+  justify-content:space-between;gap:30px;
+}
+.cta h2{max-width:700px;margin-bottom:10px}
+.cta p{color:#c7dbe3;max-width:650px}
+.cta .btn{background:var(--teal);color:#fff}
+
+footer{
+  background:#041e30;color:#fff;padding:55px 0 25px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;
+  gap:50px;padding-bottom:35px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+footer h3{margin-bottom:13px}
+footer p,footer a{color:#a9c1cc;font-size:14px}
+footer a{display:block;margin:7px 0}
+.brand{font-size:23px;font-weight:800;margin-bottom:10px}
+.copy{
+  display:flex;justify-content:space-between;
+  padding-top:20px;color:#76919d;font-size:12px;
+}
+
+@media(max-width:850px){
+  nav{display:none}
+  .grid{grid-template-columns:1fr}
+  .values{grid-template-columns:1fr}
+  .cta-in{flex-direction:column;align-items:flex-start}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .nav{height:80px}
+  .logo img{height:58px}
+  section{padding:70px 0}
+  .hero{padding:75px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+
+<a href="index.html" class="logo">
+<img src="alaric_high_contrast_text_4k.png" alt="Alaric Health Services">
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#growth">Digital Growth</a>
+<a href="index.html#why">Why Alaric</a>
+<a href="index.html#contact" class="btn btn-primary">Get Started</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="container">
+<div class="label">About Alaric Health Services</div>
+<h1>Healthcare support built around better performance.</h1>
+<p>
+We help healthcare organizations manage important operational,
+revenue cycle and digital growth needs through professional,
+structured and dependable support.
+</p>
+</div>
+</section>
+
+<section>
+<div class="container grid">
+
+<div class="visual">
+<div class="card">
+<strong>Alaric Health Services</strong>
+<span>Professional healthcare solutions focused on better care and better results.</span>
+</div>
+</div>
+
+<div>
+<div class="label">Who We Are</div>
+<h2>A partner focused on your success.</h2>
+
+<p>
+Alaric Health Services is dedicated to supporting healthcare
+organizations with solutions that help simplify operations,
+strengthen revenue cycle performance and create opportunities
+for sustainable growth.
+</p>
+
+<br>
+
+<p>
+Our services bring together healthcare administrative support,
+revenue cycle solutions and digital growth capabilities so
+providers can spend more time focusing on what matters most:
+delivering quality care.
+</p>
+
+<br>
+
+<p>
+We believe strong partnerships are built through communication,
+accountability, attention to detail and a commitment to continuous
+improvement.
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="light">
+<div class="container">
+
+<div class="head center">
+<div class="label">Our Approach</div>
+<h2>Professional support. Practical solutions.</h2>
+<p>
+Every healthcare organization has different needs. Our approach
+is designed to provide flexible support while maintaining
+professional standards and clear communication.
+</p>
+</div>
+
+<div class="values">
+
+<div class="value">
+<span>01</span>
+<h3>Accuracy</h3>
+<p>
+We focus on detail and consistency across critical healthcare
+and revenue cycle workflows.
+</p>
+</div>
+
+<div class="value">
+<span>02</span>
+<h3>Communication</h3>
+<p>
+Clear, timely communication helps teams stay informed and
+makes collaboration easier.
+</p>
+</div>
+
+<div class="value">
+<span>03</span>
+<h3>Results</h3>
+<p>
+Our goal is to provide practical solutions that contribute
+to stronger operations and sustainable growth.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container grid">
+
+<div>
+<div class="label">Our Mission</div>
+<h2>Helping healthcare organizations move forward.</h2>
+
+<p>
+Our mission is to provide dependable healthcare services that
+help organizations improve operational efficiency, strengthen
+their revenue cycle and build a stronger presence in the digital
+healthcare marketplace.
+</p>
+
+<br>
+
+<p>
+As we grow, we remain committed to building long-term
+relationships based on trust, professionalism and measurable
+value.
+</p>
+</div>
+
+<div>
+<div class="label">Looking Ahead</div>
+<h2>Built for today's healthcare environment.</h2>
+
+<p>
+Healthcare continues to evolve. From changing payer processes
+to increasing digital competition, providers face new challenges
+every day.
+</p>
+
+<br>
+
+<p>
+Alaric Health Services is positioned to support organizations
+through these changes with scalable services and a
+forward-thinking approach.
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="cta">
+<div class="container cta-in">
+<div>
+<h2>Ready to strengthen your healthcare operation?</h2>
+<p>
+Let's discuss how Alaric Health Services can support your
+organization.
+</p>
+</div>
+<a href="index.html#contact" class="btn">Get Started</a>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<div class="brand">Alaric Health Services</div>
+<p>
+Professional healthcare solutions focused on better operations,
+growth and results.
+</p>
+</div>
+
+<div>
+<h3>Explore</h3>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#growth">Digital Growth</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>alarichealthservcies@gmail.com</p>
+<p>Phone: Coming Soon</p>
+<p>Address: Coming Soon</p>
+</div>
+
+</div>
+
+<div class="copy">
+<span>© 2026 Alaric Health Services. All Rights Reserved.</span>
+<span>Where Care Becomes Results.</span>
+</div>
+
+</div>
+</footer>
+
+</body>
+</html>
