@@ -859,79 +859,203 @@ section{
 .form-status.ok{
   color:var(--success);
 }
-
-/* FOOTER */
+/* =========================================================
+   PROFESSIONAL FOOTER
+   ========================================================= */
 
 footer{
-  background:#041e30;
+  background:linear-gradient(135deg,#031d2d,#062f45);
   color:#fff;
-  padding:65px 0 25px;
+  padding:75px 0 25px;
 }
 
 .footer-grid{
   display:grid;
-  grid-template-columns:1.4fr 1fr 1fr;
-  gap:60px;
-  padding-bottom:40px;
+  grid-template-columns:1.5fr 1fr 1fr 1.15fr;
+  gap:55px;
+  padding-bottom:45px;
   border-bottom:1px solid rgba(255,255,255,.12);
 }
 
 footer h3{
-  margin-bottom:14px;
+  color:#fff;
+  font-size:15px;
+  margin-bottom:18px;
+  font-weight:800;
 }
 
 footer p,
 footer a{
   color:#a9c1cc;
-  font-size:14px;
+  font-size:13.5px;
+  line-height:1.75;
 }
 
 footer a{
   display:block;
-  margin:8px 0;
-  transition:.2s ease;
+  margin:9px 0;
+  transition:.25s ease;
 }
 
 footer a:hover{
-  color:#fff;
+  color:#65e2e4;
+  transform:translateX(2px);
 }
 
 .footer-brand{
-  font-size:23px;
-  font-weight:800;
-  margin-bottom:12px;
+  font-size:24px;
+  font-weight:900;
+  margin-bottom:5px;
   color:#fff;
 }
 
 .footer-tagline{
-  font-size:12px;
-  letter-spacing:1px;
+  font-size:11px;
+  letter-spacing:1.4px;
   text-transform:uppercase;
   color:var(--teal);
   font-weight:800;
-  margin-bottom:14px;
+  margin-bottom:18px;
 }
 
-.footer-hours{
-  margin-top:6px;
+.footer-company p{
+  max-width:390px;
 }
 
-.footer-hours li{
-  list-style:none;
+.footer-note{
+  margin-top:13px;
+  color:#7895a1!important;
+  font-size:12px!important;
+}
+
+.footer-contact{
+  margin:10px 0;
+}
+
+.footer-legal{
+  margin-top:28px;
+}
+
+.footer-legal h3{
+  margin-bottom:12px;
+}
+
+
+/* =========================================================
+   COMPLIANCE / TRUST
+   ========================================================= */
+
+.footer-compliance{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  padding:28px 0;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.compliance-badge{
   display:flex;
-  justify-content:space-between;
-  max-width:220px;
-  font-size:13px;
-  color:#a9c1cc;
-  padding:5px 0;
+  align-items:center;
+  gap:13px;
+  padding:16px 18px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:10px;
+  background:rgba(255,255,255,.035);
 }
+
+.compliance-badge strong{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:48px;
+  height:38px;
+  border-radius:7px;
+  background:rgba(19,184,189,.14);
+  color:#65e2e4;
+  font-size:11px;
+  letter-spacing:.5px;
+}
+
+.compliance-badge span{
+  color:#9bb5bf;
+  font-size:11.5px;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
 
 .copy{
   display:flex;
   justify-content:space-between;
-  padding-top:20px;
-  color:#76919d;
+  align-items:center;
+  gap:20px;
+  padding-top:22px;
+  color:#718c98;
   font-size:12px;
+}
+
+.footer-bottom-links{
+  display:flex;
+  gap:22px;
+}
+
+.footer-bottom-links a{
+  display:inline-block;
+  margin:0;
+  color:#8fa9b4;
+  font-size:12px;
+}
+
+.footer-disclaimer{
+  text-align:center;
+  max-width:850px;
+  margin:22px auto 0;
+  color:#607d89!important;
+  font-size:10.5px!important;
+  line-height:1.6!important;
+}
+
+
+/* =========================================================
+   MOBILE FOOTER
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+
+  .footer-compliance{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  footer{
+    padding:55px 0 22px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .copy{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .footer-bottom-links{
+    flex-direction:column;
+    gap:4px;
+  }
+
 }
 
 /* MOBILE MENU TOGGLE */
@@ -2104,19 +2228,16 @@ footer a:hover{
   </div>
 
 </form>
+    <!-- PROFESSIONAL FOOTER -->
 
-
-
-<!-- FOOTER -->
-
-<footer>
+<footer class="professional-footer">
 
   <div class="container">
 
     <div class="footer-grid">
 
-
-      <div>
+      <!-- COMPANY -->
+      <div class="footer-company">
 
         <div class="footer-brand">
           Alaric Health Services
@@ -2127,56 +2248,104 @@ footer a:hover{
         </div>
 
         <p>
-          Professional healthcare solutions focused on better operations,
-          better growth and better results.
+          Alaric Health Services provides healthcare revenue cycle management,
+          medical billing, practice support, credentialing and digital growth
+          solutions for healthcare organizations.
+        </p>
+
+        <p class="footer-note">
+          Professional healthcare business services focused on responsible
+          operations, privacy and long-term client relationships.
         </p>
 
       </div>
 
 
+      <!-- QUICK LINKS -->
       <div>
 
-        <h3>
-          Explore
-        </h3>
+        <h3>Quick Links</h3>
 
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Our Services</a>
         <a href="#growth">Digital Growth</a>
         <a href="#why">Why Alaric</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Contact Us</a>
 
       </div>
 
 
+      <!-- SERVICES -->
       <div>
 
-        <h3>
-          Contact
-        </h3>
+        <h3>Services</h3>
 
-       <p>alarichealthservices@gmail.com</p>
-
-
-        <p>
-          Phone: Coming Soon
-        </p>
-
-        <p>
-          Houston, Texas
-        </p>
-
-        <ul class="footer-hours">
-          <li><span>Mon – Fri</span><span>9AM – 6PM</span></li>
-          <li><span>Sat – Sun</span><span>Closed</span></li>
-        </ul>
+        <a href="#services">Medical Billing</a>
+        <a href="#services">Revenue Cycle Management</a>
+        <a href="#services">Claims &amp; Denial Management</a>
+        <a href="#services">Medical Coding</a>
+        <a href="#services">Credentialing &amp; Enrollment</a>
+        <a href="#growth">Digital Growth</a>
 
       </div>
 
+
+      <!-- CONTACT -->
+      <div>
+
+        <h3>Contact</h3>
+
+        <a href="mailto:alarichealthservices@gmail.com">
+          alarichealthservices@gmail.com
+        </a>
+
+        <p class="footer-contact">
+          Houston, Texas, USA
+        </p>
+
+        <p class="footer-contact">
+          Maricopa, Arizona, USA
+        </p>
+
+        <div class="footer-legal">
+
+          <h3>Legal &amp; Privacy</h3>
+
+          <a href="/privacy.html">Privacy Policy</a>
+
+          <a href="/terms.html">Terms &amp; Conditions</a>
+
+        </div>
+
+      </div>
 
     </div>
 
+
+    <!-- TRUST / COMPLIANCE -->
+
+    <div class="footer-compliance">
+
+      <div class="compliance-badge">
+        <strong>HIPAA</strong>
+        <span>Privacy &amp; Security Focused</span>
+      </div>
+
+      <div class="compliance-badge">
+        <strong>RCM</strong>
+        <span>Healthcare Revenue Cycle Support</span>
+      </div>
+
+      <div class="compliance-badge">
+        <strong>USA</strong>
+        <span>Healthcare Business Services</span>
+      </div>
+
+    </div>
+
+
+    <!-- COPYRIGHT -->
 
     <div class="copy">
 
@@ -2184,11 +2353,28 @@ footer a:hover{
         © 2026 Alaric Health Services. All Rights Reserved.
       </span>
 
-      <span>
-        Where Care Becomes Results.
-      </span>
+      <div class="footer-bottom-links">
+
+        <a href="/privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="/terms.html">
+          Terms &amp; Conditions
+        </a>
+
+      </div>
 
     </div>
+
+
+    <!-- DISCLAIMER -->
+
+    <p class="footer-disclaimer">
+      Alaric Health Services provides healthcare business, medical billing,
+      revenue cycle management and related administrative support services.
+      We do not provide medical diagnosis, treatment or medical advice.
+    </p>
 
   </div>
 
