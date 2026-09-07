@@ -129,12 +129,22 @@ header{
   align-items:center;
 }
 
-.logo img{
-  width:auto;
-  height:70px;
-  max-width:285px;
-  object-fit:contain;
+.logo{
+  display:flex;
+  align-items:center;
+  width:320px;
+  min-width:320px;
 }
+
+.logo img{
+  width:320px;
+  height:82px;
+  max-width:none;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
+}
+
 
 nav{
   display:flex;
@@ -835,10 +845,17 @@ footer a:hover{
     display:none;
   }
 
-  .logo img{
-    height:50px;
-    max-width:205px;
-  }
+.logo{
+  width:240px;
+  min-width:240px;
+}
+
+.logo img{
+  width:240px;
+  height:62px;
+  max-width:none;
+}
+
 
   .hero{
     min-height:620px;
