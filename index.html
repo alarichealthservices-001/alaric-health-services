@@ -1,1216 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Alaric Health Services - Professional healthcare solutions focused on better care, better operations, and better results.">
-  <title>Alaric Health Services | Where Care Becomes Results</title>
-
-  <style>
-    :root {
-      --navy: #082f49;
-      --blue: #0b6b8a;
-      --cyan: #16a6b6;
-      --light: #f4fafc;
-      --white: #ffffff;
-      --dark: #102a43;
-      --text: #526477;
-      --border: #dceaf0;
-      --shadow: 0 20px 60px rgba(8, 47, 73, .10);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--dark);
-      background: #fff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
-
-    /* TOP BAR */
-    .topbar {
-      background: var(--navy);
-      color: #d9edf4;
-      font-size: 13px;
-      padding: 9px 0;
-    }
-
-    .topbar-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .topbar span {
-      opacity: .95;
-    }
-
-    /* HEADER */
-    header {
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid #edf3f5;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(12px);
-    }
-
-    .nav {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      color: var(--navy);
-      font-size: 20px;
-      letter-spacing: -.5px;
-    }
-
-    .brand-mark {
-      width: 43px;
-      height: 43px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--cyan), var(--blue));
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 20px;
-      box-shadow: 0 8px 20px rgba(22,166,182,.25);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    nav a {
-      font-size: 14px;
-      font-weight: 600;
-      color: #385269;
-      transition: .25s;
-    }
-
-    nav a:hover {
-      color: var(--cyan);
-    }
-
-    .nav-cta {
-      background: var(--navy);
-      color: white !important;
-      padding: 12px 20px;
-      border-radius: 7px;
-    }
-
-    .nav-cta:hover {
-      background: var(--blue);
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 690px;
-      background:
-        linear-gradient(90deg, rgba(5,34,52,.96) 0%, rgba(5,34,52,.83) 47%, rgba(5,34,52,.30) 100%),
-        linear-gradient(135deg, #0a405b, #1b879a);
-      color: white;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      right: -180px;
-      bottom: -230px;
-      background: rgba(255,255,255,.08);
-    }
-
-    .hero-content {
-      max-width: 730px;
-      position: relative;
-      z-index: 2;
-      padding: 85px 0;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: #9ee8ee;
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 2px;
-      background: var(--cyan);
-    }
-
-    .hero h1 {
-      font-size: clamp(44px, 6vw, 76px);
-      line-height: 1.03;
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: #6ee3e7;
-    }
-
-    .hero p {
-      max-width: 650px;
-      font-size: 18px;
-      color: #d9e9ef;
-      margin-bottom: 35px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 25px;
-      border-radius: 7px;
-      font-size: 14px;
-      font-weight: 800;
-      transition: .25s;
-    }
-
-    .btn-primary {
-      background: #25b7c3;
-      color: white;
-      box-shadow: 0 10px 30px rgba(37,183,195,.25);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: #19a6b3;
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.45);
-      color: white;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: var(--navy);
-    }
-
-    /* TRUST STRIP */
-    .trust {
-      background: white;
-      box-shadow: 0 10px 40px rgba(8,47,73,.08);
-      position: relative;
-      z-index: 5;
-      margin-top: -45px;
-      border-radius: 12px;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 28px 35px;
-    }
-
-    .trust-item {
-      padding: 5px 30px;
-      border-right: 1px solid var(--border);
-    }
-
-    .trust-item:last-child {
-      border-right: 0;
-    }
-
-    .trust-item strong {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 3px;
-    }
-
-    .trust-item span {
-      color: var(--text);
-      font-size: 13px;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 105px 0;
-    }
-
-    .section-head {
-      max-width: 680px;
-      margin-bottom: 50px;
-    }
-
-    .section-label {
-      color: var(--cyan);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 13px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(34px, 4vw, 50px);
-      line-height: 1.12;
-      letter-spacing: -1.7px;
-      color: var(--navy);
-      margin-bottom: 17px;
-    }
-
-    .section-head p {
-      color: var(--text);
-      font-size: 16px;
-    }
-
-    /* ABOUT */
-    .about {
-      background: #fff;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .about-visual {
-      min-height: 450px;
-      border-radius: 18px;
-      background: linear-gradient(145deg, #e7f7f8, #c8e9ed);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-visual::before {
-      content: "AL";
-      position: absolute;
-      font-size: 190px;
-      font-weight: 900;
-      color: rgba(8,47,73,.08);
-      right: -5px;
-      bottom: -40px;
-    }
-
-    .visual-card {
-      position: absolute;
-      left: 30px;
-      bottom: 30px;
-      background: white;
-      padding: 25px;
-      border-radius: 13px;
-      width: 270px;
-      box-shadow: var(--shadow);
-    }
-
-    .visual-card strong {
-      display: block;
-      font-size: 31px;
-      color: var(--navy);
-    }
-
-    .visual-card span {
-      color: var(--text);
-      font-size: 13px;
-    }
-
-    .about-copy h3 {
-      color: var(--navy);
-      font-size: 29px;
-      margin-bottom: 17px;
-    }
-
-    .about-copy p {
-      color: var(--text);
-      margin-bottom: 18px;
-    }
-
-    .check-list {
-      list-style: none;
-      margin: 25px 0 30px;
-    }
-
-    .check-list li {
-      margin: 13px 0;
-      font-weight: 600;
-      color: #28465c;
-    }
-
-    .check-list li::before {
-      content: "✓";
-      color: var(--cyan);
-      font-weight: 900;
-      margin-right: 11px;
-    }
-
-    /* SERVICES */
-    .services {
-      background: var(--light);
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      background: white;
-      padding: 32px;
-      border: 1px solid #e4eff3;
-      border-radius: 12px;
-      transition: .3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow);
-      border-color: transparent;
-    }
-
-    .service-icon {
-      width: 51px;
-      height: 51px;
-      display: grid;
-      place-items: center;
-      background: #e7f8fa;
-      color: var(--blue);
-      border-radius: 10px;
-      font-size: 21px;
-      font-weight: 800;
-      margin-bottom: 23px;
-    }
-
-    .service-card h3 {
-      color: var(--navy);
-      font-size: 20px;
-      margin-bottom: 11px;
-    }
-
-    .service-card p {
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    /* WHY */
-    .why {
-      background: white;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .why-panel {
-      background: var(--navy);
-      border-radius: 17px;
-      padding: 50px;
-      color: white;
-    }
-
-    .why-panel h3 {
-      font-size: 34px;
-      line-height: 1.15;
-      margin-bottom: 17px;
-    }
-
-    .why-panel p {
-      color: #c8dce5;
-    }
-
-    .benefits {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .benefit {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 22px;
-    }
-
-    .benefit strong {
-      display: block;
-      color: var(--navy);
-      margin-bottom: 6px;
-      font-size: 17px;
-    }
-
-    .benefit p {
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    /* STATS */
-    .stats {
-      background: #eef9fa;
-      padding: 65px 0;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      text-align: center;
-    }
-
-    .stat {
-      border-right: 1px solid #cfe6e9;
-    }
-
-    .stat:last-child {
-      border-right: 0;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 40px;
-      color: var(--navy);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat span {
-      color: var(--text);
-      font-size: 13px;
-    }
-
-    /* CTA */
-    .cta {
-      padding: 80px 0;
-      background: linear-gradient(135deg, #07344d, #0b7187);
-      color: white;
-    }
-
-    .cta-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-    }
-
-    .cta h2 {
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      color: #d3e8ee;
-      max-width: 650px;
-    }
-
-    /* CONTACT */
-    .contact {
-      background: #fff;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 70px;
-    }
-
-    .contact-info h2 {
-      font-size: 42px;
-      color: var(--navy);
-      line-height: 1.1;
-      margin-bottom: 17px;
-    }
-
-    .contact-info > p {
-      color: var(--text);
-      margin-bottom: 30px;
-    }
-
-    .contact-line {
-      display: flex;
-      gap: 15px;
-      margin: 20px 0;
-    }
-
-    .contact-line b {
-      color: var(--navy);
-      display: block;
-    }
-
-    .contact-line span {
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    .contact-form {
-      background: var(--light);
-      padding: 35px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 17px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    .field label {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--navy);
-    }
-
-    .field input,
-    .field textarea {
-      width: 100%;
-      border: 1px solid #d5e5ea;
-      background: white;
-      padding: 14px;
-      border-radius: 7px;
-      outline: none;
-      font: inherit;
-    }
-
-    .field textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .field input:focus,
-    .field textarea:focus {
-      border-color: var(--cyan);
-    }
-
-    /* FOOTER */
-    footer {
-      background: #061f31;
-      color: white;
-      padding: 65px 0 25px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr;
-      gap: 60px;
-      padding-bottom: 45px;
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
-
-    footer h3 {
-      margin-bottom: 16px;
-      font-size: 17px;
-    }
-
-    footer p,
-    footer a {
-      color: #a9c1cc;
-      font-size: 14px;
-    }
-
-    footer a {
-      display: block;
-      margin: 9px 0;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    .footer-brand {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 13px;
-    }
-
-    .copyright {
-      padding-top: 22px;
-      color: #76919d;
-      font-size: 12px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 900px) {
-      nav {
-        display: none;
-      }
-
-      .about-grid,
-      .why-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .trust-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .trust-item {
-        border-right: 0;
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 18px;
-      }
-
-      .trust-item:last-child {
-        border-bottom: 0;
-      }
-
-      .cta-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .topbar-inner {
-        justify-content: center;
-      }
-
-      .topbar span:last-child {
-        display: none;
-      }
-
-      .nav {
-        height: 70px;
-      }
-
-      .hero {
-        min-height: 620px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .service-grid,
-      .benefits,
-      .stats-grid,
-      .form-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stat {
-        border-right: 0;
-        border-bottom: 1px solid #cfe6e9;
-        padding: 20px;
-      }
-
-      .stat:last-child {
-        border-bottom: 0;
-      }
-
-      .field.full {
-        grid-column: auto;
-      }
-
-      .about-visual {
-        min-height: 330px;
-      }
-
-      .why-panel {
-        padding: 32px;
-      }
-
-      .copyright {
-        flex-direction: column;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Alaric Health Services provides healthcare revenue cycle, practice support and digital growth solutions.">
+<title>Alaric Health Services | Healthcare Solutions</title>
+
+<style>
+:root{
+--navy:#062d46;
+--blue:#087b95;
+--teal:#13b8bd;
+--aqua:#eaf9fa;
+--light:#f5fafc;
+--text:#536979;
+--dark:#102d42;
+--white:#fff;
+--line:#dcebef;
+--shadow:0 20px 60px rgba(6,45,70,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--dark);line-height:1.65;background:#fff}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.topbar{background:var(--navy);color:#dceef3;font-size:13px;padding:9px 0}
+.topbar-in{display:flex;justify-content:space-between}
+header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid #edf3f5}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center}
+.logo img{width:auto;height:58px;max-width:245px;object-fit:contain}
+nav{display:flex;align-items:center;gap:28px}
+nav a{font-size:14px;font-weight:700;color:#385269}
+nav a:hover{color:var(--teal)}
+.nav-btn{background:var(--navy);color:#fff!important;padding:12px 20px;border-radius:7px}
+.nav-btn:hover{background:var(--blue)}
+.hero{
+min-height:680px;display:flex;align-items:center;color:#fff;
+background:
+linear-gradient(90deg,rgba(3,28,45,.97),rgba(3,38,57,.86) 48%,rgba(3,38,57,.35)),
+linear-gradient(135deg,#07506b,#16a8b1);
+}
+.hero-content{max-width:780px;padding:90px 0}
+.tag{color:#75e4e5;text-transform:uppercase;letter-spacing:2.5px;font-size:12px;font-weight:800;margin-bottom:20px}
+.hero h1{font-size:clamp(45px,6vw,76px);line-height:1.02;letter-spacing:-3px;margin-bottom:25px}
+.hero h1 span{color:#65e2e4}
+.hero p{font-size:18px;color:#d9e9ef;max-width:680px;margin-bottom:35px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 24px;border-radius:7px;font-weight:800;font-size:14px;border:0;cursor:pointer}
+.primary{background:var(--teal);color:#fff;box-shadow:0 12px 30px rgba(19,184,189,.22)}
+.primary:hover{background:#0da5aa;transform:translateY(-2px)}
+.outline{border:1px solid rgba(255,255,255,.45);color:#fff}
+.outline:hover{background:#fff;color:var(--navy)}
+.trust{margin-top:-42px;position:relative;z-index:5;background:#fff;border-radius:12px;box-shadow:var(--shadow)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:27px 30px}
+.trust-item{padding:5px 30px;border-right:1px solid var(--line)}
+.trust-item:last-child{border:0}
+.trust-item strong{display:block;color:var(--navy)}
+.trust-item span{font-size:13px;color:var(--text)}
+section{padding:105px 0}
+.label{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--teal);font-weight:800;margin-bottom:13px}
+.head{max-width:700px;margin-bottom:48px}
+.head h2{font-size:clamp(34px,4vw,51px);line-height:1.1;letter-spacing:-1.7px;color:var(--navy);margin-bottom:17px}
+.head p{color:var(--text)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-art{height:460px;border-radius:18px;background:linear-gradient(145deg,#dff6f7,#bce5e9);position:relative;overflow:hidden}
+.about-art:after{content:"AL";position:absolute;right:-10px;bottom:-70px;font-size:230px;font-weight:900;color:rgba(6,45,70,.08)}
+.about-card{position:absolute;left:30px;bottom:30px;background:#fff;padding:25px;border-radius:12px;box-shadow:var(--shadow);width:275px;z-index:2}
+.about-card b{font-size:29px;color:var(--navy);display:block}
+.about-copy h3{font-size:30px;color:var(--navy);margin-bottom:15px}
+.about-copy p{color:var(--text);margin-bottom:16px}
+.checks{list-style:none;margin:25px 0}
+.checks li{margin:11px 0;font-weight:700;color:#29475a}
+.checks li:before{content:"✓";color:var(--teal);margin-right:10px}
+.services{background:var(--light)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:#fff;border:1px solid var(--line);border-radius:12px;padding:30px;transition:.3s}
+.service:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.icon{width:48px;height:48px;border-radius:10px;background:var(--aqua);color:var(--blue);display:grid;place-items:center;font-size:13px;font-weight:900;margin-bottom:20px}
+.service h3{font-size:19px;color:var(--navy);margin-bottom:9px}
+.service p{font-size:14px;color:var(--text)}
+.category{margin-top:55px;margin-bottom:20px;color:var(--navy);font-size:22px}
+.why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:75px;align-items:center}
+.why-box{background:var(--navy);color:#fff;border-radius:16px;padding:48px}
+.why-box h2{font-size:37px;line-height:1.15;margin-bottom:16px}
+.why-box p{color:#c8dce5}
+.benefits{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.benefit{border-bottom:1px solid var(--line);padding-bottom:20px}
+.benefit b{display:block;color:var(--navy);margin-bottom:5px}
+.benefit p{font-size:14px;color:var(--text)}
+.growth{background:#eef9fa}
+.growth-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.growth-card{background:#fff;padding:30px;border-radius:12px;border:1px solid var(--line)}
+.growth-card h3{color:var(--navy);margin-bottom:8px}
+.growth-card p{font-size:14px;color:var(--text)}
+.cta{background:linear-gradient(135deg,#052e47,#087c91);color:#fff}
+.cta-in{display:flex;justify-content:space-between;align-items:center;gap:35px}
+.cta h2{font-size:clamp(32px,4vw,48px);line-height:1.1;margin-bottom:10px}
+.cta p{color:#d2e8ed;max-width:650px}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.contact h2{font-size:43px;line-height:1.1;color:var(--navy);margin-bottom:15px}
+.contact-info p{color:var(--text)}
+.contact-line{margin:22px 0}
+.contact-line b{display:block;color:var(--navy)}
+.contact-line span{color:var(--text);font-size:14px}
+.form{background:var(--light);border:1px solid var(--line);padding:35px;border-radius:14px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;font-weight:800;color:var(--navy)}
+.field input,.field textarea{border:1px solid #d4e4e9;background:#fff;border-radius:7px;padding:14px;font:inherit;outline:none}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--teal)}
+footer{background:#041e30;color:#fff;padding:65px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:60px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer h3{margin-bottom:14px}
+footer p,footer a{color:#a9c1cc;font-size:14px}
+footer a{display:block;margin:8px 0}
+.footer-brand{font-size:23px;font-weight:800;margin-bottom:12px}
+.copy{display:flex;justify-content:space-between;padding-top:20px;color:#76919d;font-size:12px}
+@media(max-width:900px){
+nav{display:none}.about-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
+.service-grid,.growth-grid{grid-template-columns:1fr 1fr}
+.trust-grid{grid-template-columns:1fr}.trust-item{border-right:0;border-bottom:1px solid var(--line);padding:15px 20px}
+.trust-item:last-child{border:0}.cta-in{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:600px){
+.topbar-in{justify-content:center}.topbar-in span:last-child{display:none}
+.logo img{height:50px;max-width:205px}
+.hero{min-height:620px}.hero h1{letter-spacing:-2px}
+section{padding:75px 0}
+.service-grid,.growth-grid,.benefits,.form-grid,.footer-grid{grid-template-columns:1fr}
+.field.full{grid-column:auto}.about-art{height:330px}.why-box{padding:32px}
+.copy{flex-direction:column;gap:8px}
+}
+</style>
 </head>
 
 <body>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span>Professional Healthcare Solutions</span>
-      <span>Serving Healthcare Providers with Excellence</span>
-    </div>
-  </div>
-
-  <header>
-    <div class="container nav">
-
-      <a href="#home" class="brand">
-        <img src="alaric_high_contrast_text_4k.png"
-     alt="Alaric Health Services"
-     style="height:58px; width:auto;">
-
-        <span>Alaric Health Services</span>
-      </a>
-
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#why-us">Why Alaric</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="nav-cta">Get Started</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-
-          <div class="eyebrow">Healthcare Excellence</div>
-
-          <h1>
-            Where Better Care
-            <span>Becomes Results.</span>
-          </h1>
-
-          <p>
-            Alaric Health Services delivers dependable healthcare solutions
-            designed to help providers operate more efficiently, strengthen
-            performance, and stay focused on what matters most — patient care.
-          </p>
-
-          <div class="buttons">
-            <a href="#contact" class="btn btn-primary">Request a Consultation</a>
-            <a href="#services" class="btn btn-outline">Explore Our Services</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST -->
-    <div class="container">
-      <div class="trust">
-        <div class="trust-grid">
-
-          <div class="trust-item">
-            <strong>Provider-Focused</strong>
-            <span>Solutions built around your healthcare operation.</span>
-          </div>
-
-          <div class="trust-item">
-            <strong>Results Driven</strong>
-            <span>Focused on efficiency, accuracy and measurable outcomes.</span>
-          </div>
-
-          <div class="trust-item">
-            <strong>Professional Support</strong>
-            <span>A reliable partner for your evolving healthcare needs.</span>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <div class="container about-grid">
-
-        <div class="about-visual">
-          <div class="visual-card">
-            <strong>Alaric</strong>
-            <span>Where Care Becomes Results</span>
-          </div>
-        </div>
-
-        <div class="about-copy">
-          <div class="section-label">About Alaric</div>
-
-          <h3>Healthcare solutions built around your success.</h3>
-
-          <p>
-            At Alaric Health Services, we believe healthcare organizations
-            deserve more than a service provider. They deserve a dependable
-            partner committed to quality, efficiency and long-term results.
-          </p>
-
-          <p>
-            Our approach combines professional expertise, streamlined
-            processes and a commitment to responsive support — helping
-            healthcare providers spend less time dealing with operational
-            challenges and more time focused on their patients.
-          </p>
-
-          <ul class="check-list">
-            <li>Professional and dependable service</li>
-            <li>Provider-centered approach</li>
-            <li>Quality-focused processes</li>
-            <li>Long-term partnership mindset</li>
-          </ul>
-
-          <a href="#contact" class="btn btn-primary">Learn More About Us</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services" id="services">
-      <div class="container">
-
-        <div class="section-head">
-          <div class="section-label">Our Services</div>
-          <h2>Solutions designed for modern healthcare.</h2>
-          <p>
-            Explore professional healthcare support services designed to
-            simplify operations, improve efficiency and support sustainable
-            growth.
-          </p>
-        </div>
-
-        <div class="service-grid">
-
-          <article class="service-card">
-            <div class="service-icon">01</div>
-            <h3>Medical Billing</h3>
-            <p>
-              Streamlined billing support designed to improve claim accuracy,
-              reduce administrative burden and support healthier revenue cycles.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">02</div>
-            <h3>Medical Coding</h3>
-            <p>
-              Accurate and organized coding support that helps healthcare
-              organizations maintain consistent documentation and billing
-              processes.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">03</div>
-            <h3>Credentialing</h3>
-            <p>
-              Professional credentialing assistance designed to help providers
-              navigate enrollment and maintain essential payer relationships.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">04</div>
-            <h3>Denial Management</h3>
-            <p>
-              Structured denial follow-up and workflow support focused on
-              identifying issues and helping providers recover appropriate
-              reimbursement.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">05</div>
-            <h3>Revenue Cycle Support</h3>
-            <p>
-              End-to-end operational support that helps create a more organized,
-              transparent and efficient revenue cycle.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">06</div>
-            <h3>Healthcare Administrative Support</h3>
-            <p>
-              Flexible administrative solutions that help healthcare teams
-              reduce workload and maintain smooth day-to-day operations.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- WHY US -->
-    <section class="why" id="why-us">
-      <div class="container why-grid">
-
-        <div class="why-panel">
-          <div class="section-label">Why Alaric</div>
-          <h3>A partner committed to your success.</h3>
-          <p>
-            We combine a professional mindset with a practical understanding
-            of healthcare operations to deliver support you can depend on.
-          </p>
-        </div>
-
-        <div class="benefits">
-
-          <div class="benefit">
-            <strong>Accuracy First</strong>
-            <p>We prioritize detail, consistency and quality in every process.</p>
-          </div>
-
-          <div class="benefit">
-            <strong>Clear Communication</strong>
-            <p>Professional communication keeps your team informed and supported.</p>
-          </div>
-
-          <div class="benefit">
-            <strong>Scalable Support</strong>
-            <p>Our solutions can grow alongside your organization's needs.</p>
-          </div>
-
-          <div class="benefit">
-            <strong>Results Focused</strong>
-            <p>Every process is designed with efficiency and measurable improvement in mind.</p>
-          </div>
-
-          <div class="benefit">
-            <strong>Patient-Care Mindset</strong>
-            <p>Better operations ultimately create more room for quality patient care.</p>
-          </div>
-
-          <div class="benefit">
-            <strong>Long-Term Partnership</strong>
-            <p>We aim to become a trusted extension of your healthcare team.</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="stats">
-      <div class="container stats-grid">
-
-        <div class="stat">
-          <strong>01</strong>
-          <span>Provider-Focused Approach</span>
-        </div>
-
-        <div class="stat">
-          <strong>24/7</strong>
-          <span>Commitment to Support</span>
-        </div>
-
-        <div class="stat">
-          <strong>100%</strong>
-          <span>Professional Mindset</span>
-        </div>
-
-        <div class="stat">
-          <strong>∞</strong>
-          <span>Focus on Better Results</span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container cta-inner">
-
-        <div>
-          <h2>Ready to move healthcare forward?</h2>
-          <p>
-            Connect with Alaric Health Services and discover how the right
-            support can make your healthcare operation more efficient.
-          </p>
-        </div>
-
-        <a href="#contact" class="btn btn-primary">Talk to Alaric</a>
-
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-
-        <div class="contact-info">
-
-          <div class="section-label">Contact Us</div>
-
-          <h2>Let's build better results together.</h2>
-
-          <p>
-            Have questions about our services? Reach out to our team.
-            Contact details will be updated as they become available.
-          </p>
-
-          <div class="contact-line">
-            <div>✉</div>
-            <div>
-              <b>Email</b>
-              <span>Coming Soon</span>
-            </div>
-          </div>
-
-          <div class="contact-line">
-            <div>☎</div>
-            <div>
-              <b>Phone</b>
-              <span>Coming Soon</span>
-            </div>
-          </div>
-
-          <div class="contact-line">
-            <div>⌖</div>
-            <div>
-              <b>Address</b>
-              <span>Coming Soon</span>
-            </div>
-          </div>
-
-        </div>
-
-        <form class="contact-form">
-
-          <div class="form-grid">
-
-            <div class="field">
-              <label>First Name</label>
-              <input type="text" placeholder="Your first name">
-            </div>
-
-            <div class="field">
-              <label>Last Name</label>
-              <input type="text" placeholder="Your last name">
-            </div>
-
-            <div class="field">
-              <label>Email Address</label>
-              <input type="email" placeholder="Your email">
-            </div>
-
-            <div class="field">
-              <label>Phone</label>
-              <input type="tel" placeholder="Your phone number">
-            </div>
-
-            <div class="field full">
-              <label>How Can We Help?</label>
-              <textarea placeholder="Tell us about your needs"></textarea>
-            </div>
-
-            <div class="field full">
-              <button type="button" class="btn btn-primary">
-                Submit Inquiry
-              </button>
-            </div>
-
-          </div>
-
-        </form>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div>
-          <div class="footer-brand">Alaric Health Services</div>
-          <p>
-            Where Care Becomes Results.
-            Professional healthcare solutions built around better outcomes.
-          </p>
-        </div>
-
-        <div>
-          <h3>Quick Links</h3>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#why-us">Why Alaric</a>
-        </div>
-
-        <div>
-          <h3>Contact</h3>
-          <p>Email: Coming Soon</p>
-          <p>Phone: Coming Soon</p>
-          <p>Address: Coming Soon</p>
-        </div>
-
-      </div>
-
-      <div class="copyright">
-        <span>© 2026 Alaric Health Services. All Rights Reserved.</span>
-        <span>Where Care Becomes Results</span>
-      </div>
-
-    </div>
-  </footer>
+<div class="topbar">
+<div class="container topbar-in">
+<span>Professional Healthcare Solutions</span>
+<span>Focused on Better Care & Better Results</span>
+</div>
+</div>
+
+<header>
+<div class="container nav">
+<a class="logo" href="#home">
+<img src="alaric_high_contrast_text_4k.png" alt="Alaric Health Services">
+</a>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#growth">Digital Growth</a>
+<a href="#why">Why Alaric</a>
+<a href="#contact" class="nav-btn">Get Started</a>
+</nav>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<div class="tag">Healthcare • Revenue • Growth</div>
+<h1>Helping Healthcare Organizations <span>Perform Better.</span></h1>
+<p>
+Alaric Health Services provides professional healthcare support,
+revenue cycle solutions and digital growth services designed to help
+providers operate efficiently, strengthen performance and focus on patient care.
+</p>
+<div class="buttons">
+<a class="btn primary" href="#contact">Request a Consultation</a>
+<a class="btn outline" href="#services">Explore Our Services</a>
+</div>
+</div>
+</div>
+</section>
+
+<div class="container">
+<div class="trust">
+<div class="trust-grid">
+<div class="trust-item"><strong>Healthcare Focused</strong><span>Solutions built around modern healthcare operations.</span></div>
+<div class="trust-item"><strong>Revenue & Operations</strong><span>Structured support designed to improve efficiency.</span></div>
+<div class="trust-item"><strong>Growth Mindset</strong><span>Digital strategies that help practices build visibility.</span></div>
+</div>
+</div>
+</div>
+
+<section id="about">
+<div class="container about-grid">
+<div class="about-art">
+<div class="about-card"><b>Alaric Health Services</b><span>Professional support for modern healthcare organizations.</span></div>
+</div>
+<div class="about-copy">
+<div class="label">About Alaric</div>
+<h3>A dependable partner for healthcare businesses.</h3>
+<p>
+Alaric Health Services is focused on helping healthcare organizations
+manage critical operational functions while creating opportunities for
+stronger performance and sustainable growth.
+</p>
+<p>
+Our approach combines healthcare support, revenue cycle expertise and
+digital solutions under one professional service partner.
+</p>
+<ul class="checks">
+<li>Provider-centered solutions</li>
+<li>Professional and responsive support</li>
+<li>Efficiency-focused workflows</li>
+<li>Long-term partnership approach</li>
+</ul>
+<a href="#contact" class="btn primary">Connect With Our Team</a>
+</div>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+<div class="head">
+<div class="label">Our Services</div>
+<h2>Complete support for the modern healthcare practice.</h2>
+<p>From revenue cycle operations to provider support, Alaric helps simplify the processes behind successful healthcare organizations.</p>
+</div>
+
+<h3 class="category">Revenue Cycle Management</h3>
+<div class="service-grid">
+
+<div class="service"><div class="icon">01</div><h3>Medical Billing</h3><p>Professional billing support designed to improve claim accuracy, reduce administrative burden and support healthier revenue cycles.</p></div>
+
+<div class="service"><div class="icon">02</div><h3>Accounts Receivable Management</h3><p>Structured A/R follow-up and account resolution support focused on improving visibility and reducing outstanding balances.</p></div>
+
+<div class="service"><div class="icon">03</div><h3>Claims Management & Follow-Up</h3><p>Organized claims workflows and payer follow-up designed to keep revenue moving through the billing cycle.</p></div>
+
+<div class="service"><div class="icon">04</div><h3>Denial Management & Appeals</h3><p>Identify denial issues, coordinate follow-up and support appropriate appeals to help reduce preventable revenue loss.</p></div>
+
+<div class="service"><div class="icon">05</div><h3>Payment Posting</h3><p>Accurate payment posting support that helps maintain organized financial records and cleaner revenue cycle reporting.</p></div>
+
+<div class="service"><div class="icon">06</div><h3>Eligibility & Benefits Verification</h3><p>Insurance verification support designed to improve front-end accuracy and reduce avoidable billing issues.</p></div>
+
+</div>
+
+<h3 class="category">Provider & Practice Support</h3>
+<div class="service-grid">
+
+<div class="service"><div class="icon">07</div><h3>Prior Authorization</h3><p>Organized authorization support, documentation coordination and payer follow-up to help reduce administrative delays.</p></div>
+
+<div class="service"><div class="icon">08</div><h3>Medical Coding</h3><p>Professional coding support focused on accurate documentation, consistency and compliant billing workflows.</p></div>
+
+<div class="service"><div class="icon">09</div><h3>Credentialing & Enrollment</h3><p>Provider credentialing and enrollment assistance designed to support payer participation and practice operations.</p></div>
+
+<div class="service"><div class="icon">10</div><h3>Practice Administrative Support</h3><p>Flexible administrative assistance designed to help healthcare teams manage day-to-day operational demands.</p></div>
+
+<div class="service"><div class="icon">11</div><h3>Insurance Verification</h3><p>Front-end insurance support designed to help practices maintain accurate patient and payer information.</p></div>
+
+<div class="service"><div class="icon">12</div><h3>Patient & Payer Coordination</h3><p>Professional coordination support that helps streamline communication across important practice workflows.</p></div>
+
+</div>
+</div>
+</section>
+
+<section id="growth" class="growth">
+<div class="container">
+<div class="head">
+<div class="label">Healthcare Digital Growth</div>
+<h2>Build a stronger digital presence for your practice.</h2>
+<p>Healthcare organizations need more than operational support. Our digital services help practices strengthen visibility, credibility and growth.</p>
+</div>
+
+<div class="growth-grid">
+<div class="growth-card"><h3>Digital Marketing</h3><p>Healthcare-focused marketing strategies designed to strengthen brand visibility and connect practices with their target audience.</p></div>
+<div class="growth-card"><h3>Website Design & Development</h3><p>Professional, responsive websites designed to communicate services clearly and create a credible digital experience.</p></div>
+<div class="growth-card"><h3>Search Engine Optimization</h3><p>Search-focused strategies designed to improve organic visibility and help practices reach relevant audiences.</p></div>
+<div class="growth-card"><h3>Social Media Management</h3><p>Consistent professional social media management including content planning, publishing and audience engagement.</p></div>
+<div class="growth-card"><h3>Paid Advertising</h3><p>Targeted digital advertising campaigns designed to increase visibility and generate qualified opportunities.</p></div>
+<div class="growth-card"><h3>Practice Growth & Lead Generation</h3><p>Integrated digital strategies designed to help healthcare practices build awareness and create new opportunities.</p></div>
+</div>
+</div>
+</section>
+
+<section id="why">
+<div class="container why-grid">
+<div class="why-box">
+<div class="label">Why Alaric</div>
+<h2>Built around your operation. Focused on your results.</h2>
+<p>We aim to become a reliable extension of your healthcare team by combining professional service, clear communication and practical solutions.</p>
+</div>
+
+<div class="benefits">
+<div class="benefit"><b>Accuracy First</b><p>Attention to detail across critical healthcare workflows.</p></div>
+<div class="benefit"><b>Clear Communication</b><p>Professional communication keeps your team informed.</p></div>
+<div class="benefit"><b>Scalable Support</b><p>Services designed to adapt as your organization grows.</p></div>
+<div class="benefit"><b>Efficiency Focused</b><p>Processes designed to reduce unnecessary administrative workload.</p></div>
+<div class="benefit"><b>Professional Mindset</b><p>A service experience built around reliability and accountability.</p></div>
+<div class="benefit"><b>Long-Term Partnership</b><p>We focus on building lasting relationships, not one-time transactions.</p></div>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container cta-in">
+<div>
+<h2>Let's build better results together.</h2>
+<p>Connect with Alaric Health Services to discuss your healthcare support and growth needs.</p>
+</div>
+<a href="#contact" class="btn primary">Get Started</a>
+</div>
+</section>
+
+<section id="contact">
+<div class="container contact-grid">
+
+<div class="contact-info">
+<div class="label">Contact Alaric</div>
+<h2>Let's start a conversation.</h2>
+<p>Have questions about our services? Our contact details will be updated as additional information becomes available.</p>
+
+<div class="contact-line">
+<b>Email</b>
+<span>alarichealthservcies@gmail.com</span>
+</div>
+
+<div class="contact-line">
+<b>Phone</b>
+<span>Coming Soon</span>
+</div>
+
+<div class="contact-line">
+<b>Address</b>
+<span>Coming Soon</span>
+</div>
+
+<div class="contact-line">
+<b>Leadership</b>
+<span>Coming Soon</span>
+</div>
+</div>
+
+<form class="form">
+<div class="form-grid">
+
+<div class="field">
+<label>First Name</label>
+<input type="text" placeholder="Your first name">
+</div>
+
+<div class="field">
+<label>Last Name</label>
+<input type="text" placeholder="Your last name">
+</div>
+
+<div class="field">
+<label>Email Address</label>
+<input type="email" placeholder="Your email">
+</div>
+
+<div class="field">
+<label>Phone</label>
+<input type="tel" placeholder="Your phone number">
+</div>
+
+<div class="field full">
+<label>How Can We Help?</label>
+<textarea placeholder="Tell us about your healthcare needs"></textarea>
+</div>
+
+<div class="field full">
+<button type="button" class="btn primary">Submit Inquiry</button>
+</div>
+
+</div>
+</form>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+
+<div>
+<div class="footer-brand">Alaric Health Services</div>
+<p>Professional healthcare solutions focused on better operations, better growth and better results.</p>
+</div>
+
+<div>
+<h3>Explore</h3>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#growth">Digital Growth</a>
+<a href="#why">Why Alaric</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>alarichealthservcies@gmail.com</p>
+<p>Phone: Coming Soon</p>
+<p>Address: Coming Soon</p>
+</div>
+
+</div>
+
+<div class="copy">
+<span>© 2026 Alaric Health Services. All Rights Reserved.</span>
+<span>Where Care Becomes Results.</span>
+</div>
+</div>
+</footer>
 
 </body>
 </html>
