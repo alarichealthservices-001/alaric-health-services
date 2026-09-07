@@ -2252,10 +2252,37 @@ var contactForm = document.getElementById('contactForm');
 var formStatus = document.getElementById('formStatus');
 
 contactForm.addEventListener('submit', function (e) {
+  contactForm.addEventListener('submit', async function (e) {
   e.preventDefault();
-  formStatus.textContent = "Thank you! Your inquiry has been received. We'll get back to you soon.";
-  formStatus.className = "form-status show ok";
-  contactForm.reset();
+
+  formStatus.textContent = "Sending...";
+  formStatus.className = "form-status show";
+
+  const formData = new FormData(contactForm);
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      formStatus.textContent = "Thank you! Your inquiry has been received. We'll get back to you soon.";
+      formStatus.className = "form-status show ok";
+      contactForm.reset();
+    } else {
+      formStatus.textContent = "Something went wrong. Please try again.";
+      formStatus.className = "form-status show error";
+    }
+
+  } catch (error) {
+    formStatus.textContent = "Something went wrong. Please try again.";
+    formStatus.className = "form-status show error";
+  }
+});
+
 });
 
 /* =========================================================
