@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Eligibility & Benefits Verification | Alaric Health Services</title>
+
+<meta name="description" content="Professional insurance eligibility and benefits verification support for healthcare practices by Alaric Health Services.">
+
+<style>
+:root{
+  --navy:#052b43;
+  --deep:#031b2b;
+  --blue:#087c96;
+  --cyan:#19b9bd;
+  --mint:#78dfc1;
+  --ice:#f3fafc;
+  --text:#536b7a;
+  --line:#dcebed;
+  --white:#fff;
+  --shadow:0 25px 70px rgba(5,43,67,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--navy);
+  background:#fff;
+  line-height:1.6
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+
+header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #e3eef1
+}
+.nav{
+  min-height:88px;display:flex;align-items:center;
+  justify-content:space-between;gap:25px
+}
+.logo img{
+  height:63px;width:auto;max-width:280px;object-fit:contain
+}
+nav{display:flex;align-items:center;gap:21px}
+nav a{
+  color:#405a69;font-size:13px;font-weight:700
+}
+nav a:hover{color:var(--cyan)}
+.nav-cta{
+  padding:12px 18px;color:#fff!important;
+  background:var(--navy);border-radius:7px
+}
+
+/* HERO */
+.hero{
+  position:relative;overflow:hidden;
+  padding:105px 0 115px;color:#fff;
+  background:
+  radial-gradient(circle at 84% 15%,rgba(25,185,189,.32),transparent 29%),
+  linear-gradient(135deg,#052b43,#087c96)
+}
+.hero:after{
+  content:"";position:absolute;right:-100px;top:-110px;
+  width:590px;height:590px;
+  background:url("alaric_high_contrast_text_4k.png") center/contain no-repeat;
+  opacity:.045;filter:grayscale(1) brightness(4)
+}
+.hero-grid{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1fr .85fr;
+  gap:70px;align-items:center
+}
+.eyebrow{
+  margin-bottom:15px;color:var(--cyan);
+  font-size:11px;font-weight:900;
+  text-transform:uppercase;letter-spacing:2.5px
+}
+.hero .eyebrow{color:#83e8e7}
+.hero h1{
+  margin-bottom:23px;
+  font-size:clamp(45px,6vw,68px);
+  line-height:1.02;letter-spacing:-3px
+}
+.hero p{
+  max-width:700px;color:#d8eaee;font-size:18px
+}
+.buttons{
+  display:flex;gap:13px;flex-wrap:wrap;margin-top:30px
+}
+.btn{
+  padding:14px 21px;border-radius:7px;
+  font-size:13px;font-weight:900
+}
+.primary{color:#fff;background:var(--cyan)}
+.secondary{
+  color:#fff;border:1px solid rgba(255,255,255,.3)
+}
+
+/* VERIFICATION PANEL */
+.panel{
+  padding:27px;border:1px solid rgba(255,255,255,.17);
+  border-radius:20px;background:rgba(255,255,255,.08);
+  box-shadow:0 30px 80px rgba(0,0,0,.18);
+  backdrop-filter:blur(12px)
+}
+.panel-top{
+  display:flex;justify-content:space-between;
+  color:#c3e0e5;font-size:9px;
+  text-transform:uppercase;letter-spacing:1.5px
+}
+.status{color:#7ce3bd}
+.check-list{margin-top:22px}
+.check{
+  display:flex;align-items:center;gap:13px;
+  padding:14px 0;border-bottom:1px solid rgba(255,255,255,.11)
+}
+.check:last-child{border-bottom:0}
+.check-icon{
+  width:34px;height:34px;display:grid;
+  place-items:center;border-radius:9px;
+  color:#fff;background:rgba(25,185,189,.18);
+  font-size:11px;font-weight:900
+}
+.check strong{
+  display:block;color:#fff;font-size:11px
+}
+.check span{
+  display:block;color:#a9ccd4;font-size:9px
+}
+.verified{
+  margin-left:auto;padding:5px 8px;
+  border-radius:5px;color:#9cead0;
+  background:rgba(98,213,176,.1);
+  font-size:8px;font-weight:900
+}
+
+/* INTRO */
+.intro{padding:90px 0}
+.intro-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center
+}
+h2{
+  font-size:clamp(34px,4vw,51px);
+  line-height:1.08;letter-spacing:-2px
+}
+.intro p{color:var(--text);font-size:16px}
+
+/* SERVICES */
+.services{
+  padding:90px 0;background:var(--ice)
+}
+.section-head{max-width:780px;margin-bottom:45px}
+.section-head p{margin-top:15px;color:var(--text)}
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+}
+.card{
+  position:relative;overflow:hidden;
+  padding:28px;min-height:230px;
+  border:1px solid var(--line);
+  border-radius:16px;background:#fff;
+  transition:.28s
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:#b9e5e7
+}
+.card:after{
+  content:"";position:absolute;
+  width:120px;height:120px;right:-65px;bottom:-65px;
+  border:1px solid #d9eef0;border-radius:50%
+}
+.card-no{
+  color:var(--cyan);font-size:10px;
+  font-weight:900;letter-spacing:1.4px
+}
+.card h3{margin:30px 0 8px;font-size:18px}
+.card p{color:var(--text);font-size:12.5px}
+
+/* WORKFLOW */
+.workflow{padding:100px 0}
+.workflow-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center
+}
+.workflow-copy p{
+  margin-top:16px;color:var(--text);font-size:16px
+}
+.flow{
+  padding:28px;border:1px solid var(--line);
+  border-radius:18px;background:#fff;
+  box-shadow:var(--shadow)
+}
+.flow-row{
+  display:flex;align-items:center;gap:15px;
+  padding:15px 0;border-bottom:1px solid var(--line)
+}
+.flow-row:last-child{border-bottom:0}
+.flow-no{
+  width:35px;height:35px;display:grid;
+  place-items:center;flex:none;border-radius:9px;
+  color:#fff;background:var(--navy);
+  font-size:10px;font-weight:900
+}
+.flow-row strong{display:block;font-size:13px}
+.flow-row span{color:var(--text);font-size:10px}
+
+/* BENEFITS */
+.benefits{
+  padding:90px 0;background:var(--ice)
+}
+.benefit-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:18px;margin-top:45px
+}
+.benefit{
+  padding:27px;border:1px solid var(--line);
+  border-radius:15px;background:#fff
+}
+.icon{
+  width:42px;height:42px;display:grid;
+  place-items:center;margin-bottom:17px;
+  border-radius:9px;color:#fff;
+  background:linear-gradient(135deg,var(--blue),var(--cyan));
+  font-size:10px;font-weight:900
+}
+.benefit h3{margin-bottom:7px;font-size:16px}
+.benefit p{color:var(--text);font-size:12.5px}
+
+/* CTA */
+.cta{
+  padding:100px 0;color:#fff;
+  background:
+  radial-gradient(circle at 85% 20%,rgba(25,185,189,.2),transparent 30%),
+  var(--deep)
+}
+.cta-grid{
+  display:flex;align-items:center;
+  justify-content:space-between;gap:50px
+}
+.cta p{
+  max-width:700px;margin-top:14px;color:#b9d3da
+}
+.cta-btn{
+  padding:16px 24px;white-space:nowrap;
+  border-radius:7px;color:#fff;
+  background:var(--cyan);font-size:13px;font-weight:900
+}
+
+/* FOOTER */
+footer{
+  padding:55px 0 25px;color:#fff;background:#031b2b
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;
+  gap:55px;padding-bottom:35px;
+  border-bottom:1px solid rgba(255,255,255,.12)
+}
+.footer-brand{
+  margin-bottom:10px;font-size:22px;font-weight:900
+}
+footer h3{margin-bottom:13px;font-size:15px}
+footer p,footer a{color:#9ebbc5;font-size:13px}
+footer a{display:block;margin:7px 0}
+footer a:hover{color:#fff}
+.copy{
+  display:flex;justify-content:space-between;
+  gap:20px;padding-top:20px;
+  color:#718e99;font-size:11px
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{display:none}
+  .hero-grid,.intro-grid,.workflow-grid{
+    grid-template-columns:1fr
+  }
+  .cards,.benefit-grid{
+    grid-template-columns:1fr 1fr
+  }
+  .footer-grid{grid-template-columns:1fr}
+  .cta-grid{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:600px){
+  .logo img{height:55px}
+  .hero{padding:75px 0 85px}
+  .hero h1{letter-spacing:-1.5px}
+  .intro,.services,.workflow,.benefits,.cta{
+    padding:70px 0
+  }
+  .cards,.benefit-grid{grid-template-columns:1fr}
+  .copy{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+
+<a href="index.html" class="logo">
+<img src="alaric_high_contrast_text_4k.png"
+alt="Alaric Health Services">
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="rcm.html">RCM</a>
+<a href="medical-billing.html">Medical Billing</a>
+<a href="vma.html">VMA</a>
+<a href="index.html#contact" class="nav-cta">Get Started</a>
+</nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="eyebrow">
+Patient Access • Insurance Operations
+</div>
+
+<h1>
+Know the coverage before the care begins.
+</h1>
+
+<p>
+Alaric Health Services provides professional eligibility
+and benefits verification support to help healthcare teams
+understand coverage information, organize patient-access
+workflows and reduce avoidable administrative friction.
+</p>
+
+<div class="buttons">
+<a href="index.html#contact" class="btn primary">
+Discuss Your Workflow
+</a>
+
+<a href="services.html" class="btn secondary">
+View All Services
+</a>
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<div class="panel-top">
+<span>Eligibility Operations</span>
+<span class="status">● Active Workflow</span>
+</div>
+
+<div class="check-list">
+
+<div class="check">
+<div class="check-icon">01</div>
+<div>
+<strong>Patient Information</strong>
+<span>Demographics & coverage details</span>
+</div>
+<div class="verified">READY</div>
+</div>
+
+<div class="check">
+<div class="check-icon">02</div>
+<div>
+<strong>Insurance Verification</strong>
+<span>Payer & member information</span>
+</div>
+<div class="verified">VERIFIED</div>
+</div>
+
+<div class="check">
+<div class="check-icon">03</div>
+<div>
+<strong>Eligibility Status</strong>
+<span>Active coverage review</span>
+</div>
+<div class="verified">ACTIVE</div>
+</div>
+
+<div class="check">
+<div class="check-icon">04</div>
+<div>
+<strong>Benefits Information</strong>
+<span>Coverage details & limitations</span>
+</div>
+<div class="verified">REVIEWED</div>
+</div>
+
+<div class="check">
+<div class="check-icon">05</div>
+<div>
+<strong>Documentation</strong>
+<span>Information routed appropriately</span>
+</div>
+<div class="verified">READY</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<div class="container intro-grid">
+
+<div>
+
+<div class="eyebrow">
+Patient Access Intelligence
+</div>
+
+<h2>
+Turn insurance information into a cleaner workflow.
+</h2>
+
+</div>
+
+<p>
+Eligibility verification is more than checking whether a
+patient has insurance. Accurate information at the front
+end can help teams prepare for the financial and
+administrative steps that follow.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SERVICE AREAS -->
+
+<section class="services">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">
+What We Support
+</div>
+
+<h2>
+Built for the details behind patient access.
+</h2>
+
+<p>
+Our support can be aligned with the workflow and systems
+used by your healthcare organization.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<div class="card-no">01 / COVERAGE</div>
+<h3>Eligibility Verification</h3>
+<p>
+Support verification of active coverage and relevant
+insurance information before scheduled services.
+</p>
+</div>
+
+<div class="card">
+<div class="card-no">02 / BENEFITS</div>
+<h3>Benefits Review</h3>
+<p>
+Organize available benefits information to support
+appropriate patient-access and administrative workflows.
+</p>
+</div>
+
+<div class="card">
+<div class="card-no">03 / PAYER</div>
+<h3>Payer Information</h3>
+<p>
+Capture and organize payer, member and coverage
+information for appropriate downstream workflows.
+</p>
+</div>
+
+<div class="card">
+<div class="card-no">04 / PATIENT</div>
+<h3>Patient Information</h3>
+<p>
+Help maintain accurate administrative information
+required for insurance and scheduling workflows.
+</p>
+</div>
+
+<div class="card">
+<div class="card-no">05 / DOCUMENTATION</div>
+<h3>Verification Documentation</h3>
+<p>
+Support organized documentation and routing of
+verification information to the appropriate team.
+</p>
+</div>
+
+<div class="card">
+<div class="card-no">06 / COORDINATION</div>
+<h3>Workflow Coordination</h3>
+<p>
+Connect eligibility findings with scheduling, billing,
+authorization and patient-support workflows.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WORKFLOW -->
+
+<section class="workflow">
+
+<div class="container workflow-grid">
+
+<div class="workflow-copy">
+
+<div class="eyebrow">
+Our Process
+</div>
+
+<h2>
+A verification workflow designed for clarity.
+</h2>
+
+<p>
+We organize eligibility support around a consistent
+sequence so information can move efficiently from
+verification to the next appropriate workflow.
+</p>
+
+</div>
+
+
+<div class="flow">
+
+<div class="flow-row">
+<div class="flow-no">01</div>
+<div>
+<strong>Collect</strong>
+<span>Gather patient and insurance information.</span>
+</div>
+</div>
+
+<div class="flow-row">
+<div class="flow-no">02</div>
+<div>
+<strong>Verify</strong>
+<span>Review available eligibility and coverage information.</span>
+</div>
+</div>
+
+<div class="flow-row">
+<div class="flow-no">03</div>
+<div>
+<strong>Document</strong>
+<span>Organize relevant findings for the appropriate workflow.</span>
+</div>
+</div>
+
+<div class="flow-row">
+<div class="flow-no">04</div>
+<div>
+<strong>Route</strong>
+<span>Send information to billing, scheduling or other teams.</span>
+</div>
+</div>
+
+<div class="flow-row">
+<div class="flow-no">05</div>
+<div>
+<strong>Follow Up</strong>
+<span>Identify unresolved items requiring additional action.</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<section class="benefits">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">
+Why Alaric
+</div>
+
+<h2>
+Better organized patient-access operations.
+</h2>
+
+</div>
+
+
+<div class="benefit-grid">
+
+<div class="benefit">
+<div class="icon">01</div>
+<h3>Front-End Visibility</h3>
+<p>
+Help teams identify important coverage information
+before downstream workflows begin.
+</p>
+</div>
+
+<div class="benefit">
+<div class="icon">02</div>
+<h3>Consistent Processes</h3>
+<p>
+Structured workflows help reduce unnecessary
+variation in recurring administrative tasks.
+</p>
+</div>
+
+<div class="benefit">
+<div class="icon">03</div>
+<h3>Better Coordination</h3>
+<p>
+Connect patient-access information with billing,
+authorization and scheduling workflows.
+</p>
+</div>
+
+<div class="benefit">
+<div class="icon">04</div>
+<h3>Operational Support</h3>
+<p>
+Provide additional capacity for healthcare teams
+managing high administrative workloads.
+</p>
+</div>
+
+<div class="benefit">
+<div class="icon">05</div>
+<h3>Clear Documentation</h3>
+<p>
+Organized information makes follow-up and internal
+coordination easier.
+</p>
+</div>
+
+<div class="benefit">
+<div class="icon">06</div>
+<h3>Scalable Support</h3>
+<p>
+Build support around your organization's volume,
+workflow and operational requirements.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container cta-grid">
+
+<div>
+
+<div class="eyebrow">
+Partner With Alaric
+</div>
+
+<h2>
+Make patient access a stronger part of your operation.
+</h2>
+
+<p>
+Tell us how your current eligibility and insurance
+workflow operates and we'll help identify where
+Alaric can provide support.
+</p>
+
+</div>
+
+<a href="index.html#contact" class="cta-btn">
+Request a Consultation
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<div class="footer-brand">
+Alaric Health Services
+</div>
+
+<p>
+Professional healthcare solutions focused on better
+operations, growth and results.
+</p>
+</div>
+
+<div>
+<h3>Explore</h3>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="rcm.html">RCM</a>
+<a href="medical-billing.html">Medical Billing</a>
+<a href="vma.html">VMA</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>alarichealthservcies@gmail.com</p>
+<p>Phone: Coming Soon</p>
+<p>Address: Coming Soon</p>
+</div>
+
+</div>
+
+<div class="copy">
+<span>© 2026 Alaric Health Services. All Rights Reserved.</span>
+<span>Where Care Becomes Results.</span>
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
