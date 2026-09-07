@@ -6,27 +6,29 @@
 
 <title>Revenue Cycle Management | Alaric Health Services</title>
 
-<meta name="description" content="Alaric Health Services provides comprehensive Revenue Cycle Management support including eligibility, authorization, coding, claims, payment posting, denial management and A/R follow-up.">
+<meta name="description" content="Alaric Health Services provides professional Revenue Cycle Management solutions for healthcare organizations, including billing, claims, accounts receivable, denials, eligibility and authorization support.">
 
 <style>
 :root{
-  --navy:#062d46;
-  --deep:#041f31;
-  --blue:#087b95;
-  --cyan:#18b9bf;
-  --aqua:#7ce5e4;
-  --bg:#f5fafc;
-  --white:#fff;
-  --text:#536979;
-  --line:#dcebef;
-  --green:#65d6b0;
-  --shadow:0 25px 70px rgba(6,45,70,.12);
+  --navy:#04263d;
+  --deep:#021725;
+  --blue:#087d98;
+  --cyan:#18b8bd;
+  --mint:#78dfc1;
+  --sky:#eaf8fa;
+  --white:#ffffff;
+  --text:#58707d;
+  --line:#d9e9ed;
+  --green:#39c69b;
+  --orange:#f3a64b;
+  --red:#e66c72;
+  --shadow:0 25px 70px rgba(4,38,61,.14);
 }
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 html{
@@ -35,8 +37,8 @@ html{
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  color:var(--navy);
   background:#fff;
+  color:var(--navy);
   line-height:1.6;
 }
 
@@ -50,688 +52,662 @@ a{
   margin:auto;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
   position:sticky;
   top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.96);
+  z-index:999;
+  background:rgba(255,255,255,.97);
   backdrop-filter:blur(16px);
-  border-bottom:1px solid #e7f0f3;
+  border-bottom:1px solid #e2edf0;
 }
 
 .nav{
-  min-height:90px;
+  min-height:108px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+}
+
+/* CENTERED BRAND */
+
+.logo{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:30px;
+  justify-content:center;
 }
 
 .logo img{
   width:auto;
-  height:68px;
-  max-width:285px;
+  height:72px;
+  max-width:330px;
   object-fit:contain;
+  display:block;
+}
+
+.brand-name{
+  margin-top:-2px;
+  color:var(--navy);
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.brand-tagline{
+  color:#718894;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
 nav{
   display:flex;
   align-items:center;
-  gap:24px;
+  justify-content:center;
+  gap:23px;
+  margin-top:6px;
 }
 
 nav a{
-  font-size:13px;
-  font-weight:700;
-  color:#3b5667;
+  color:#48616e;
+  font-size:11px;
+  font-weight:800;
 }
 
 nav a:hover{
   color:var(--cyan);
 }
 
-.nav-cta{
-  background:var(--navy);
+.nav-button{
+  padding:9px 15px;
+  border-radius:6px;
   color:#fff!important;
-  padding:12px 19px;
-  border-radius:7px;
+  background:var(--navy);
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
   position:relative;
   overflow:hidden;
+  padding:105px 0 90px;
   color:#fff;
-  padding:105px 0 120px;
   background:
-    radial-gradient(circle at 78% 20%,rgba(24,185,191,.30),transparent 27%),
-    linear-gradient(135deg,#052d46 0%,#087b95 100%);
+    radial-gradient(circle at 82% 15%,rgba(24,184,189,.30),transparent 30%),
+    radial-gradient(circle at 5% 95%,rgba(120,223,193,.10),transparent 30%),
+    linear-gradient(135deg,#04263d,#087d98);
 }
 
 .hero:before{
   content:"";
   position:absolute;
-  width:620px;
-  height:620px;
+  width:650px;
+  height:650px;
+  right:-230px;
+  top:-250px;
   border:1px solid rgba(255,255,255,.10);
   border-radius:50%;
-  right:-240px;
-  top:-260px;
+  box-shadow:
+    0 0 0 70px rgba(255,255,255,.025),
+    0 0 0 140px rgba(255,255,255,.018);
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  right:30px;
+  bottom:-90px;
+  width:430px;
+  height:430px;
+  background:url("alaric_high_contrast_text_4k.png") center/contain no-repeat;
+  opacity:.035;
+  filter:grayscale(1) brightness(4);
 }
 
 .hero-grid{
+  position:relative;
+  z-index:2;
   display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:70px;
+  grid-template-columns:.92fr 1.08fr;
+  gap:65px;
   align-items:center;
 }
 
 .eyebrow{
+  margin-bottom:16px;
   color:var(--cyan);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:2.8px;
   text-transform:uppercase;
-  letter-spacing:2.5px;
-  font-size:11px;
-  font-weight:800;
-  margin-bottom:15px;
 }
 
 .hero .eyebrow{
-  color:#82e9e8;
+  color:#8be8e6;
 }
 
 .hero h1{
-  font-size:clamp(46px,6vw,72px);
-  line-height:1.02;
+  max-width:650px;
+  font-size:clamp(43px,5.6vw,67px);
+  line-height:1.01;
   letter-spacing:-3px;
-  max-width:750px;
-  margin-bottom:24px;
 }
 
-.hero p{
-  color:#d7eaee;
-  font-size:18px;
-  max-width:690px;
+.hero-copy p{
+  max-width:650px;
+  margin-top:24px;
+  color:#d4e8ed;
+  font-size:17px;
 }
 
-.hero-buttons{
+.hero-actions{
   display:flex;
-  gap:13px;
-  margin-top:32px;
+  gap:12px;
   flex-wrap:wrap;
+  margin-top:31px;
 }
 
 .btn{
   padding:14px 21px;
   border-radius:7px;
-  font-weight:800;
-  font-size:13px;
+  font-size:11px;
+  font-weight:900;
 }
 
 .btn-primary{
-  background:var(--cyan);
   color:#fff;
+  background:var(--cyan);
 }
 
 .btn-secondary{
-  border:1px solid rgba(255,255,255,.30);
   color:#fff;
+  border:1px solid rgba(255,255,255,.28);
 }
 
-/* HERO DASHBOARD */
+/* ================= REVENUE DASHBOARD ================= */
 
-.dashboard{
-  position:relative;
-  padding:25px;
-  min-height:400px;
-  border-radius:20px;
-  background:rgba(255,255,255,.08);
+.revenue-dashboard{
+  padding:20px;
   border:1px solid rgba(255,255,255,.17);
-  box-shadow:0 30px 80px rgba(0,0,0,.16);
-  backdrop-filter:blur(10px);
+  border-radius:20px;
+  background:rgba(255,255,255,.075);
+  box-shadow:0 35px 90px rgba(0,0,0,.22);
+  backdrop-filter:blur(14px);
 }
 
-.dash-top{
+.dashboard-header{
   display:flex;
   justify-content:space-between;
-  color:#bfe0e5;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
+  align-items:center;
+  margin-bottom:17px;
 }
 
-.status{
-  color:#79e5c2;
-}
-
-.metric-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:22px;
-}
-
-.metric{
-  padding:16px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:12px;
-}
-
-.metric span{
-  display:block;
-  color:#a9ced6;
-  font-size:10px;
-  text-transform:uppercase;
-}
-
-.metric strong{
-  display:block;
+.dashboard-title{
   color:#fff;
-  font-size:25px;
-  margin-top:3px;
+  font-size:12px;
+  font-weight:900;
 }
 
-.mini-chart{
-  height:130px;
-  margin-top:20px;
-  display:flex;
-  align-items:flex-end;
+.live{
+  padding:5px 8px;
+  border-radius:5px;
+  color:#83e8c4;
+  background:rgba(70,207,164,.10);
+  font-size:8px;
+  font-weight:900;
+}
+
+.kpis{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
   gap:9px;
-  padding:0 5px;
-  border-bottom:1px solid rgba(255,255,255,.15);
 }
 
-.mini-bar{
-  flex:1;
-  border-radius:5px 5px 0 0;
-  background:linear-gradient(to top,var(--cyan),#9af0ee);
-}
-
-.mini-bar:nth-child(1){height:35%}
-.mini-bar:nth-child(2){height:45%}
-.mini-bar:nth-child(3){height:40%}
-.mini-bar:nth-child(4){height:59%}
-.mini-bar:nth-child(5){height:66%}
-.mini-bar:nth-child(6){height:78%}
-.mini-bar:nth-child(7){height:92%}
-
-/* INTRO */
-
-.intro{
-  padding:90px 0;
-}
-
-.intro-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-h2{
-  font-size:clamp(34px,4vw,52px);
-  line-height:1.08;
-  letter-spacing:-2px;
-}
-
-.intro p{
-  color:var(--text);
-  font-size:17px;
-}
-
-/* PROCESS */
-
-.process{
-  padding:85px 0;
-  background:var(--bg);
-}
-
-.section-head{
-  max-width:760px;
-  margin-bottom:55px;
-}
-
-.section-head p{
-  color:var(--text);
-  margin-top:15px;
-}
-
-.process-flow{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:0;
-  position:relative;
-}
-
-.process-flow:before{
-  content:"";
-  position:absolute;
-  top:32px;
-  left:7%;
-  right:7%;
-  height:2px;
-  background:linear-gradient(90deg,var(--cyan),#b7e7e9);
-}
-
-.process-item{
-  position:relative;
-  z-index:2;
-  text-align:center;
-}
-
-.process-number{
-  width:65px;
-  height:65px;
-  margin:auto;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:#fff;
-  font-weight:900;
-  background:linear-gradient(135deg,var(--blue),var(--cyan));
-  box-shadow:0 10px 25px rgba(24,185,191,.22);
-  border:6px solid var(--bg);
-}
-
-.process-item strong{
-  display:block;
-  font-size:12px;
-  margin-top:14px;
-}
-
-.process-item span{
-  display:block;
-  color:#748996;
-  font-size:10px;
-  margin-top:3px;
-}
-
-/* SERVICES */
-
-.service{
-  padding:100px 0;
-  border-top:1px solid #edf3f5;
-}
-
-.service-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-.service:nth-child(even){
-  background:var(--bg);
-}
-
-.service-copy p{
-  color:var(--text);
-  margin:17px 0 27px;
-}
-
-.service-list{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0 25px;
-  list-style:none;
-}
-
-.service-list li{
-  font-size:13px;
-  font-weight:700;
-  color:#385467;
-  padding:10px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.service-list li:before{
-  content:"✓";
-  color:var(--cyan);
-  margin-right:8px;
-  font-weight:900;
-}
-
-/* VISUAL CARD */
-
-.visual{
-  position:relative;
-  min-height:440px;
-  overflow:hidden;
-  border-radius:22px;
-  padding:27px;
-  background:linear-gradient(145deg,#052d46,#087b95);
-  box-shadow:var(--shadow);
-}
-
-.visual:after{
-  content:"";
-  position:absolute;
-  width:300px;
-  height:300px;
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:50%;
-  right:-110px;
-  bottom:-120px;
-}
-
-/* FLOW VISUAL */
-
-.visual-title{
-  color:#c9e5e9;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  position:relative;
-  z-index:2;
-}
-
-.flow-vertical{
-  position:absolute;
-  left:40px;
-  right:40px;
-  top:90px;
-  z-index:3;
-}
-
-.flow-row{
-  display:flex;
-  align-items:center;
-  gap:13px;
-  margin-bottom:12px;
-}
-
-.flow-box{
-  flex:1;
-  padding:14px 16px;
+.kpi{
+  padding:14px;
   border-radius:10px;
-  color:#fff;
-  font-size:12px;
-  font-weight:800;
-  background:rgba(255,255,255,.09);
-  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.075);
 }
 
-.flow-tag{
-  color:#82e9e8;
-  font-size:10px;
-  font-weight:900;
-  min-width:35px;
-  text-align:right;
-}
-
-/* CLAIM VISUAL */
-
-.claim-card{
-  position:absolute;
-  left:35px;
-  right:35px;
-  top:88px;
-  z-index:3;
-}
-
-.claim-step{
-  padding:18px;
-  margin-bottom:10px;
-  border-radius:10px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.13);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.claim-step span{
-  color:#b7dbe0;
-  font-size:11px;
-}
-
-.claim-step strong{
-  font-size:12px;
-}
-
-/* DENIAL VISUAL */
-
-.donut{
-  position:absolute;
-  width:180px;
-  height:180px;
-  left:50%;
-  top:100px;
-  transform:translateX(-50%);
-  border-radius:50%;
-  background:
-    conic-gradient(
-      var(--cyan) 0 58%,
-      var(--aqua) 58% 78%,
-      #3d7890 78% 90%,
-      rgba(255,255,255,.12) 90% 100%
-    );
-  display:grid;
-  place-items:center;
-  z-index:3;
-}
-
-.donut:after{
-  content:"";
-  width:112px;
-  height:112px;
-  border-radius:50%;
-  background:#086f8a;
-  position:absolute;
-}
-
-.donut-center{
-  position:relative;
-  z-index:4;
-  text-align:center;
-  color:#fff;
-}
-
-.donut-center strong{
+.kpi small{
   display:block;
-  font-size:28px;
-}
-
-.donut-center span{
-  font-size:9px;
-  color:#c6e4e8;
-}
-
-.legend{
-  position:absolute;
-  left:35px;
-  right:35px;
-  bottom:35px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-  z-index:4;
-}
-
-.legend div{
-  color:#c6e4e8;
-  font-size:10px;
-}
-
-.legend i{
-  display:inline-block;
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--cyan);
-  margin-right:5px;
-}
-
-/* AR VISUAL */
-
-.ar-bars{
-  position:absolute;
-  left:40px;
-  right:40px;
-  bottom:50px;
-  height:250px;
-  display:flex;
-  align-items:flex-end;
-  gap:13px;
-  z-index:3;
-}
-
-.ar-bar{
-  flex:1;
-  border-radius:7px 7px 0 0;
-  background:linear-gradient(to top,var(--cyan),#b4f1ef);
-  position:relative;
-}
-
-.ar-bar span{
-  position:absolute;
-  top:-20px;
-  width:100%;
-  text-align:center;
-  color:#d6eef0;
-  font-size:9px;
-}
-
-.ar-bar:nth-child(1){height:85%}
-.ar-bar:nth-child(2){height:68%}
-.ar-bar:nth-child(3){height:54%}
-.ar-bar:nth-child(4){height:39%}
-.ar-bar:nth-child(5){height:27%}
-
-.ar-labels{
-  position:absolute;
-  left:40px;
-  right:40px;
-  bottom:25px;
-  display:flex;
-  justify-content:space-between;
-  color:#a9ced5;
-  font-size:9px;
-}
-
-/* AUTH VISUAL */
-
-.auth-line{
-  position:absolute;
-  top:165px;
-  left:45px;
-  right:45px;
-  height:3px;
-  background:linear-gradient(90deg,var(--cyan),rgba(255,255,255,.15));
-  z-index:2;
-}
-
-.auth-points{
-  position:absolute;
-  top:145px;
-  left:40px;
-  right:40px;
-  display:flex;
-  justify-content:space-between;
-  z-index:4;
-}
-
-.auth-point{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:#fff;
-  font-size:10px;
-  font-weight:900;
-  background:var(--cyan);
-  border:5px solid #087b95;
-}
-
-.auth-labels{
-  position:absolute;
-  top:210px;
-  left:35px;
-  right:35px;
-  display:flex;
-  justify-content:space-between;
-  text-align:center;
-  color:#d0e8eb;
-  font-size:9px;
-}
-
-/* METRICS BAND */
-
-.metrics{
-  padding:70px 0;
-  background:#062d46;
-  color:#fff;
-}
-
-.metric-band{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1px;
-  background:rgba(255,255,255,.13);
-}
-
-.metric-box{
-  padding:28px;
-  background:#062d46;
-}
-
-.metric-box strong{
-  font-size:31px;
-  display:block;
-  color:#fff;
-}
-
-.metric-box span{
-  color:#a8cbd3;
-  font-size:11px;
+  color:#9fc4cc;
+  font-size:7px;
   text-transform:uppercase;
   letter-spacing:1px;
 }
 
-/* CTA */
+.kpi strong{
+  display:block;
+  margin-top:4px;
+  color:#fff;
+  font-size:18px;
+}
+
+.kpi em{
+  display:block;
+  margin-top:2px;
+  color:#7ee0bb;
+  font-size:7px;
+  font-style:normal;
+}
+
+.chart{
+  position:relative;
+  height:165px;
+  margin-top:12px;
+  padding:17px;
+  overflow:hidden;
+  border-radius:11px;
+  background:rgba(255,255,255,.055);
+}
+
+.chart-label{
+  color:#9fc4cc;
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.chart svg{
+  position:absolute;
+  left:10px;
+  right:10px;
+  bottom:8px;
+  width:calc(100% - 20px);
+  height:115px;
+}
+
+.chart-grid{
+  stroke:rgba(255,255,255,.08);
+  stroke-width:1;
+}
+
+.chart-line{
+  fill:none;
+  stroke:var(--cyan);
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.chart-fill{
+  fill:url(#area);
+  opacity:.35;
+}
+
+.pipeline{
+  margin-top:12px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:6px;
+}
+
+.pipeline-item{
+  padding:10px 6px;
+  text-align:center;
+  border-radius:7px;
+  background:rgba(255,255,255,.055);
+}
+
+.pipeline-item span{
+  display:block;
+  color:#8fb9c2;
+  font-size:7px;
+  text-transform:uppercase;
+}
+
+.pipeline-item strong{
+  display:block;
+  margin-top:3px;
+  color:#fff;
+  font-size:11px;
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+  padding:100px 0;
+}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:90px;
+  align-items:center;
+}
+
+.intro h2{
+  font-size:clamp(35px,4.5vw,53px);
+  line-height:1.06;
+  letter-spacing:-2px;
+}
+
+.intro-text p{
+  color:var(--text);
+  font-size:16px;
+}
+
+.intro-text p+p{
+  margin-top:17px;
+}
+
+.stat-strip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  margin-top:30px;
+  border:1px solid var(--line);
+  background:var(--line);
+}
+
+.stat{
+  padding:18px;
+  background:#fff;
+}
+
+.stat strong{
+  display:block;
+  color:var(--blue);
+  font-size:24px;
+}
+
+.stat span{
+  color:var(--text);
+  font-size:9px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+/* ================= SERVICES ================= */
+
+.modules{
+  padding:100px 0;
+  background:var(--sky);
+}
+
+.section-head{
+  max-width:760px;
+  margin-bottom:47px;
+}
+
+.section-head h2{
+  font-size:clamp(35px,4.5vw,52px);
+  line-height:1.06;
+  letter-spacing:-2px;
+}
+
+.section-head p{
+  margin-top:15px;
+  color:var(--text);
+}
+
+.module-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.module{
+  position:relative;
+  overflow:hidden;
+  min-height:245px;
+  padding:29px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:#fff;
+  transition:.28s;
+}
+
+.module:hover{
+  transform:translateY(-7px);
+  box-shadow:var(--shadow);
+  border-color:#addfe3;
+}
+
+.module-number{
+  color:var(--cyan);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.module h3{
+  margin-top:31px;
+  font-size:20px;
+}
+
+.module p{
+  max-width:480px;
+  margin-top:9px;
+  color:var(--text);
+  font-size:12.5px;
+}
+
+.module-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:19px;
+  color:var(--blue);
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.module-link span{
+  transition:.2s;
+}
+
+.module:hover .module-link span{
+  transform:translateX(5px);
+}
+
+.module-mark{
+  position:absolute;
+  right:27px;
+  top:27px;
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--blue),var(--cyan));
+  font-size:9px;
+  font-weight:900;
+}
+
+/* ================= REVENUE FLOW ================= */
+
+.flow-section{
+  padding:105px 0;
+}
+
+.flow-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.flow-copy p{
+  margin-top:17px;
+  color:var(--text);
+  font-size:16px;
+}
+
+.flow-board{
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+
+.flow-step{
+  position:relative;
+  display:flex;
+  gap:16px;
+  padding:17px 0;
+}
+
+.flow-step:not(:last-child):after{
+  content:"";
+  position:absolute;
+  left:17px;
+  top:51px;
+  bottom:-2px;
+  width:1px;
+  background:#cce5e8;
+}
+
+.flow-icon{
+  position:relative;
+  z-index:2;
+  width:35px;
+  height:35px;
+  display:grid;
+  place-items:center;
+  flex:none;
+  border-radius:9px;
+  color:#fff;
+  background:var(--navy);
+  font-size:9px;
+  font-weight:900;
+}
+
+.flow-step strong{
+  display:block;
+  font-size:13px;
+}
+
+.flow-step span{
+  display:block;
+  margin-top:2px;
+  color:var(--text);
+  font-size:10px;
+}
+
+/* ================= OPERATIONS ================= */
+
+.operations{
+  padding:100px 0;
+  background:var(--navy);
+  color:#fff;
+}
+
+.operations-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:45px;
+}
+
+.operation{
+  padding:27px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:15px;
+  background:rgba(255,255,255,.045);
+}
+
+.operation-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.operation-number{
+  color:#79e2de;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+
+.operation-rate{
+  color:#7ee0bb;
+  font-size:9px;
+  font-weight:900;
+}
+
+.operation h3{
+  margin-top:28px;
+  font-size:17px;
+}
+
+.operation p{
+  margin-top:8px;
+  color:#a9c6ce;
+  font-size:12px;
+}
+
+.mini-bar{
+  height:5px;
+  margin-top:20px;
+  overflow:hidden;
+  border-radius:10px;
+  background:rgba(255,255,255,.09);
+}
+
+.mini-bar span{
+  display:block;
+  height:100%;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--cyan),var(--mint));
+}
+
+/* ================= CTA ================= */
 
 .cta{
-  padding:100px 0;
-  background:
-    radial-gradient(circle at 90% 20%,rgba(24,185,191,.16),transparent 30%),
-    var(--deep);
+  padding:105px 0;
   color:#fff;
+  background:
+    radial-gradient(circle at 82% 20%,rgba(24,184,189,.22),transparent 30%),
+    var(--deep);
 }
 
 .cta-grid{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:50px;
+  gap:55px;
+}
+
+.cta h2{
+  max-width:720px;
+  font-size:clamp(36px,4.5vw,53px);
+  line-height:1.06;
+  letter-spacing:-2px;
 }
 
 .cta p{
-  color:#b9d3da;
   max-width:700px;
   margin-top:15px;
+  color:#b8d1d8;
 }
 
-.cta-btn{
-  white-space:nowrap;
+.cta-button{
   padding:16px 24px;
-  background:var(--cyan);
-  color:#fff;
+  white-space:nowrap;
   border-radius:7px;
-  font-size:13px;
+  color:#fff;
+  background:var(--cyan);
+  font-size:11px;
   font-weight:900;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-  background:#031b2a;
-  color:#fff;
   padding:55px 0 25px;
+  color:#fff;
+  background:#031522;
 }
 
 .footer-grid{
@@ -739,24 +715,31 @@ footer{
   grid-template-columns:1.5fr 1fr 1fr;
   gap:55px;
   padding-bottom:35px;
-  border-bottom:1px solid rgba(255,255,255,.12);
+  border-bottom:1px solid rgba(255,255,255,.10);
 }
 
 .footer-brand{
-  font-size:23px;
+  font-size:21px;
   font-weight:900;
-  margin-bottom:10px;
+}
+
+.footer-tag{
+  margin-top:4px;
+  color:#7998a3;
+  font-size:8px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
 }
 
 footer h3{
   margin-bottom:13px;
-  font-size:15px;
+  font-size:14px;
 }
 
 footer p,
 footer a{
-  color:#9ebbc5;
-  font-size:13px;
+  color:#91adb7;
+  font-size:12px;
 }
 
 footer a{
@@ -764,43 +747,38 @@ footer a{
   margin:7px 0;
 }
 
+footer a:hover{
+  color:#fff;
+}
+
 .copy{
   display:flex;
   justify-content:space-between;
   gap:20px;
   padding-top:20px;
-  color:#718e99;
-  font-size:11px;
+  color:#67818b;
+  font-size:10px;
 }
 
-/* MOBILE */
+/* ================= RESPONSIVE ================= */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
   nav{
-    display:none;
+    gap:13px;
   }
 
   .hero-grid,
   .intro-grid,
-  .service-grid{
+  .flow-layout{
     grid-template-columns:1fr;
   }
 
-  .hero-grid{
-    gap:45px;
+  .module-grid{
+    grid-template-columns:1fr;
   }
 
-  .process-flow{
-    grid-template-columns:repeat(3,1fr);
-    gap:30px 5px;
-  }
-
-  .process-flow:before{
-    display:none;
-  }
-
-  .metric-band{
+  .operations-grid{
     grid-template-columns:1fr 1fr;
   }
 
@@ -814,43 +792,53 @@ footer a{
   }
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
 
   .nav{
-    min-height:78px;
+    min-height:95px;
   }
 
   .logo img{
-    height:57px;
+    height:61px;
+  }
+
+  .brand-name{
+    font-size:13px;
+  }
+
+  nav{
+    display:none;
   }
 
   .hero{
-    padding:75px 0 85px;
+    padding:75px 0 80px;
   }
 
   .hero h1{
     letter-spacing:-1.5px;
   }
 
-  .intro,
-  .service,
-  .process{
-    padding:70px 0;
-  }
-
-  .service-list{
+  .kpis{
     grid-template-columns:1fr;
   }
 
-  .visual{
-    min-height:410px;
-  }
-
-  .process-flow{
+  .pipeline{
     grid-template-columns:1fr 1fr;
   }
 
-  .metric-band{
+  .intro,
+  .modules,
+  .flow-section,
+  .operations,
+  .cta{
+    padding:72px 0;
+  }
+
+  .stat-strip{
+    grid-template-columns:1fr;
+  }
+
+  .operations-grid{
     grid-template-columns:1fr;
   }
 
@@ -863,49 +851,65 @@ footer a{
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
+
 <div class="container nav">
 
 <a href="index.html" class="logo">
-<img src="alaric_high_contrast_text_4k.png" alt="Alaric Health Services">
+<img src="alaric_high_contrast_text_4k.png"
+alt="Alaric Health Services Logo">
 </a>
+
+<div class="brand-name">
+Alaric Health Services
+</div>
+
+<div class="brand-tagline">
+Healthcare Revenue • Operations • Growth
+</div>
 
 <nav>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="services.html">Services</a>
-<a href="rcm.html">RCM</a>
-<a href="index.html#growth">Digital Growth</a>
-<a href="index.html#contact" class="nav-cta">Get Started</a>
+<a href="medical-billing.html">Medical Billing</a>
+<a href="vma.html">VMA</a>
+<a href="index.html#contact" class="nav-button">Get Started</a>
 </nav>
 
 </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
 <div class="container hero-grid">
 
-<div>
+<div class="hero-copy">
 
 <div class="eyebrow">
 Revenue Cycle Management
 </div>
 
 <h1>
-Turn healthcare revenue complexity into a clearer process.
+Turn healthcare revenue into a stronger operation.
 </h1>
 
 <p>
-Alaric Health Services supports the complete revenue cycle —
-from patient access and eligibility through claims, payment
-posting, denials and accounts receivable.
+Alaric Health Services provides structured Revenue Cycle
+Management support across billing, claims, eligibility,
+authorization, accounts receivable and denial workflows —
+helping healthcare organizations operate with greater
+visibility and consistency.
 </p>
 
-<div class="hero-buttons">
+<div class="hero-actions">
+
 <a href="index.html#contact" class="btn btn-primary">
 Request a Consultation
 </a>
@@ -913,209 +917,471 @@ Request a Consultation
 <a href="services.html" class="btn btn-secondary">
 Explore All Services
 </a>
+
+</div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div class="revenue-dashboard">
+
+<div class="dashboard-header">
+
+<div class="dashboard-title">
+Revenue Cycle Overview
+</div>
+
+<div class="live">
+● OPERATIONS ACTIVE
 </div>
 
 </div>
 
 
-<div class="dashboard">
+<div class="kpis">
 
-<div class="dash-top">
-<span>RCM Operations View</span>
-<span class="status">● Active Workflow</span>
+<div class="kpi">
+<small>Claims</small>
+<strong>94.8%</strong>
+<em>↑ Workflow health</em>
 </div>
 
-<div class="metric-grid">
-
-<div class="metric">
-<span>Front-End</span>
-<strong>01</strong>
+<div class="kpi">
+<small>A/R Focus</small>
+<strong>72%</strong>
+<em>↑ Worklist progress</em>
 </div>
 
-<div class="metric">
+<div class="kpi">
+<small>Denials</small>
+<strong>8.4%</strong>
+<em>↓ Under review</em>
+</div>
+
+</div>
+
+
+<div class="chart">
+
+<div class="chart-label">
+Revenue Performance Trend
+</div>
+
+<svg viewBox="0 0 500 120" preserveAspectRatio="none">
+
+<defs>
+
+<linearGradient id="area"
+x1="0"
+y1="0"
+x2="0"
+y2="1">
+
+<stop offset="0%"
+stop-color="#19b9bd"
+stop-opacity=".65"/>
+
+<stop offset="100%"
+stop-color="#19b9bd"
+stop-opacity="0"/>
+
+</linearGradient>
+
+</defs>
+
+<line x1="0" y1="25" x2="500" y2="25" class="chart-grid"/>
+<line x1="0" y1="55" x2="500" y2="55" class="chart-grid"/>
+<line x1="0" y1="85" x2="500" y2="85" class="chart-grid"/>
+<line x1="0" y1="110" x2="500" y2="110" class="chart-grid"/>
+
+<path
+class="chart-fill"
+d="M0,95 L55,82 L105,88 L160,63 L215,70 L270,45 L325,55 L380,35 L435,42 L500,18 L500,120 L0,120 Z">
+</path>
+
+<path
+class="chart-line"
+d="M0,95 L55,82 L105,88 L160,63 L215,70 L270,45 L325,55 L380,35 L435,42 L500,18">
+</path>
+
+</svg>
+
+</div>
+
+
+<div class="pipeline">
+
+<div class="pipeline-item">
+<span>Eligibility</span>
+<strong>Ready</strong>
+</div>
+
+<div class="pipeline-item">
 <span>Claims</span>
-<strong>02</strong>
+<strong>Active</strong>
 </div>
 
-<div class="metric">
-<span>Payments</span>
-<strong>03</strong>
-</div>
-
-<div class="metric">
+<div class="pipeline-item">
 <span>A/R</span>
-<strong>04</strong>
+<strong>72%</strong>
 </div>
 
-</div>
-
-<div class="mini-chart">
-<div class="mini-bar"></div>
-<div class="mini-bar"></div>
-<div class="mini-bar"></div>
-<div class="mini-bar"></div>
-<div class="mini-bar"></div>
-<div class="mini-bar"></div>
-<div class="mini-bar"></div>
+<div class="pipeline-item">
+<span>Denials</span>
+<strong>Review</strong>
 </div>
 
 </div>
 
 </div>
+
+</div>
+
 </section>
 
 
-<!-- INTRO -->
+<!-- ================= INTRO ================= -->
 
 <section class="intro">
 
 <div class="container intro-grid">
 
 <div>
-<div class="eyebrow">End-to-End Support</div>
 
-<h2>
-One connected view of the revenue cycle.
-</h2>
+<div class="eyebrow">
+The Alaric Approach
 </div>
 
+<h2>
+Every part of the revenue cycle should work together.
+</h2>
+
+</div>
+
+<div class="intro-text">
+
 <p>
-Healthcare revenue depends on hundreds of connected
-activities. Our RCM approach brings those workflows
-together so practices can maintain stronger operational
-visibility from the front desk through final payment.
+Revenue cycle performance isn't created by one task alone.
+It depends on the connection between patient access,
+billing, claims, payments, denials and accounts receivable.
 </p>
+
+<p>
+Alaric brings these workflows together into a structured
+operational model designed around visibility, consistency
+and accountable follow-through.
+</p>
+
+<div class="stat-strip">
+
+<div class="stat">
+<strong>01</strong>
+<span>Connected Workflow</span>
+</div>
+
+<div class="stat">
+<strong>02</strong>
+<span>Clear Visibility</span>
+</div>
+
+<div class="stat">
+<strong>03</strong>
+<span>Continuous Follow-Up</span>
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- PROCESS -->
+<!-- ================= RCM MODULES ================= -->
 
-<section class="process">
+<section class="modules">
 
 <div class="container">
 
 <div class="section-head">
 
-<div class="eyebrow">The RCM Journey</div>
+<div class="eyebrow">
+Core RCM Capabilities
+</div>
 
 <h2>
-From patient access to payment.
+A complete revenue-cycle operating layer.
 </h2>
 
 <p>
-A structured workflow designed to keep critical revenue
-cycle activities connected.
+Our RCM services can be combined according to the needs,
+volume and workflow of your healthcare organization.
 </p>
 
 </div>
 
 
-<div class="process-flow">
+<div class="module-grid">
 
-<div class="process-item">
-<div class="process-number">01</div>
+
+<a href="medical-billing.html" class="module">
+
+<div class="module-number">
+01 / BILLING
+</div>
+
+<div class="module-mark">
+BIL
+</div>
+
+<h3>
+Medical Billing
+</h3>
+
+<p>
+Professional billing workflow support including claim
+preparation, submission coordination, payment posting
+and billing operations.
+</p>
+
+<div class="module-link">
+Explore Medical Billing <span>→</span>
+</div>
+
+</a>
+
+
+<div class="module">
+
+<div class="module-number">
+02 / CLAIMS
+</div>
+
+<div class="module-mark">
+CLM
+</div>
+
+<h3>
+Claims Management
+</h3>
+
+<p>
+Organized claims workflows designed to improve visibility,
+follow-up and coordination across the revenue cycle.
+</p>
+
+<div class="module-link">
+Claims Operations <span>→</span>
+</div>
+
+</div>
+
+
+<div class="module">
+
+<div class="module-number">
+03 / A/R
+</div>
+
+<div class="module-mark">
+A/R
+</div>
+
+<h3>
+Accounts Receivable
+</h3>
+
+<p>
+Structured worklist management, aging review and
+follow-up support for outstanding healthcare revenue.
+</p>
+
+<div class="module-link">
+A/R Management <span>→</span>
+</div>
+
+</div>
+
+
+<div class="module">
+
+<div class="module-number">
+04 / DENIALS
+</div>
+
+<div class="module-mark">
+DEN
+</div>
+
+<h3>
+Denial Management
+</h3>
+
+<p>
+Identify, categorize and coordinate follow-up on denied
+claims while helping teams understand recurring issues.
+</p>
+
+<div class="module-link">
+Denial Operations <span>→</span>
+</div>
+
+</div>
+
+
+<div class="module">
+
+<div class="module-number">
+05 / PATIENT ACCESS
+</div>
+
+<div class="module-mark">
+ELG
+</div>
+
+<h3>
+Eligibility & Benefits
+</h3>
+
+<p>
+Front-end insurance verification support connecting
+patient access with downstream revenue workflows.
+</p>
+
+<div class="module-link">
+View Eligibility <span>→</span>
+</div>
+
+</div>
+
+
+<div class="module">
+
+<div class="module-number">
+06 / AUTHORIZATION
+</div>
+
+<div class="module-mark">
+PA
+</div>
+
+<h3>
+Prior Authorization
+</h3>
+
+<p>
+Authorization workflow support including documentation,
+submission coordination, tracking and follow-up.
+</p>
+
+<div class="module-link">
+View Authorization <span>→</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FLOW ================= -->
+
+<section class="flow-section">
+
+<div class="container flow-layout">
+
+<div class="flow-copy">
+
+<div class="eyebrow">
+Revenue Cycle Architecture
+</div>
+
+<h2>
+One connected journey from patient access to payment.
+</h2>
+
+<p>
+The strongest revenue operations don't operate in isolated
+departments. Each stage creates information that supports
+the next stage of the cycle.
+</p>
+
+</div>
+
+
+<div class="flow-board">
+
+<div class="flow-step">
+
+<div class="flow-icon">
+01
+</div>
+
+<div>
 <strong>Patient Access</strong>
-<span>Registration</span>
+<span>Eligibility and benefits information.</span>
 </div>
 
-<div class="process-item">
-<div class="process-number">02</div>
-<strong>Eligibility</strong>
-<span>Benefits</span>
 </div>
 
-<div class="process-item">
-<div class="process-number">03</div>
+
+<div class="flow-step">
+
+<div class="flow-icon">
+02
+</div>
+
+<div>
 <strong>Authorization</strong>
-<span>Pre-Service</span>
-</div>
-
-<div class="process-item">
-<div class="process-number">04</div>
-<strong>Claims</strong>
-<span>Submission</span>
-</div>
-
-<div class="process-item">
-<div class="process-number">05</div>
-<strong>Payment</strong>
-<span>Posting</span>
-</div>
-
-<div class="process-item">
-<div class="process-number">06</div>
-<strong>A/R</strong>
-<span>Resolution</span>
+<span>Documentation and authorization workflow.</span>
 </div>
 
 </div>
 
+
+<div class="flow-step">
+
+<div class="flow-icon">
+03
 </div>
 
-</section>
-
-
-<!-- ELIGIBILITY -->
-
-<section class="service">
-
-<div class="container service-grid">
-
-<div class="service-copy">
-
-<div class="eyebrow">01 • Patient Access</div>
-
-<h2>
-Eligibility & Benefits Verification
-</h2>
-
-<p>
-Improve front-end visibility by verifying coverage,
-benefits and payer information before services are
-provided.
-</p>
-
-<ul class="service-list">
-<li>Eligibility Verification</li>
-<li>Benefits Verification</li>
-<li>Insurance Verification</li>
-<li>Coverage Validation</li>
-<li>Demographic Review</li>
-<li>Patient Registration</li>
-<li>Pre-Registration</li>
-<li>Referral Verification</li>
-</ul>
+<div>
+<strong>Billing & Claims</strong>
+<span>Claim preparation and submission operations.</span>
+</div>
 
 </div>
 
 
-<div class="visual">
+<div class="flow-step">
 
-<div class="visual-title">Front-End Workflow</div>
-
-<div class="flow-vertical">
-
-<div class="flow-row">
-<div class="flow-box">Patient Information</div>
-<div class="flow-tag">01</div>
+<div class="flow-icon">
+04
 </div>
 
-<div class="flow-row">
-<div class="flow-box">Insurance Verification</div>
-<div class="flow-tag">02</div>
+<div>
+<strong>Payment & Posting</strong>
+<span>Payment workflow and financial reconciliation.</span>
 </div>
 
-<div class="flow-row">
-<div class="flow-box">Benefits & Coverage</div>
-<div class="flow-tag">03</div>
 </div>
 
-<div class="flow-row">
-<div class="flow-box">Ready for Service</div>
-<div class="flow-tag">04</div>
+
+<div class="flow-step">
+
+<div class="flow-icon">
+05
+</div>
+
+<div>
+<strong>A/R & Denials</strong>
+<span>Follow-up, resolution and revenue recovery.</span>
 </div>
 
 </div>
@@ -1127,503 +1393,163 @@ provided.
 </section>
 
 
-<!-- PRIOR AUTH -->
+<!-- ================= OPERATIONS ================= -->
 
-<section class="service">
-
-<div class="container service-grid">
-
-<div class="visual">
-
-<div class="visual-title">Authorization Timeline</div>
-
-<div class="auth-line"></div>
-
-<div class="auth-points">
-<div class="auth-point">01</div>
-<div class="auth-point">02</div>
-<div class="auth-point">03</div>
-<div class="auth-point">04</div>
-</div>
-
-<div class="auth-labels">
-<span>Request</span>
-<span>Documents</span>
-<span>Payer Review</span>
-<span>Decision</span>
-</div>
-
-</div>
-
-
-<div class="service-copy">
-
-<div class="eyebrow">02 • Prior Authorization</div>
-
-<h2>
-Keep authorization workflows organized.
-</h2>
-
-<p>
-Support for authorization-related workflows designed
-to help practices coordinate documentation, requests,
-follow-up and payer communication.
-</p>
-
-<ul class="service-list">
-<li>Authorization Requests</li>
-<li>Documentation Review</li>
-<li>Submission Support</li>
-<li>Payer Follow-Up</li>
-<li>Status Tracking</li>
-<li>Authorization Updates</li>
-<li>Referral Coordination</li>
-<li>Expiration Tracking</li>
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CODING -->
-
-<section class="service">
-
-<div class="container service-grid">
-
-<div class="service-copy">
-
-<div class="eyebrow">03 • Coding & Charge Capture</div>
-
-<h2>
-Accurate information at the claim foundation.
-</h2>
-
-<p>
-Coding and charge capture support focused on helping
-claims move through the revenue cycle with organized
-documentation and billing information.
-</p>
-
-<ul class="service-list">
-<li>Medical Coding</li>
-<li>Charge Capture</li>
-<li>Charge Entry</li>
-<li>Coding Review</li>
-<li>Documentation Review</li>
-<li>Modifier Review</li>
-<li>Diagnosis Coding</li>
-<li>Procedure Coding</li>
-<li>Claim Readiness</li>
-<li>Billing Workflow Support</li>
-</ul>
-
-</div>
-
-
-<div class="visual">
-
-<div class="visual-title">Charge → Claim Readiness</div>
-
-<div class="flow-vertical">
-
-<div class="flow-row">
-<div class="flow-box">Clinical Documentation</div>
-<div class="flow-tag">01</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-box">Coding & Charge Capture</div>
-<div class="flow-tag">02</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-box">Billing Review</div>
-<div class="flow-tag">03</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-box">Claim Ready</div>
-<div class="flow-tag">04</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CLAIMS -->
-
-<section class="service">
-
-<div class="container service-grid">
-
-<div class="visual">
-
-<div class="visual-title">Claims Operations</div>
-
-<div class="claim-card">
-
-<div class="claim-step">
-<strong>Claim Preparation</strong>
-<span>01</span>
-</div>
-
-<div class="claim-step">
-<strong>Claim Scrubbing</strong>
-<span>02</span>
-</div>
-
-<div class="claim-step">
-<strong>Electronic Submission</strong>
-<span>03</span>
-</div>
-
-<div class="claim-step">
-<strong>Payer Adjudication</strong>
-<span>04</span>
-</div>
-
-<div class="claim-step">
-<strong>Follow-Up / Resolution</strong>
-<span>05</span>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="service-copy">
-
-<div class="eyebrow">04 • Claims Management</div>
-
-<h2>
-Keep claims moving.
-</h2>
-
-<p>
-Structured claims support covering preparation, submission,
-rejections, status checks, corrections and payer follow-up.
-</p>
-
-<ul class="service-list">
-<li>Claim Preparation</li>
-<li>Claim Scrubbing</li>
-<li>Electronic Submission</li>
-<li>Clearinghouse Rejections</li>
-<li>Claim Status</li>
-<li>Corrected Claims</li>
-<li>Rejected Claims</li>
-<li>Payer Follow-Up</li>
-<li>Secondary Claims</li>
-<li>Claim Resolution</li>
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PAYMENT -->
-
-<section class="service">
-
-<div class="container service-grid">
-
-<div class="service-copy">
-
-<div class="eyebrow">05 • Payment Operations</div>
-
-<h2>
-Organized payment posting and reconciliation.
-</h2>
-
-<p>
-Support for payment posting workflows that help practices
-maintain a clearer picture of payments, adjustments,
-balances and outstanding revenue.
-</p>
-
-<ul class="service-list">
-<li>Payment Posting</li>
-<li>ERA Processing</li>
-<li>EOB Processing</li>
-<li>Insurance Payments</li>
-<li>Patient Payments</li>
-<li>Adjustments</li>
-<li>Reconciliation</li>
-<li>Balance Review</li>
-</ul>
-
-</div>
-
-
-<div class="visual">
-
-<div class="visual-title">Payment Cycle</div>
-
-<div class="flow-vertical">
-
-<div class="flow-row">
-<div class="flow-box">ERA / EOB Received</div>
-<div class="flow-tag">01</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-box">Payment Posting</div>
-<div class="flow-tag">02</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-box">Adjustment Review</div>
-<div class="flow-tag">03</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-box">Reconciliation</div>
-<div class="flow-tag">04</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DENIAL -->
-
-<section class="service">
-
-<div class="container service-grid">
-
-<div class="visual">
-
-<div class="visual-title">Denial Intelligence</div>
-
-<div class="donut">
-
-<div class="donut-center">
-<strong>RCM</strong>
-<span>DENIAL VIEW</span>
-</div>
-
-</div>
-
-<div class="legend">
-<div><i></i>Eligibility</div>
-<div><i></i>Authorization</div>
-<div><i></i>Coding</div>
-<div><i></i>Documentation</div>
-</div>
-
-</div>
-
-
-<div class="service-copy">
-
-<div class="eyebrow">06 • Denial Management</div>
-
-<h2>
-Resolve denials and identify their causes.
-</h2>
-
-<p>
-A structured denial workflow focused on identifying,
-categorizing, following up and supporting appeals while
-highlighting opportunities for prevention.
-</p>
-
-<ul class="service-list">
-<li>Denial Identification</li>
-<li>Denial Categorization</li>
-<li>Root Cause Review</li>
-<li>Eligibility Denials</li>
-<li>Authorization Denials</li>
-<li>Coding Denials</li>
-<li>Documentation Issues</li>
-<li>Appeal Preparation</li>
-<li>Payer Follow-Up</li>
-<li>Denial Prevention</li>
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- AR -->
-
-<section class="service">
-
-<div class="container service-grid">
-
-<div class="service-copy">
-
-<div class="eyebrow">07 • Accounts Receivable</div>
-
-<h2>
-Focused A/R follow-up.
-</h2>
-
-<p>
-Maintain visibility across outstanding balances with
-structured insurance and patient A/R workflows.
-</p>
-
-<ul class="service-list">
-<li>Insurance A/R</li>
-<li>Patient A/R</li>
-<li>Aging Analysis</li>
-<li>Payer Follow-Up</li>
-<li>Outstanding Claims</li>
-<li>Underpayment Review</li>
-<li>Balance Review</li>
-<li>Collection Workflow</li>
-<li>A/R Reporting</li>
-<li>Revenue Leakage Review</li>
-</ul>
-
-</div>
-
-
-<div class="visual">
-
-<div class="visual-title">A/R Aging View</div>
-
-<div class="ar-bars">
-
-<div class="ar-bar"><span>Current</span></div>
-<div class="ar-bar"><span>30</span></div>
-<div class="ar-bar"><span>60</span></div>
-<div class="ar-bar"><span>90</span></div>
-<div class="ar-bar"><span>120+</span></div>
-
-</div>
-
-<div class="ar-labels">
-<span>Current</span>
-<span>30–60</span>
-<span>60–90</span>
-<span>90–120</span>
-<span>120+</span>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PATIENT -->
-
-<section class="service">
-
-<div class="container service-grid">
-
-<div class="visual">
-
-<div class="visual-title">Patient Financial Workflow</div>
-
-<div class="flow-vertical">
-
-<div class="flow-row">
-<div class="flow-box">Patient Statement</div>
-<div class="flow-tag">01</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-box">Balance Communication</div>
-<div class="flow-tag">02</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-box">Payment Support</div>
-<div class="flow-tag">03</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-box">Account Resolution</div>
-<div class="flow-tag">04</div>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="service-copy">
-
-<div class="eyebrow">08 • Patient A/R & Support</div>
-
-<h2>
-A better patient financial experience.
-</h2>
-
-<p>
-Support for patient-facing financial workflows designed
-to improve communication and account resolution.
-</p>
-
-<ul class="service-list">
-<li>Patient Statements</li>
-<li>Balance Questions</li>
-<li>Payment Support</li>
-<li>Account Review</li>
-<li>Patient Communication</li>
-<li>Financial Workflow Support</li>
-<li>Follow-Up</li>
-<li>Resolution Support</li>
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- OPERATIONS -->
-
-<section class="metrics">
+<section class="operations">
 
 <div class="container">
 
-<div class="metric-band">
+<div class="section-head">
 
-<div class="metric-box">
-<strong>01</strong>
-<span>Patient Access</span>
+<div class="eyebrow">
+Operational Focus
 </div>
 
-<div class="metric-box">
-<strong>02</strong>
-<span>Claims Operations</span>
+<h2>
+Where disciplined execution creates better visibility.
+</h2>
+
 </div>
 
-<div class="metric-box">
-<strong>03</strong>
-<span>Payment Operations</span>
+
+<div class="operations-grid">
+
+
+<div class="operation">
+
+<div class="operation-top">
+<span class="operation-number">01 / CLAIMS</span>
+<span class="operation-rate">ACTIVE</span>
 </div>
 
-<div class="metric-box">
-<strong>04</strong>
-<span>A/R Resolution</span>
+<h3>
+Claims Workflow
+</h3>
+
+<p>
+Organized claim activity and follow-up across the
+revenue-cycle process.
+</p>
+
+<div class="mini-bar">
+<span style="width:91%"></span>
+</div>
+
+</div>
+
+
+<div class="operation">
+
+<div class="operation-top">
+<span class="operation-number">02 / A/R</span>
+<span class="operation-rate">FOCUS</span>
+</div>
+
+<h3>
+A/R Worklists
+</h3>
+
+<p>
+Structured attention to outstanding balances,
+aging and follow-up priorities.
+</p>
+
+<div class="mini-bar">
+<span style="width:76%"></span>
+</div>
+
+</div>
+
+
+<div class="operation">
+
+<div class="operation-top">
+<span class="operation-number">03 / DENIALS</span>
+<span class="operation-rate">TRACKED</span>
+</div>
+
+<h3>
+Denial Resolution
+</h3>
+
+<p>
+Categorization, tracking and workflow coordination
+for unresolved claim issues.
+</p>
+
+<div class="mini-bar">
+<span style="width:68%"></span>
+</div>
+
+</div>
+
+
+<div class="operation">
+
+<div class="operation-top">
+<span class="operation-number">04 / ACCESS</span>
+<span class="operation-rate">READY</span>
+</div>
+
+<h3>
+Patient Access
+</h3>
+
+<p>
+Eligibility and benefits workflows supporting the
+front end of the revenue cycle.
+</p>
+
+<div class="mini-bar">
+<span style="width:87%"></span>
+</div>
+
+</div>
+
+
+<div class="operation">
+
+<div class="operation-top">
+<span class="operation-number">05 / AUTH</span>
+<span class="operation-rate">TRACKED</span>
+</div>
+
+<h3>
+Authorization
+</h3>
+
+<p>
+Organized authorization requests, documentation and
+status follow-up.
+</p>
+
+<div class="mini-bar">
+<span style="width:79%"></span>
+</div>
+
+</div>
+
+
+<div class="operation">
+
+<div class="operation-top">
+<span class="operation-number">06 / REPORTING</span>
+<span class="operation-rate">VISIBLE</span>
+</div>
+
+<h3>
+Operational Reporting
+</h3>
+
+<p>
+Clear workflow visibility to support better operational
+decision-making.
+</p>
+
+<div class="mini-bar">
+<span style="width:94%"></span>
+</div>
+
 </div>
 
 </div>
@@ -1633,7 +1559,7 @@ to improve communication and account resolution.
 </section>
 
 
-<!-- CTA -->
+<!-- ================= CTA ================= -->
 
 <section class="cta">
 
@@ -1641,21 +1567,23 @@ to improve communication and account resolution.
 
 <div>
 
-<div class="eyebrow">Partner With Alaric</div>
+<div class="eyebrow">
+Build A Better Revenue Operation
+</div>
 
 <h2>
-Ready to strengthen your revenue cycle?
+Let's make your revenue cycle easier to manage.
 </h2>
 
 <p>
-Tell us about your practice, current workflow or revenue
-cycle challenges. Our team can help identify where
-Alaric may fit into your operations.
+Tell us where your current RCM workflow needs support.
+Alaric can help identify the right combination of
+revenue-cycle services for your organization.
 </p>
 
 </div>
 
-<a href="index.html#contact" class="cta-btn">
+<a href="index.html#contact" class="cta-button">
 Request a Consultation
 </a>
 
@@ -1664,7 +1592,7 @@ Request a Consultation
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1678,7 +1606,11 @@ Request a Consultation
 Alaric Health Services
 </div>
 
-<p>
+<div class="footer-tag">
+Healthcare Revenue • Operations • Growth
+</div>
+
+<p style="margin-top:13px;">
 Professional healthcare solutions focused on better
 operations, growth and results.
 </p>
@@ -1691,10 +1623,10 @@ operations, growth and results.
 <h3>Explore</h3>
 
 <a href="index.html">Home</a>
-<a href="about.html">About</a>
+<a href="about.html">About Us</a>
 <a href="services.html">Services</a>
-<a href="rcm.html">RCM</a>
-<a href="index.html#growth">Digital Growth</a>
+<a href="medical-billing.html">Medical Billing</a>
+<a href="vma.html">Virtual Medical Assistance</a>
 
 </div>
 
