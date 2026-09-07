@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Virtual Medical Assistance | Alaric Health Services</title>
+
+<meta name="description" content="Professional Virtual Medical Assistance for healthcare practices, including patient support, scheduling, administrative coordination, referrals, insurance support and clinical workflow assistance.">
+
+<style>
+:root{
+  --navy:#052b43;
+  --deep:#031b2b;
+  --blue:#087c96;
+  --cyan:#19b9bd;
+  --mint:#79dfc1;
+  --ice:#f3fafc;
+  --text:#536b7a;
+  --line:#dcebed;
+  --white:#fff;
+  --shadow:0 25px 70px rgba(5,43,67,.13);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--navy);
+  background:#fff;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #e4eef1;
+}
+
+.nav{
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.logo img{
+  height:65px;
+  width:auto;
+  max-width:285px;
+  object-fit:contain;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:23px;
+}
+
+nav a{
+  color:#405a69;
+  font-size:13px;
+  font-weight:700;
+}
+
+nav a:hover{
+  color:var(--cyan);
+}
+
+.nav-btn{
+  padding:12px 19px;
+  color:#fff!important;
+  background:var(--navy);
+  border-radius:7px;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:105px 0 120px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 82% 20%,rgba(25,185,189,.30),transparent 28%),
+    linear-gradient(135deg,#052b43 0%,#087c96 100%);
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:550px;
+  height:550px;
+  right:-150px;
+  top:-120px;
+  background:url("alaric_high_contrast_text_4k.png") center/contain no-repeat;
+  opacity:.045;
+  filter:grayscale(1) brightness(4);
+  pointer-events:none;
+}
+
+.hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  gap:75px;
+  align-items:center;
+}
+
+.eyebrow{
+  margin-bottom:15px;
+  color:var(--cyan);
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:2.5px;
+}
+
+.hero .eyebrow{
+  color:#83e8e7;
+}
+
+.hero h1{
+  max-width:760px;
+  margin-bottom:25px;
+  font-size:clamp(45px,6vw,72px);
+  line-height:1.02;
+  letter-spacing:-3px;
+}
+
+.hero p{
+  max-width:690px;
+  color:#d8eaee;
+  font-size:18px;
+}
+
+.buttons{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:32px;
+}
+
+.btn{
+  padding:14px 21px;
+  border-radius:7px;
+  font-size:13px;
+  font-weight:900;
+}
+
+.primary{
+  color:#fff;
+  background:var(--cyan);
+}
+
+.secondary{
+  color:#fff;
+  border:1px solid rgba(255,255,255,.3);
+}
+
+/* OPERATIONS DASHBOARD */
+
+.dashboard{
+  min-height:425px;
+  padding:25px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:20px;
+  background:rgba(255,255,255,.08);
+  box-shadow:0 30px 80px rgba(0,0,0,.18);
+  backdrop-filter:blur(12px);
+}
+
+.dash-head{
+  display:flex;
+  justify-content:space-between;
+  color:#c2e0e5;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+
+.active{
+  color:#78e2bd;
+}
+
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:23px;
+}
+
+.dash-card{
+  padding:16px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:11px;
+  background:rgba(255,255,255,.08);
+}
+
+.dash-card span{
+  display:block;
+  color:#a9ccd4;
+  font-size:9px;
+  text-transform:uppercase;
+}
+
+.dash-card strong{
+  display:block;
+  margin-top:4px;
+  color:#fff;
+  font-size:25px;
+}
+
+.schedule{
+  margin-top:23px;
+}
+
+.schedule-title{
+  margin-bottom:9px;
+  color:#b9dce2;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.schedule-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.11);
+}
+
+.time{
+  width:43px;
+  color:#85e5e4;
+  font-size:9px;
+}
+
+.patient{
+  flex:1;
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+}
+
+.badge{
+  padding:4px 7px;
+  border-radius:5px;
+  color:#9cead0;
+  background:rgba(98,213,176,.10);
+  font-size:8px;
+}
+
+/* INTRO */
+
+.intro{
+  padding:90px 0;
+}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+h2{
+  font-size:clamp(34px,4vw,52px);
+  line-height:1.08;
+  letter-spacing:-2px;
+}
+
+.intro p{
+  color:var(--text);
+  font-size:17px;
+}
+
+/* OPERATING MODEL */
+
+.model{
+  padding:90px 0;
+  background:var(--ice);
+}
+
+.section-head{
+  max-width:760px;
+  margin-bottom:50px;
+}
+
+.section-head p{
+  margin-top:15px;
+  color:var(--text);
+}
+
+.model-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.model-card{
+  position:relative;
+  overflow:hidden;
+  min-height:230px;
+  padding:27px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+}
+
+.model-card:after{
+  content:"";
+  position:absolute;
+  width:100px;
+  height:100px;
+  right:-45px;
+  bottom:-45px;
+  border-radius:50%;
+  border:1px solid #d9eef0;
+}
+
+.model-no{
+  color:var(--cyan);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.model-card h3{
+  margin:35px 0 8px;
+  font-size:17px;
+}
+
+.model-card p{
+  color:var(--text);
+  font-size:12px;
+}
+
+/* SERVICE SECTIONS */
+
+.service{
+  padding:100px 0;
+  border-top:1px solid #edf3f5;
+}
+
+.service:nth-child(even){
+  background:var(--ice);
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.service-copy p{
+  margin:17px 0 25px;
+  color:var(--text);
+}
+
+.list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 25px;
+  list-style:none;
+}
+
+.list li{
+  padding:10px 0;
+  border-bottom:1px solid var(--line);
+  color:#385466;
+  font-size:13px;
+  font-weight:700;
+}
+
+.list li:before{
+  content:"✓";
+  margin-right:8px;
+  color:var(--cyan);
+}
+
+/* VISUAL */
+
+.visual{
+  position:relative;
+  overflow:hidden;
+  min-height:430px;
+  padding:27px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#052b43,#087c96);
+  box-shadow:var(--shadow);
+}
+
+.visual:before{
+  content:"";
+  position:absolute;
+  width:360px;
+  height:360px;
+  right:-170px;
+  bottom:-170px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:50%;
+}
+
+.visual-title{
+  position:relative;
+  z-index:3;
+  color:#c9e6ea;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+/* FLOW */
+
+.flow{
+  position:absolute;
+  z-index:3;
+  top:88px;
+  left:38px;
+  right:38px;
+}
+
+.flow-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:13px;
+}
+
+.flow-box{
+  flex:1;
+  padding:15px 16px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:10px;
+  color:#fff;
+  background:rgba(255,255,255,.09);
+  font-size:12px;
+  font-weight:800;
+}
+
+.flow-number{
+  color:#85e5e4;
+  font-size:10px;
+  font-weight:900;
+}
+
+/* PATIENT DESK */
+
+.ticket{
+  position:absolute;
+  z-index:3;
+  top:90px;
+  left:35px;
+  right:35px;
+}
+
+.ticket-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:10px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+}
+
+.ticket-row span{
+  color:#b9dce2;
+  font-size:10px;
+}
+
+.ticket-row strong{
+  font-size:12px;
+}
+
+/* CALENDAR */
+
+.calendar{
+  position:absolute;
+  z-index:3;
+  top:90px;
+  left:35px;
+  right:35px;
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:7px;
+}
+
+.day{
+  padding:9px 3px;
+  border-radius:7px;
+  background:rgba(255,255,255,.07);
+  text-align:center;
+  color:#b8d9df;
+  font-size:9px;
+}
+
+.day.active-day{
+  color:#fff;
+  background:var(--cyan);
+}
+
+/* SECURITY */
+
+.security-box{
+  position:absolute;
+  z-index:3;
+  top:100px;
+  left:40px;
+  right:40px;
+}
+
+.sec-row{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:15px;
+  padding:15px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:10px;
+  background:rgba(255,255,255,.08);
+}
+
+.sec-icon{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  background:rgba(25,185,189,.18);
+  color:#8de9e7;
+  font-size:11px;
+  font-weight:900;
+}
+
+.sec-row strong{
+  display:block;
+  color:#fff;
+  font-size:11px;
+}
+
+.sec-row span{
+  color:#a9ccd4;
+  font-size:9px;
+}
+
+/* BENEFITS */
+
+.benefits{
+  padding:90px 0;
+}
+
+.benefit-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.benefit{
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#fff;
+  transition:.25s;
+}
+
+.benefit:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+}
+
+.icon{
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  margin-bottom:18px;
+  border-radius:10px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--blue),var(--cyan));
+  font-size:11px;
+  font-weight:900;
+}
+
+.benefit h3{
+  margin-bottom:8px;
+  font-size:17px;
+}
+
+.benefit p{
+  color:var(--text);
+  font-size:13px;
+}
+
+/* CTA */
+
+.cta{
+  padding:100px 0;
+  color:#fff;
+  background:
+    radial-gradient(circle at 85% 25%,rgba(25,185,189,.18),transparent 30%),
+    var(--deep);
+}
+
+.cta-grid{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:50px;
+}
+
+.cta p{
+  max-width:700px;
+  margin-top:15px;
+  color:#b9d3da;
+}
+
+.cta-btn{
+  padding:16px 24px;
+  border-radius:7px;
+  color:#fff;
+  background:var(--cyan);
+  font-size:13px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+/* FOOTER */
+
+footer{
+  padding:55px 0 25px;
+  color:#fff;
+  background:#031b2b;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:55px;
+  padding-bottom:35px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.footer-brand{
+  margin-bottom:10px;
+  font-size:23px;
+  font-weight:900;
+}
+
+footer h3{
+  margin-bottom:13px;
+  font-size:15px;
+}
+
+footer p,
+footer a{
+  color:#9ebbc5;
+  font-size:13px;
+}
+
+footer a{
+  display:block;
+  margin:7px 0;
+}
+
+.copy{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding-top:20px;
+  color:#718e99;
+  font-size:11px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  nav{
+    display:none;
+  }
+
+  .hero-grid,
+  .intro-grid,
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .model-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .benefit-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cta-grid{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:600px){
+
+  .logo img{
+    height:55px;
+  }
+
+  .hero{
+    padding:75px 0 85px;
+  }
+
+  .hero h1{
+    letter-spacing:-1.5px;
+  }
+
+  .intro,
+  .model,
+  .service,
+  .benefits,
+  .cta{
+    padding:70px 0;
+  }
+
+  .model-grid,
+  .benefit-grid{
+    grid-template-columns:1fr;
+  }
+
+  .list{
+    grid-template-columns:1fr;
+  }
+
+  .visual{
+    min-height:410px;
+  }
+
+  .copy{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+
+<a href="index.html" class="logo">
+<img src="alaric_high_contrast_text_4k.png" alt="Alaric Health Services">
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="rcm.html">RCM</a>
+<a href="medical-billing.html">Medical Billing</a>
+<a href="vma.html">VMA</a>
+<a href="index.html#contact" class="nav-btn">Get Started</a>
+</nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="eyebrow">
+Virtual Medical Assistance
+</div>
+
+<h1>
+Extend your healthcare team without extending the complexity.
+</h1>
+
+<p>
+Alaric Health Services provides structured Virtual Medical
+Assistance for the administrative, patient-facing and
+operational work that keeps healthcare practices moving.
+</p>
+
+<div class="buttons">
+
+<a href="index.html#contact" class="btn primary">
+Discuss Your Workflow
+</a>
+
+<a href="services.html" class="btn secondary">
+View All Services
+</a>
+
+</div>
+
+</div>
+
+
+<div class="dashboard">
+
+<div class="dash-head">
+<span>Virtual Care Operations</span>
+<span class="active">● Operational</span>
+</div>
+
+<div class="dashboard-grid">
+
+<div class="dash-card">
+<span>Patient Requests</span>
+<strong>24</strong>
+</div>
+
+<div class="dash-card">
+<span>Appointments</span>
+<strong>18</strong>
+</div>
+
+<div class="dash-card">
+<span>Open Tasks</span>
+<strong>07</strong>
+</div>
+
+<div class="dash-card">
+<span>Follow-Ups</span>
+<strong>13</strong>
+</div>
+
+</div>
+
+<div class="schedule">
+
+<div class="schedule-title">
+Today's Coordination Queue
+</div>
+
+<div class="schedule-row">
+<div class="time">09:00</div>
+<div class="patient">Appointment Coordination</div>
+<div class="badge">READY</div>
+</div>
+
+<div class="schedule-row">
+<div class="time">10:30</div>
+<div class="patient">Insurance Follow-Up</div>
+<div class="badge">ACTIVE</div>
+</div>
+
+<div class="schedule-row">
+<div class="time">12:00</div>
+<div class="patient">Patient Help Desk</div>
+<div class="badge">ACTIVE</div>
+</div>
+
+<div class="schedule-row">
+<div class="time">14:30</div>
+<div class="patient">Referral Coordination</div>
+<div class="badge">READY</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<div class="container intro-grid">
+
+<div>
+
+<div class="eyebrow">
+Beyond Administrative Support
+</div>
+
+<h2>
+A virtual extension of your practice operations.
+</h2>
+
+</div>
+
+<p>
+Modern healthcare teams manage patient communication,
+scheduling, referrals, insurance workflows, documentation
+and countless administrative tasks. Alaric's VMA model
+helps organize these activities around your practice's
+actual workflow.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- OPERATING MODEL -->
+
+<section class="model">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">
+Our Operating Model
+</div>
+
+<h2>
+Designed around how healthcare actually works.
+</h2>
+
+<p>
+Instead of treating every task as a separate request,
+we organize assistance around connected operational
+workflows.
+</p>
+
+</div>
+
+
+<div class="model-grid">
+
+<div class="model-card">
+<div class="model-no">01 / PATIENT</div>
+<h3>Patient Experience</h3>
+<p>
+Help patients navigate scheduling, communication,
+questions and routine administrative needs.
+</p>
+</div>
+
+<div class="model-card">
+<div class="model-no">02 / PROVIDER</div>
+<h3>Provider Support</h3>
+<p>
+Reduce administrative friction around provider-facing
+coordination and daily operational tasks.
+</p>
+</div>
+
+<div class="model-card">
+<div class="model-no">03 / OPERATIONS</div>
+<h3>Workflow Coordination</h3>
+<p>
+Connect appointments, referrals, insurance tasks,
+follow-ups and administrative queues.
+</p>
+</div>
+
+<div class="model-card">
+<div class="model-no">04 / VISIBILITY</div>
+<h3>Task Visibility</h3>
+<p>
+Create clearer ownership and status across recurring
+virtual support activities.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PATIENT HELP DESK -->
+
+<section class="service">
+
+<div class="container service-grid">
+
+<div class="service-copy">
+
+<div class="eyebrow">
+01 • Patient Help Desk
+</div>
+
+<h2>
+Professional support at the patient touchpoint.
+</h2>
+
+<p>
+Support routine patient-facing administrative needs
+with organized communication and escalation workflows.
+</p>
+
+<ul class="list">
+<li>Patient Calls</li>
+<li>Patient Messages</li>
+<li>Appointment Questions</li>
+<li>General Inquiries</li>
+<li>Follow-Up Communication</li>
+<li>Administrative Assistance</li>
+<li>Information Routing</li>
+<li>Escalation Coordination</li>
+</ul>
+
+</div>
+
+
+<div class="visual">
+
+<div class="visual-title">
+Patient Support Queue
+</div>
+
+<div class="ticket">
+
+<div class="ticket-row">
+<strong>Appointment Question</strong>
+<span>OPEN</span>
+</div>
+
+<div class="ticket-row">
+<strong>Prescription Routing</strong>
+<span>ROUTE</span>
+</div>
+
+<div class="ticket-row">
+<strong>Insurance Question</strong>
+<span>FOLLOW-UP</span>
+</div>
+
+<div class="ticket-row">
+<strong>Provider Message</strong>
+<span>ESCALATED</span>
+</div>
+
+<div class="ticket-row">
+<strong>Appointment Request</strong>
+<span>READY</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SCHEDULING -->
+
+<section class="service">
+
+<div class="container service-grid">
+
+<div class="visual">
+
+<div class="visual-title">
+Appointment Coordination
+</div>
+
+<div class="calendar">
+
+<div class="day">M</div>
+<div class="day">T</div>
+<div class="day active-day">W</div>
+<div class="day">T</div>
+<div class="day">F</div>
+<div class="day">S</div>
+<div class="day">S</div>
+
+<div class="day">08</div>
+<div class="day">09</div>
+<div class="day active-day">10</div>
+<div class="day">11</div>
+<div class="day">12</div>
+<div class="day">13</div>
+<div class="day">14</div>
+
+<div class="day">15</div>
+<div class="day">16</div>
+<div class="day active-day">17</div>
+<div class="day">18</div>
+<div class="day">19</div>
+<div class="day">20</div>
+<div class="day">21</div>
+
+<div class="day">22</div>
+<div class="day active-day">23</div>
+<div class="day">24</div>
+<div class="day">25</div>
+<div class="day">26</div>
+<div class="day">27</div>
+<div class="day">28</div>
+
+</div>
+
+</div>
+
+
+<div class="service-copy">
+
+<div class="eyebrow">
+02 • Scheduling & Coordination
+</div>
+
+<h2>
+Keep the appointment calendar moving.
+</h2>
+
+<p>
+Scheduling support designed to reduce administrative
+friction and help patients and providers stay coordinated.
+</p>
+
+<ul class="list">
+<li>Appointment Scheduling</li>
+<li>Rescheduling</li>
+<li>Appointment Confirmation</li>
+<li>Cancellation Handling</li>
+<li>Recall Coordination</li>
+<li>Calendar Management</li>
+<li>Provider Availability</li>
+<li>Patient Reminders</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INSURANCE -->
+
+<section class="service">
+
+<div class="container service-grid">
+
+<div class="service-copy">
+
+<div class="eyebrow">
+03 • Insurance & Eligibility
+</div>
+
+<h2>
+Connect patient access with revenue-cycle workflows.
+</h2>
+
+<p>
+Virtual support for routine insurance-related
+administrative workflows and coordination with the
+appropriate internal or billing team.
+</p>
+
+<ul class="list">
+<li>Insurance Verification</li>
+<li>Eligibility Support</li>
+<li>Benefits Information</li>
+<li>Insurance Updates</li>
+<li>Coverage Documentation</li>
+<li>Referral Verification</li>
+<li>Authorization Coordination</li>
+<li>Payer Information</li>
+</ul>
+
+</div>
+
+
+<div class="visual">
+
+<div class="visual-title">
+Patient Access Workflow
+</div>
+
+<div class="flow">
+
+<div class="flow-item">
+<div class="flow-box">Patient Information</div>
+<div class="flow-number">01</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-box">Insurance Details</div>
+<div class="flow-number">02</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-box">Eligibility / Benefits</div>
+<div class="flow-number">03</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-box">Documentation / Routing</div>
+<div class="flow-number">04</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REFERRALS -->
+
+<section class="service">
+
+<div class="container service-grid">
+
+<div class="visual">
+
+<div class="visual-title">
+Referral Coordination
+</div>
+
+<div class="flow">
+
+<div class="flow-item">
+<div class="flow-box">Referral Received</div>
+<div class="flow-number">01</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-box">Information Review</div>
+<div class="flow-number">02</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-box">Scheduling Coordination</div>
+<div class="flow-number">03</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-box">Status Follow-Up</div>
+<div class="flow-number">04</div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="service-copy">
+
+<div class="eyebrow">
+04 • Referral & Authorization Coordination
+</div>
+
+<h2>
+Keep referrals from getting lost between teams.
+</h2>
+
+<p>
+Organized support for referral-related administrative
+workflows, status checks and coordination between
+patients, providers and appropriate teams.
+</p>
+
+<ul class="list">
+<li>Referral Intake</li>
+<li>Referral Tracking</li>
+<li>Referral Status</li>
+<li>Document Coordination</li>
+<li>Specialist Scheduling</li>
+<li>Authorization Coordination</li>
+<li>Follow-Up</li>
+<li>Escalation Routing</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROVIDER -->
+
+<section class="service">
+
+<div class="container service-grid">
+
+<div class="service-copy">
+
+<div class="eyebrow">
+05 • Provider Administrative Support
+</div>
+
+<h2>
+Give providers more room to focus on care.
+</h2>
+
+<p>
+Administrative assistance for recurring operational
+tasks that support the day-to-day functioning of
+healthcare teams.
+</p>
+
+<ul class="list">
+<li>Inbox Organization</li>
+<li>Task Coordination</li>
+<li>Administrative Follow-Up</li>
+<li>Document Routing</li>
+<li>Referral Coordination</li>
+<li>Appointment Support</li>
+<li>Workflow Tracking</li>
+<li>Administrative Reporting</li>
+</ul>
+
+</div>
+
+
+<div class="visual">
+
+<div class="visual-title">
+Provider Operations
+</div>
+
+<div class="ticket">
+
+<div class="ticket-row">
+<strong>Provider Inbox</strong>
+<span>07 TASKS</span>
+</div>
+
+<div class="ticket-row">
+<strong>Referral Queue</strong>
+<span>04 OPEN</span>
+</div>
+
+<div class="ticket-row">
+<strong>Documents</strong>
+<span>06 READY</span>
+</div>
+
+<div class="ticket-row">
+<strong>Patient Follow-Up</strong>
+<span>09 DUE</span>
+</div>
+
+<div class="ticket-row">
+<strong>Admin Queue</strong>
+<span>03 ACTIVE</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WORKFLOW -->
+
+<section class="service">
+
+<div class="container service-grid">
+
+<div class="visual">
+
+<div class="visual-title">
+Structured Task Management
+</div>
+
+<div class="flow">
+
+<div class="flow-item">
+<div class="flow-box">Receive</div>
+<div class="flow-number">01</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-box">Prioritize</div>
+<div class="flow-number">02</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-box">Execute</div>
+<div class="flow-number">03</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-box">Document</div>
+<div class="flow-number">04</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-box">Escalate / Close</div>
+<div class="flow-number">05</div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="service-copy">
+
+<div class="eyebrow">
+06 • Workflow Management
+</div>
+
+<h2>
+A clear path for every recurring task.
+</h2>
+
+<p>
+Our virtual assistance model emphasizes structured
+task ownership, status visibility, documentation and
+appropriate escalation.
+</p>
+
+<ul class="list">
+<li>Task Queues</li>
+<li>Daily Worklists</li>
+<li>Priority Management</li>
+<li>Status Tracking</li>
+<li>Follow-Up Queues</li>
+<li>Escalation Workflows</li>
+<li>Completion Tracking</li>
+<li>Operational Reporting</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SECURITY -->
+
+<section class="service">
+
+<div class="container service-grid">
+
+<div class="service-copy">
+
+<div class="eyebrow">
+07 • Professional Standards
+</div>
+
+<h2>
+Healthcare support requires discipline.
+</h2>
+
+<p>
+Virtual assistance should fit into the practice's
+existing processes, permissions and compliance
+requirements rather than creating another disconnected
+system.
+</p>
+
+<ul class="list">
+<li>Role-Based Access</li>
+<li>Workflow Discipline</li>
+<li>Secure Communication Practices</li>
+<li>Documentation Standards</li>
+<li>Escalation Protocols</li>
+<li>Task Accountability</li>
+<li>Process Consistency</li>
+<li>Operational Visibility</li>
+</ul>
+
+</div>
+
+
+<div class="visual">
+
+<div class="visual-title">
+Operational Controls
+</div>
+
+<div class="security-box">
+
+<div class="sec-row">
+<div class="sec-icon">01</div>
+<div>
+<strong>Defined Access</strong>
+<span>Role-based workflow participation</span>
+</div>
+</div>
+
+<div class="sec-row">
+<div class="sec-icon">02</div>
+<div>
+<strong>Clear Escalation</strong>
+<span>Route appropriate matters to the right team</span>
+</div>
+</div>
+
+<div class="sec-row">
+<div class="sec-icon">03</div>
+<div>
+<strong>Documented Tasks</strong>
+<span>Maintain workflow visibility</span>
+</div>
+</div>
+
+<div class="sec-row">
+<div class="sec-icon">04</div>
+<div>
+<strong>Consistent Process</strong>
+<span>Repeatable operational standards</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<section class="benefits">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">
+Why Alaric VMA
+</div>
+
+<h2>
+Built to become part of your team.
+</h2>
+
+</div>
+
+<div class="benefit-grid">
+
+<div class="benefit">
+<div class="icon">01</div>
+<h3>Patient-Centered</h3>
+<p>
+Professional support around the patient experience
+without losing sight of practice workflows.
+</p>
+</div>
+
+<div class="benefit">
+<div class="icon">02</div>
+<h3>Operationally Structured</h3>
+<p>
+Tasks are organized into clear queues, workflows
+and ownership.
+</p>
+</div>
+
+<div class="benefit">
+<div class="icon">03</div>
+<h3>Scalable</h3>
+<p>
+Support can evolve as your practice volume and
+administrative needs change.
+</p>
+</div>
+
+<div class="benefit">
+<div class="icon">04</div>
+<h3>Workflow Focused</h3>
+<p>
+Designed around your existing systems and processes
+rather than forcing a generic model.
+</p>
+</div>
+
+<div class="benefit">
+<div class="icon">05</div>
+<h3>Responsive</h3>
+<p>
+Structured communication and follow-up help keep
+important administrative work moving.
+</p>
+</div>
+
+<div class="benefit">
+<div class="icon">06</div>
+<h3>Results Oriented</h3>
+<p>
+The goal is simple: reduce operational friction and
+help your healthcare team work more effectively.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container cta-grid">
+
+<div>
+
+<div class="eyebrow">
+Partner With Alaric
+</div>
+
+<h2>
+Let's build a better support workflow.
+</h2>
+
+<p>
+Tell us what your practice needs help managing.
+We'll help identify the areas where Virtual Medical
+Assistance can fit into your operations.
+</p>
+
+</div>
+
+<a href="index.html#contact" class="cta-btn">
+Start a Conversation
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-brand">
+Alaric Health Services
+</div>
+
+<p>
+Professional healthcare solutions focused on
+better care, better operations and better results.
+</p>
+
+</div>
+
+<div>
+
+<h3>Explore</h3>
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="rcm.html">RCM</a>
+<a href="medical-billing.html">Medical Billing</a>
+<a href="vma.html">VMA</a>
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+<p>alarichealthservcies@gmail.com</p>
+<p>Phone: Coming Soon</p>
+<p>Address: Coming Soon</p>
+
+</div>
+
+</div>
+
+<div class="copy">
+
+<span>
+© 2026 Alaric Health Services. All Rights Reserved.
+</span>
+
+<span>
+Where Care Becomes Results.
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
