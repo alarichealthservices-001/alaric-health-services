@@ -5,6 +5,79 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Alaric Health Services provides healthcare revenue cycle, practice support and digital growth solutions.">
 <title>Alaric Health Services | Healthcare Solutions</title>
+/* PREMIUM COMPANY LOCATIONS */
+
+.locations-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin: 35px 0;
+}
+
+.location-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #ffffff, #f3f9fb);
+  border: 1px solid rgba(20, 120, 150, .14);
+  box-shadow: 0 18px 50px rgba(10, 70, 90, .08);
+  transition: all .35s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(10, 70, 90, .15);
+}
+
+.location-icon {
+  min-width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #087f9f, #19a5bd);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 25px rgba(8, 127, 159, .22);
+}
+
+.location-label {
+  display: block;
+  color: #1687a7;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.location-card h3 {
+  margin: 0 0 7px;
+  color: #123746;
+  font-size: 22px;
+}
+
+.location-card p {
+  margin: 0;
+  color: #60747c;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+@media (max-width: 750px) {
+  .locations-section {
+    grid-template-columns: 1fr;
+  }
+
+  .location-card {
+    padding: 22px;
+  }
+}
 
 <style>
 :root{
@@ -320,6 +393,35 @@ digital solutions under one professional service partner.
 
 <section id="contact">
 <div class="container contact-grid">
+<!-- COMPANY LOCATIONS -->
+
+<div class="locations-section">
+
+  <div class="location-card">
+    <div class="location-icon">HQ</div>
+    <div>
+      <span class="location-label">HEADQUARTERS</span>
+      <h3>Houston, Texas</h3>
+      <p>
+        1201 Fannin Street, Suite 262<br>
+        Houston, TX 77002, USA
+      </p>
+    </div>
+  </div>
+
+  <div class="location-card">
+    <div class="location-icon">AZ</div>
+    <div>
+      <span class="location-label">ARIZONA OFFICE</span>
+      <h3>Maricopa, Arizona</h3>
+      <p>
+        1704 W Smith Enke Rd, Suite 100<br>
+        Maricopa, AZ 85138, USA
+      </p>
+    </div>
+  </div>
+
+</div>
 
 <div class="contact-info">
 <div class="label">Contact Alaric</div>
