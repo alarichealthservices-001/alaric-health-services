@@ -3,397 +3,1355 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Learn about Alaric Health Services and our approach to healthcare support, revenue cycle management and digital growth.">
-<title>About Us | Alaric Health Services</title>
+
+<meta name="description" content="Learn about Alaric Health Services and our approach to healthcare support, revenue cycle management, practice operations and digital growth.">
+
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://alarichealthservices.com/about.html">
+
+<meta name="author" content="Alaric Health Services">
+
+<title>About Alaric Health Services | Healthcare Support & Revenue Solutions</title>
 
 <style>
 :root{
   --navy:#062d46;
+  --navy-2:#092f45;
   --blue:#087b95;
   --teal:#13b8bd;
+  --aqua:#eaf9fa;
   --light:#f5fafc;
   --text:#536979;
-  --white:#fff;
+  --dark:#102d42;
+  --white:#ffffff;
   --line:#dcebef;
+  --muted:#78909b;
+  --shadow:0 25px 70px rgba(6,45,70,.10);
+  --shadow-soft:0 15px 45px rgba(6,45,70,.07);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--navy);line-height:1.65}
-a{text-decoration:none;color:inherit}
-.container{width:min(1180px,92%);margin:auto}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--dark);
+  background:#fff;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+  background:var(--navy);
+  color:#dceef3;
+  font-size:12px;
+  padding:9px 0;
+}
+
+.topbar-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.topbar span:last-child{
+  color:#8fe3e4;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(255,255,255,.97);
-  border-bottom:1px solid #edf3f5;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(220,235,239,.8);
 }
+
 .nav{
-  height:92px;display:flex;align-items:center;
+  min-height:88px;
+  display:flex;
+  align-items:center;
   justify-content:space-between;
+  gap:30px;
 }
-.logo img{height:70px;width:auto;max-width:285px;object-fit:contain}
-nav{display:flex;gap:27px;align-items:center}
-nav a{font-size:14px;font-weight:700;color:#385269}
-nav a:hover{color:var(--teal)}
-.btn{
-  display:inline-block;padding:14px 22px;
-  border-radius:7px;font-weight:800;font-size:14px;
+
+.logo{
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
 }
-.btn-primary{background:var(--navy);color:#fff}
-.btn-primary:hover{background:var(--blue)}
+
+.logo img{
+  height:66px;
+  width:auto;
+  max-width:275px;
+  object-fit:contain;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+
+nav a{
+  position:relative;
+  color:#385269;
+  font-size:13px;
+  font-weight:800;
+  transition:.25s ease;
+}
+
+nav a:not(.nav-button):after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0;
+  height:2px;
+  background:var(--teal);
+  transition:.25s ease;
+}
+
+nav a:not(.nav-button):hover{
+  color:var(--blue);
+}
+
+nav a:not(.nav-button):hover:after{
+  width:100%;
+}
+
+.nav-button{
+  background:var(--navy);
+  color:#fff!important;
+  padding:12px 20px;
+  border-radius:7px;
+  box-shadow:0 8px 22px rgba(6,45,70,.14);
+  transition:.25s ease;
+}
+
+.nav-button:hover{
+  background:var(--blue);
+  transform:translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  padding:105px 0;
-  background:linear-gradient(135deg,#052e47,#087c91);
-  color:#fff;
-}
-.label{
-  color:#69e0e1;text-transform:uppercase;
-  letter-spacing:2px;font-size:12px;font-weight:800;
-  margin-bottom:15px;
-}
-.hero h1{
-  font-size:clamp(44px,6vw,68px);
-  line-height:1.05;letter-spacing:-2px;
-  max-width:780px;margin-bottom:20px;
-}
-.hero p{max-width:700px;color:#d8e9ee;font-size:18px}
-
-section{padding:95px 0}
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:75px;
-  align-items:center;
-}
-h2{
-  font-size:clamp(34px,4vw,50px);
-  line-height:1.1;
-  letter-spacing:-1.5px;
-  margin-bottom:18px;
-}
-p{color:var(--text)}
-.visual{
-  min-height:430px;
-  border-radius:18px;
-  background:linear-gradient(145deg,#e0f7f8,#bde5e9);
   position:relative;
   overflow:hidden;
+  padding:115px 0 120px;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(19,184,189,.25),transparent 28%),
+    radial-gradient(circle at 10% 90%,rgba(8,123,149,.22),transparent 32%),
+    linear-gradient(135deg,#04283f,#07536a 55%,#087c91);
+  color:#fff;
 }
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:50%;
+  right:-170px;
+  top:-160px;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:50%;
+  right:40px;
+  bottom:-180px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:820px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:#72e5e5;
+  text-transform:uppercase;
+  letter-spacing:2.5px;
+  font-size:11px;
+  font-weight:900;
+  margin-bottom:22px;
+}
+
+.eyebrow:before{
+  content:"";
+  width:28px;
+  height:2px;
+  background:var(--teal);
+}
+
+.hero h1{
+  font-size:clamp(43px,6vw,72px);
+  line-height:1.03;
+  letter-spacing:-2.8px;
+  margin-bottom:25px;
+  max-width:850px;
+}
+
+.hero h1 span{
+  color:#65e2e4;
+}
+
+.hero-description{
+  max-width:720px;
+  color:#d7e9ef;
+  font-size:18px;
+  line-height:1.8;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.section{
+  padding:105px 0;
+}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:85px;
+  align-items:center;
+}
+
+.visual{
+  min-height:520px;
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 70% 25%,rgba(19,184,189,.25),transparent 25%),
+    linear-gradient(145deg,#e3f8f9,#b9e2e7);
+  box-shadow:var(--shadow);
+}
+
+.visual:before{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  border:1px solid rgba(6,45,70,.08);
+  top:-80px;
+  right:-80px;
+}
+
 .visual:after{
   content:"AL";
   position:absolute;
-  right:-15px;
-  bottom:-75px;
-  font-size:250px;
+  right:-20px;
+  bottom:-85px;
+  font-size:270px;
+  line-height:1;
   font-weight:900;
-  color:rgba(6,45,70,.08);
-}
-.card{
-  position:absolute;
-  left:30px;
-  bottom:30px;
-  background:#fff;
-  padding:27px;
-  border-radius:12px;
-  box-shadow:0 20px 55px rgba(6,45,70,.14);
-  max-width:300px;
-}
-.card strong{
-  display:block;
-  font-size:25px;
-  margin-bottom:5px;
+  letter-spacing:-15px;
+  color:rgba(6,45,70,.07);
 }
 
-.light{background:var(--light)}
-.center{text-align:center}
-.head{max-width:720px;margin:0 auto 50px}
-.head p{margin-top:10px}
+.visual-content{
+  position:absolute;
+  left:32px;
+  right:32px;
+  bottom:32px;
+  z-index:3;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);
+  padding:28px;
+  border-radius:16px;
+  box-shadow:var(--shadow-soft);
+  border:1px solid rgba(255,255,255,.7);
+}
+
+.visual-content .small{
+  color:var(--teal);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:10px;
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.visual-content h3{
+  color:var(--navy);
+  font-size:24px;
+  margin-bottom:7px;
+}
+
+.visual-content p{
+  color:var(--text);
+  font-size:14px;
+  line-height:1.65;
+}
+
+.section-label{
+  color:var(--teal);
+  text-transform:uppercase;
+  letter-spacing:2.2px;
+  font-size:11px;
+  font-weight:900;
+  margin-bottom:14px;
+}
+
+.section-title{
+  color:var(--navy);
+  font-size:clamp(34px,4vw,52px);
+  line-height:1.08;
+  letter-spacing:-1.8px;
+  margin-bottom:22px;
+}
+
+.section-copy{
+  color:var(--text);
+  font-size:15px;
+  margin-bottom:18px;
+}
+
+/* =========================
+   HIGHLIGHTS
+========================= */
+
+.highlights{
+  margin-top:38px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.highlight{
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  transition:.3s ease;
+}
+
+.highlight:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-soft);
+}
+
+.highlight strong{
+  display:block;
+  color:var(--navy);
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+.highlight span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* =========================
+   APPROACH SECTION
+========================= */
+
+.approach{
+  background:
+    linear-gradient(180deg,#f5fafc 0%,#eef9fa 100%);
+  border-top:1px solid #edf5f6;
+  border-bottom:1px solid #edf5f6;
+}
+
+.center{
+  text-align:center;
+}
+
+.head{
+  max-width:760px;
+  margin:0 auto 55px;
+}
+
+.head .section-title{
+  margin-bottom:16px;
+}
+
+.head p{
+  color:var(--text);
+  font-size:15px;
+}
+
 .values{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:22px;
 }
+
 .value{
+  position:relative;
   background:#fff;
   border:1px solid var(--line);
-  padding:32px;
-  border-radius:12px;
+  border-radius:18px;
+  padding:34px;
+  box-shadow:0 10px 35px rgba(6,45,70,.04);
+  transition:.35s ease;
 }
-.value span{
-  width:48px;height:48px;border-radius:10px;
-  background:#eaf9fa;color:var(--blue);
-  display:grid;place-items:center;
-  font-weight:900;margin-bottom:18px;
+
+.value:hover{
+  transform:translateY(-7px);
+  box-shadow:var(--shadow);
+  border-color:transparent;
 }
-.value h3{margin-bottom:8px;font-size:20px}
-.value p{font-size:14px}
+
+.value-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:52px;
+  height:52px;
+  border-radius:13px;
+  background:var(--aqua);
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:22px;
+}
+
+.value h3{
+  color:var(--navy);
+  font-size:21px;
+  margin-bottom:9px;
+}
+
+.value p{
+  color:var(--text);
+  font-size:14px;
+  line-height:1.75;
+}
+
+/* =========================
+   MISSION
+========================= */
+
+.mission{
+  padding:110px 0;
+}
+
+.mission-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.mission-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  padding:48px;
+  min-height:360px;
+}
+
+.mission-card.dark{
+  background:
+    radial-gradient(circle at 100% 0,rgba(19,184,189,.20),transparent 35%),
+    linear-gradient(145deg,#052d45,#073e56);
+  color:#fff;
+}
+
+.mission-card.light{
+  background:#f4fafb;
+  border:1px solid var(--line);
+}
+
+.mission-card .section-label{
+  color:var(--teal);
+}
+
+.mission-card h2{
+  font-size:35px;
+  line-height:1.15;
+  letter-spacing:-1px;
+  margin-bottom:17px;
+}
+
+.mission-card.dark h2{
+  color:#fff;
+}
+
+.mission-card.light h2{
+  color:var(--navy);
+}
+
+.mission-card p{
+  font-size:14px;
+  line-height:1.8;
+}
+
+.mission-card.dark p{
+  color:#c9dce4;
+}
+
+.mission-card.light p{
+  color:var(--text);
+}
+
+.mission-decoration{
+  position:absolute;
+  right:-45px;
+  bottom:-75px;
+  width:190px;
+  height:190px;
+  border:1px solid rgba(19,184,189,.18);
+  border-radius:50%;
+}
+
+.mission-decoration:after{
+  content:"";
+  position:absolute;
+  inset:25px;
+  border:1px solid rgba(19,184,189,.13);
+  border-radius:50%;
+}
+
+/* =========================
+   WHY SECTION
+========================= */
+
+.why{
+  background:#fff;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:80px;
+  align-items:center;
+}
+
+.why-intro{
+  background:var(--navy);
+  border-radius:20px;
+  padding:45px;
+  color:#fff;
+  box-shadow:var(--shadow);
+}
+
+.why-intro .section-label{
+  color:#71e2e3;
+}
+
+.why-intro h2{
+  font-size:37px;
+  line-height:1.15;
+  margin-bottom:16px;
+}
+
+.why-intro p{
+  color:#c9dce4;
+  font-size:14px;
+}
+
+.benefits{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 35px;
+}
+
+.benefit{
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.benefit strong{
+  display:block;
+  color:var(--navy);
+  font-size:15px;
+  margin-bottom:5px;
+}
+
+.benefit p{
+  color:var(--text);
+  font-size:13px;
+  line-height:1.7;
+}
+
+/* =========================
+   CTA
+========================= */
 
 .cta{
-  background:var(--navy);
+  position:relative;
+  overflow:hidden;
+  padding:85px 0;
+  background:
+    radial-gradient(circle at 90% 20%,rgba(19,184,189,.22),transparent 30%),
+    linear-gradient(135deg,#052d45,#087c91);
   color:#fff;
-  padding:75px 0;
 }
-.cta-in{
-  display:flex;align-items:center;
-  justify-content:space-between;gap:30px;
+
+.cta:after{
+  content:"";
+  position:absolute;
+  width:360px;
+  height:360px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;
+  right:-150px;
+  bottom:-230px;
 }
-.cta h2{max-width:700px;margin-bottom:10px}
-.cta p{color:#c7dbe3;max-width:650px}
-.cta .btn{background:var(--teal);color:#fff}
+
+.cta-inner{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+}
+
+.cta .section-label{
+  color:#71e2e3;
+}
+
+.cta h2{
+  font-size:clamp(32px,4vw,48px);
+  line-height:1.1;
+  letter-spacing:-1.5px;
+  margin-bottom:12px;
+}
+
+.cta p{
+  color:#d1e7ec;
+  max-width:650px;
+  font-size:15px;
+}
+
+.cta-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px 24px;
+  border-radius:8px;
+  background:var(--teal);
+  color:#fff;
+  font-size:14px;
+  font-weight:900;
+  white-space:nowrap;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+  transition:.25s ease;
+}
+
+.cta-button:hover{
+  background:#0da5aa;
+  transform:translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-  background:#041e30;color:#fff;padding:55px 0 25px;
-}
-.footer-grid{
-  display:grid;grid-template-columns:1.5fr 1fr 1fr;
-  gap:50px;padding-bottom:35px;
-  border-bottom:1px solid rgba(255,255,255,.12);
-}
-footer h3{margin-bottom:13px}
-footer p,footer a{color:#a9c1cc;font-size:14px}
-footer a{display:block;margin:7px 0}
-.brand{font-size:23px;font-weight:800;margin-bottom:10px}
-.copy{
-  display:flex;justify-content:space-between;
-  padding-top:20px;color:#76919d;font-size:12px;
+  background:#041e30;
+  color:#fff;
+  padding:65px 0 25px;
 }
 
-@media(max-width:850px){
-  nav{display:none}
-  .grid{grid-template-columns:1fr}
-  .values{grid-template-columns:1fr}
-  .cta-in{flex-direction:column;align-items:flex-start}
-  .footer-grid{grid-template-columns:1fr}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:60px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.10);
 }
-@media(max-width:600px){
-  .nav{height:80px}
-  .logo img{height:58px}
-  section{padding:70px 0}
-  .hero{padding:75px 0}
+
+.footer-brand{
+  font-size:23px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.footer-description{
+  max-width:360px;
+  color:#9eb8c3;
+  font-size:14px;
+  line-height:1.75;
+}
+
+footer h3{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:15px;
+}
+
+footer a,
+footer p{
+  color:#9eb8c3;
+  font-size:13px;
+}
+
+footer a{
+  display:block;
+  margin:9px 0;
+  transition:.2s ease;
+}
+
+footer a:hover{
+  color:#65e2e4;
+}
+
+.contact-item{
+  margin-bottom:13px;
+}
+
+.contact-item strong{
+  display:block;
+  color:#fff;
+  font-size:12px;
+  margin-bottom:3px;
+}
+
+.copy{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-top:20px;
+  color:#6f8c99;
+  font-size:11px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+  nav{
+    display:none;
+  }
+
+  .intro-grid,
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .visual{
+    min-height:430px;
+  }
+
+  .values{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mission-grid{
+    grid-template-columns:1fr;
+  }
+
+  .why-intro{
+    max-width:650px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1.2fr 1fr;
+  }
+}
+
+@media(max-width:700px){
+
+  .topbar-inner{
+    justify-content:center;
+    text-align:center;
+  }
+
+  .topbar-inner span:last-child{
+    display:none;
+  }
+
+  .nav{
+    min-height:78px;
+  }
+
+  .logo img{
+    height:56px;
+    max-width:220px;
+  }
+
+  .hero{
+    padding:82px 0 90px;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .hero-description{
+    font-size:16px;
+  }
+
+  .section,
+  .mission{
+    padding:75px 0;
+  }
+
+  .visual{
+    min-height:360px;
+  }
+
+  .visual-content{
+    left:20px;
+    right:20px;
+    bottom:20px;
+    padding:22px;
+  }
+
+  .highlights{
+    grid-template-columns:1fr;
+  }
+
+  .values{
+    grid-template-columns:1fr;
+  }
+
+  .value{
+    padding:28px;
+  }
+
+  .mission-card{
+    padding:32px;
+    min-height:auto;
+  }
+
+  .mission-card h2{
+    font-size:30px;
+  }
+
+  .benefits{
+    grid-template-columns:1fr;
+  }
+
+  .cta{
+    padding:70px 0;
+  }
+
+  .cta-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .copy{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="container nav">
+<!-- =========================
+     TOP BAR
+========================= -->
 
-<a href="index.html" class="logo">
-<img src="alaric_high_contrast_text_4k.png" alt="Alaric Health Services">
-</a>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="index.html#services">Services</a>
-<a href="index.html#growth">Digital Growth</a>
-<a href="index.html#why">Why Alaric</a>
-<a href="index.html#contact" class="btn btn-primary">Get Started</a>
-</nav>
-
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>Professional Healthcare Solutions</span>
+    <span>Focused on Better Care & Better Results</span>
+  </div>
 </div>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+  <div class="container nav">
+
+    <a href="index.html" class="logo" aria-label="Alaric Health Services Home">
+      <img
+        src="alaric_high_contrast_text_4k.png"
+        alt="Alaric Health Services"
+      >
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="index.html#growth">Digital Growth</a>
+      <a href="index.html#why">Why Alaric</a>
+      <a href="index.html#contact" class="nav-button">Get Started</a>
+    </nav>
+
+  </div>
 </header>
+
+<!-- =========================
+     MAIN
+========================= -->
 
 <main>
 
+<!-- HERO -->
+
 <section class="hero">
-<div class="container">
-<div class="label">About Alaric Health Services</div>
-<h1>Healthcare support built around better performance.</h1>
-<p>
-We help healthcare organizations manage important operational,
-revenue cycle and digital growth needs through professional,
-structured and dependable support.
-</p>
-</div>
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        About Alaric Health Services
+      </div>
+
+      <h1>
+        Healthcare support built around
+        <span>better performance.</span>
+      </h1>
+
+      <p class="hero-description">
+        We help healthcare organizations manage important operational,
+        revenue cycle and digital growth needs through professional,
+        structured and dependable support.
+      </p>
+
+    </div>
+
+  </div>
 </section>
 
-<section>
-<div class="container grid">
+<!-- INTRO -->
 
-<div class="visual">
-<div class="card">
-<strong>Alaric Health Services</strong>
-<span>Professional healthcare solutions focused on better care and better results.</span>
-</div>
-</div>
+<section class="section">
+  <div class="container intro-grid">
 
-<div>
-<div class="label">Who We Are</div>
-<h2>A partner focused on your success.</h2>
+    <div class="visual">
 
-<p>
-Alaric Health Services is dedicated to supporting healthcare
-organizations with solutions that help simplify operations,
-strengthen revenue cycle performance and create opportunities
-for sustainable growth.
-</p>
+      <div class="visual-content">
 
-<br>
+        <div class="small">
+          Our Approach
+        </div>
 
-<p>
-Our services bring together healthcare administrative support,
-revenue cycle solutions and digital growth capabilities so
-providers can spend more time focusing on what matters most:
-delivering quality care.
-</p>
+        <h3>
+          Professional support for modern healthcare organizations.
+        </h3>
 
-<br>
+        <p>
+          Combining healthcare support, revenue cycle solutions and
+          digital capabilities under one professional service partner.
+        </p>
 
-<p>
-We believe strong partnerships are built through communication,
-accountability, attention to detail and a commitment to continuous
-improvement.
-</p>
-</div>
+      </div>
 
-</div>
+    </div>
+
+    <div>
+
+      <div class="section-label">
+        Who We Are
+      </div>
+
+      <h2 class="section-title">
+        A dependable partner focused on your success.
+      </h2>
+
+      <p class="section-copy">
+        Alaric Health Services is dedicated to supporting healthcare
+        organizations with solutions that help simplify operations,
+        strengthen revenue cycle performance and create opportunities
+        for sustainable growth.
+      </p>
+
+      <p class="section-copy">
+        Our services bring together healthcare administrative support,
+        revenue cycle solutions and digital growth capabilities so
+        providers can spend more time focusing on what matters most:
+        delivering quality care.
+      </p>
+
+      <p class="section-copy">
+        We believe strong partnerships are built through communication,
+        accountability, attention to detail and a commitment to
+        continuous improvement.
+      </p>
+
+      <div class="highlights">
+
+        <div class="highlight">
+          <strong>Healthcare Focused</strong>
+          <span>Built around healthcare operations.</span>
+        </div>
+
+        <div class="highlight">
+          <strong>Professional Support</strong>
+          <span>Structured and dependable service.</span>
+        </div>
+
+        <div class="highlight">
+          <strong>Growth Mindset</strong>
+          <span>Focused on long-term improvement.</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
-<section class="light">
-<div class="container">
+<!-- APPROACH -->
 
-<div class="head center">
-<div class="label">Our Approach</div>
-<h2>Professional support. Practical solutions.</h2>
-<p>
-Every healthcare organization has different needs. Our approach
-is designed to provide flexible support while maintaining
-professional standards and clear communication.
-</p>
-</div>
+<section class="section approach">
 
-<div class="values">
+  <div class="container">
 
-<div class="value">
-<span>01</span>
-<h3>Accuracy</h3>
-<p>
-We focus on detail and consistency across critical healthcare
-and revenue cycle workflows.
-</p>
-</div>
+    <div class="head center">
 
-<div class="value">
-<span>02</span>
-<h3>Communication</h3>
-<p>
-Clear, timely communication helps teams stay informed and
-makes collaboration easier.
-</p>
-</div>
+      <div class="section-label">
+        Our Approach
+      </div>
 
-<div class="value">
-<span>03</span>
-<h3>Results</h3>
-<p>
-Our goal is to provide practical solutions that contribute
-to stronger operations and sustainable growth.
-</p>
-</div>
+      <h2 class="section-title">
+        Professional support. Practical solutions.
+      </h2>
 
-</div>
-</div>
+      <p>
+        Every healthcare organization has different needs. Our approach
+        is designed to provide flexible support while maintaining
+        professional standards, clear communication and attention to detail.
+      </p>
+
+    </div>
+
+    <div class="values">
+
+      <div class="value">
+
+        <div class="value-number">01</div>
+
+        <h3>Accuracy</h3>
+
+        <p>
+          We focus on detail and consistency across critical healthcare
+          and revenue cycle workflows.
+        </p>
+
+      </div>
+
+      <div class="value">
+
+        <div class="value-number">02</div>
+
+        <h3>Communication</h3>
+
+        <p>
+          Clear, timely communication helps teams stay informed and
+          makes collaboration easier.
+        </p>
+
+      </div>
+
+      <div class="value">
+
+        <div class="value-number">03</div>
+
+        <h3>Results</h3>
+
+        <p>
+          Our goal is to provide practical solutions that contribute
+          to stronger operations and sustainable growth.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section>
-<div class="container grid">
+<!-- MISSION / VISION -->
 
-<div>
-<div class="label">Our Mission</div>
-<h2>Helping healthcare organizations move forward.</h2>
+<section class="mission">
 
-<p>
-Our mission is to provide dependable healthcare services that
-help organizations improve operational efficiency, strengthen
-their revenue cycle and build a stronger presence in the digital
-healthcare marketplace.
-</p>
+  <div class="container mission-grid">
 
-<br>
+    <div class="mission-card dark">
 
-<p>
-As we grow, we remain committed to building long-term
-relationships based on trust, professionalism and measurable
-value.
-</p>
-</div>
+      <div class="section-label">
+        Our Mission
+      </div>
 
-<div>
-<div class="label">Looking Ahead</div>
-<h2>Built for today's healthcare environment.</h2>
+      <h2>
+        Helping healthcare organizations move forward.
+      </h2>
 
-<p>
-Healthcare continues to evolve. From changing payer processes
-to increasing digital competition, providers face new challenges
-every day.
-</p>
+      <p>
+        Our mission is to provide dependable healthcare services that
+        help organizations improve operational efficiency, strengthen
+        their revenue cycle and build a stronger presence in the
+        digital healthcare marketplace.
+      </p>
 
-<br>
+      <div class="mission-decoration"></div>
 
-<p>
-Alaric Health Services is positioned to support organizations
-through these changes with scalable services and a
-forward-thinking approach.
-</p>
-</div>
+    </div>
 
-</div>
+    <div class="mission-card light">
+
+      <div class="section-label">
+        Looking Ahead
+      </div>
+
+      <h2>
+        Built for today's healthcare environment.
+      </h2>
+
+      <p>
+        Healthcare continues to evolve. From changing payer processes
+        to increasing digital competition, providers face new challenges
+        every day.
+      </p>
+
+      <br>
+
+      <p>
+        Alaric Health Services is positioned to support organizations
+        through these changes with scalable services and a
+        forward-thinking approach.
+      </p>
+
+      <div class="mission-decoration"></div>
+
+    </div>
+
+  </div>
+
 </section>
+
+<!-- WHY ALARIC -->
+
+<section class="section why">
+
+  <div class="container why-grid">
+
+    <div class="why-intro">
+
+      <div class="section-label">
+        Why Alaric
+      </div>
+
+      <h2>
+        Built around your operation.
+        Focused on your results.
+      </h2>
+
+      <p>
+        We aim to become a reliable extension of your healthcare team
+        by combining professional service, clear communication and
+        practical solutions.
+      </p>
+
+    </div>
+
+    <div class="benefits">
+
+      <div class="benefit">
+        <strong>Accuracy First</strong>
+        <p>
+          Attention to detail across critical healthcare workflows.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <strong>Clear Communication</strong>
+        <p>
+          Professional communication keeps your team informed.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <strong>Scalable Support</strong>
+        <p>
+          Services designed to adapt as your organization grows.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <strong>Efficiency Focused</strong>
+        <p>
+          Processes designed to reduce unnecessary administrative workload.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <strong>Professional Mindset</strong>
+        <p>
+          A service experience built around reliability and accountability.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <strong>Long-Term Partnership</strong>
+        <p>
+          We focus on building lasting relationships, not one-time transactions.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
 
 <section class="cta">
-<div class="container cta-in">
-<div>
-<h2>Ready to strengthen your healthcare operation?</h2>
-<p>
-Let's discuss how Alaric Health Services can support your
-organization.
-</p>
-</div>
-<a href="index.html#contact" class="btn">Get Started</a>
-</div>
+
+  <div class="container cta-inner">
+
+    <div>
+
+      <div class="section-label">
+        Start a Conversation
+      </div>
+
+      <h2>
+        Ready to strengthen your healthcare operation?
+      </h2>
+
+      <p>
+        Let's discuss how Alaric Health Services can support your
+        organization with professional healthcare solutions.
+      </p>
+
+    </div>
+
+    <a href="index.html#contact" class="cta-button">
+      Get Started
+    </a>
+
+  </div>
+
 </section>
 
 </main>
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-<div class="container">
 
-<div class="footer-grid">
+  <div class="container">
 
-<div>
-<div class="brand">Alaric Health Services</div>
-<p>
-Professional healthcare solutions focused on better operations,
-growth and results.
-</p>
-</div>
+    <div class="footer-grid">
 
-<div>
-<h3>Explore</h3>
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="index.html#services">Services</a>
-<a href="index.html#growth">Digital Growth</a>
-</div>
+      <div>
 
-<div>
-<h3>Contact</h3>
-<p>alarichealthservcies@gmail.com</p>
-<p>Phone: Coming Soon</p>
-<p>Address: Coming Soon</p>
-</div>
+        <div class="footer-brand">
+          Alaric Health Services
+        </div>
 
-</div>
+        <p class="footer-description">
+          Professional healthcare solutions focused on better
+          operations, better growth and better results.
+        </p>
 
-<div class="copy">
-<span>© 2026 Alaric Health Services. All Rights Reserved.</span>
-<span>Where Care Becomes Results.</span>
-</div>
+      </div>
 
-</div>
+      <div>
+
+        <h3>Explore</h3>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#growth">Digital Growth</a>
+        <a href="index.html#why">Why Alaric</a>
+
+      </div>
+
+      <div>
+
+        <h3>Contact</h3>
+
+        <div class="contact-item">
+          <strong>Email</strong>
+          <p>alarichealthservcies@gmail.com</p>
+        </div>
+
+        <div class="contact-item">
+          <strong>Phone</strong>
+          <p>Coming Soon</p>
+        </div>
+
+        <div class="contact-item">
+          <strong>Address</strong>
+          <p>Coming Soon</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="copy">
+
+      <span>
+        © 2026 Alaric Health Services. All Rights Reserved.
+      </span>
+
+      <span>
+        Where Care Becomes Results.
+      </span>
+
+    </div>
+
+  </div>
+
 </footer>
 
 </body>
