@@ -27,7 +27,13 @@
   "url": "https://alarichealthservices.com/",
   "logo": "https://alarichealthservices.com/alaric_high_contrast_text_4k.png",
   "description": "Alaric Health Services provides healthcare revenue cycle management, practice support and digital growth solutions.",
-  "email": "alarichealthservcies@gmail.com"
+  "email": "alarichealthservcies@gmail.com",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }
 }
 </script>
 
@@ -104,6 +110,24 @@ img{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.topbar-hours{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+
+.topbar-hours .dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--teal);
+  display:inline-block;
 }
 
 /* HEADER */
@@ -118,41 +142,55 @@ header{
 }
 
 .nav{
-  min-height:92px;
+  min-height:104px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:20px;
 }
+
+/* ===== LOGO BLOCK (updated: image + name + tagline stacked) ===== */
 
 .logo{
   display:flex;
   align-items:center;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  width:320px;
-  min-width:320px;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  width:500px;
-  min-width:500px;
+  gap:14px;
 }
 
 .logo img{
-  width:500px;
-  height:105px;
-  max-width:none;
+  height:64px;
+  width:auto;
+  max-width:210px;
   object-fit:contain;
-  object-position:left center;
   display:block;
+  flex-shrink:0;
 }
 
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.25;
+}
 
+.logo-text .logo-name{
+  font-size:20px;
+  font-weight:800;
+  color:var(--navy);
+  letter-spacing:-.3px;
+  white-space:nowrap;
+}
+
+.logo-text .logo-tagline{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.6px;
+  color:var(--teal);
+  text-transform:uppercase;
+  margin-top:2px;
+  white-space:nowrap;
+}
+
+/* ================================================================ */
 
 nav{
   display:flex;
@@ -631,6 +669,64 @@ section{
   font-size:14px;
 }
 
+/* BUSINESS HOURS */
+
+.hours-card{
+  margin-top:26px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:24px 26px;
+  box-shadow:var(--shadow);
+}
+
+.hours-card .hours-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  color:var(--navy);
+  margin-bottom:16px;
+}
+
+.hours-card .hours-title .hours-dot{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--success);
+  box-shadow:0 0 0 4px rgba(26,166,122,.15);
+}
+
+.hours-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:9px 0;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+}
+
+.hours-row:last-child{
+  border-bottom:0;
+}
+
+.hours-row span:first-child{
+  color:var(--navy);
+  font-weight:700;
+}
+
+.hours-row span:last-child{
+  color:var(--text);
+}
+
+.hours-row.off span:last-child{
+  color:#c0392b;
+  font-weight:700;
+}
+
 /* LOCATIONS */
 
 .locations-section{
@@ -749,6 +845,21 @@ section{
   box-shadow:0 0 0 3px rgba(19,184,189,.08);
 }
 
+.form-status{
+  font-size:13px;
+  font-weight:700;
+  margin-top:14px;
+  display:none;
+}
+
+.form-status.show{
+  display:block;
+}
+
+.form-status.ok{
+  color:var(--success);
+}
+
 /* FOOTER */
 
 footer{
@@ -792,6 +903,29 @@ footer a:hover{
   color:#fff;
 }
 
+.footer-tagline{
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--teal);
+  font-weight:800;
+  margin-bottom:14px;
+}
+
+.footer-hours{
+  margin-top:6px;
+}
+
+.footer-hours li{
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  max-width:220px;
+  font-size:13px;
+  color:#a9c1cc;
+  padding:5px 0;
+}
+
 .copy{
   display:flex;
   justify-content:space-between;
@@ -800,12 +934,83 @@ footer a:hover{
   font-size:12px;
 }
 
+/* MOBILE MENU TOGGLE */
+
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  background:none;
+  border:0;
+  padding:6px;
+}
+
+.menu-toggle span{
+  width:26px;
+  height:3px;
+  background:var(--navy);
+  border-radius:2px;
+}
+
+/* BACK TO TOP */
+
+.to-top{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:var(--navy);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  box-shadow:var(--shadow);
+  opacity:0;
+  pointer-events:none;
+  transition:.3s ease;
+  z-index:998;
+}
+
+.to-top.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.to-top:hover{
+  background:var(--blue);
+}
+
 /* RESPONSIVE */
 
 @media(max-width:900px){
 
   nav{
-    display:none;
+    position:fixed;
+    top:0;
+    right:-100%;
+    height:100vh;
+    width:78%;
+    max-width:320px;
+    background:#fff;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:110px 30px 40px;
+    box-shadow:-10px 0 40px rgba(0,0,0,.15);
+    transition:right .3s ease;
+    gap:22px;
+    z-index:1000;
+  }
+
+  nav.open{
+    right:0;
+  }
+
+  .menu-toggle{
+    display:flex;
   }
 
   .about-grid,
@@ -847,31 +1052,29 @@ footer a:hover{
 
   .topbar-in{
     justify-content:center;
+    text-align:center;
   }
 
   .topbar-in span:last-child{
     display:none;
   }
 
-.logo{
-  width:300px;
-  min-width:300px;
-}
+  .nav{
+    min-height:84px;
+  }
 
-.logo img{
-  width:300px;
-  height:75px;
-  max-width:none;
-  object-fit:contain;
-}
+  .logo img{
+    height:44px;
+    max-width:150px;
+  }
 
+  .logo-text .logo-name{
+    font-size:15px;
+  }
 
-.logo img{
-  width:240px;
-  height:62px;
-  max-width:none;
-}
-
+  .logo-text .logo-tagline{
+    font-size:9px;
+  }
 
   .hero{
     min-height:620px;
@@ -935,8 +1138,8 @@ footer a:hover{
 
 <div class="topbar">
   <div class="container topbar-in">
-    <span>Professional Healthcare Solutions</span>
-    <span>Focused on Better Care & Better Results</span>
+    <span class="topbar-hours"><span class="dot"></span>Mon–Fri: 9:00 AM – 6:00 PM | Sat–Sun: Closed</span>
+    <span>Focused on Better Care &amp; Better Results</span>
   </div>
 </div>
 
@@ -951,9 +1154,17 @@ footer a:hover{
         src="alaric_high_contrast_text_4k.png"
         alt="Alaric Health Services Logo"
       >
+      <span class="logo-text">
+        <span class="logo-name">Alaric Health Services</span>
+        <span class="logo-tagline">Where Care Becomes Results.</span>
+      </span>
     </a>
 
-    <nav aria-label="Main Navigation">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav aria-label="Main Navigation" id="mainNav">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -1029,7 +1240,7 @@ footer a:hover{
       </div>
 
       <div class="trust-item">
-        <strong>Revenue & Operations</strong>
+        <strong>Revenue &amp; Operations</strong>
         <span>
           Structured support designed to improve efficiency.
         </span>
@@ -1162,7 +1373,7 @@ footer a:hover{
 
       <div class="service">
         <div class="icon">03</div>
-        <h3>Claims Management & Follow-Up</h3>
+        <h3>Claims Management &amp; Follow-Up</h3>
         <p>
           Organized claims workflows and payer follow-up designed to keep
           revenue moving through the billing cycle.
@@ -1171,7 +1382,7 @@ footer a:hover{
 
       <div class="service">
         <div class="icon">04</div>
-        <h3>Denial Management & Appeals</h3>
+        <h3>Denial Management &amp; Appeals</h3>
         <p>
           Identify denial issues, coordinate follow-up and support appropriate
           appeals to help reduce preventable revenue loss.
@@ -1189,7 +1400,7 @@ footer a:hover{
 
       <div class="service">
         <div class="icon">06</div>
-        <h3>Eligibility & Benefits Verification</h3>
+        <h3>Eligibility &amp; Benefits Verification</h3>
         <p>
           Insurance verification support designed to improve front-end
           accuracy and reduce avoidable billing issues.
@@ -1200,7 +1411,7 @@ footer a:hover{
 
 
     <h3 class="category">
-      Provider & Practice Support
+      Provider &amp; Practice Support
     </h3>
 
     <div class="service-grid">
@@ -1225,7 +1436,7 @@ footer a:hover{
 
       <div class="service">
         <div class="icon">09</div>
-        <h3>Credentialing & Enrollment</h3>
+        <h3>Credentialing &amp; Enrollment</h3>
         <p>
           Provider credentialing and enrollment assistance designed to support
           payer participation and practice operations.
@@ -1252,7 +1463,7 @@ footer a:hover{
 
       <div class="service">
         <div class="icon">12</div>
-        <h3>Patient & Payer Coordination</h3>
+        <h3>Patient &amp; Payer Coordination</h3>
         <p>
           Professional coordination support that helps streamline
           communication across important practice workflows.
@@ -1302,7 +1513,7 @@ footer a:hover{
       </div>
 
       <div class="growth-card">
-        <h3>Website Design & Development</h3>
+        <h3>Website Design &amp; Development</h3>
         <p>
           Professional, responsive websites designed to communicate services
           clearly and create a credible digital experience.
@@ -1334,7 +1545,7 @@ footer a:hover{
       </div>
 
       <div class="growth-card">
-        <h3>Practice Growth & Lead Generation</h3>
+        <h3>Practice Growth &amp; Lead Generation</h3>
         <p>
           Integrated digital strategies designed to help healthcare practices
           build awareness and create new opportunities.
@@ -1558,12 +1769,39 @@ footer a:hover{
 
       </div>
 
+
+      <!-- BUSINESS HOURS -->
+
+      <div class="hours-card">
+
+        <div class="hours-title">
+          <span class="hours-dot"></span>
+          Business Hours
+        </div>
+
+        <div class="hours-row">
+          <span>Monday – Friday</span>
+          <span>9:00 AM – 6:00 PM</span>
+        </div>
+
+        <div class="hours-row off">
+          <span>Saturday</span>
+          <span>Closed</span>
+        </div>
+
+        <div class="hours-row off">
+          <span>Sunday</span>
+          <span>Closed</span>
+        </div>
+
+      </div>
+
     </div>
 
 
     <!-- CONTACT FORM -->
 
-    <form class="form" onsubmit="return false;">
+    <form class="form" id="contactForm">
 
       <div class="form-grid">
 
@@ -1571,8 +1809,10 @@ footer a:hover{
           <label for="firstName">First Name</label>
           <input
             id="firstName"
+            name="firstName"
             type="text"
             placeholder="Your first name"
+            required
           >
         </div>
 
@@ -1581,8 +1821,10 @@ footer a:hover{
           <label for="lastName">Last Name</label>
           <input
             id="lastName"
+            name="lastName"
             type="text"
             placeholder="Your last name"
+            required
           >
         </div>
 
@@ -1591,8 +1833,10 @@ footer a:hover{
           <label for="email">Email Address</label>
           <input
             id="email"
+            name="email"
             type="email"
             placeholder="Your email"
+            required
           >
         </div>
 
@@ -1601,6 +1845,7 @@ footer a:hover{
           <label for="phone">Phone</label>
           <input
             id="phone"
+            name="phone"
             type="tel"
             placeholder="Your phone number"
           >
@@ -1615,7 +1860,9 @@ footer a:hover{
 
           <textarea
             id="message"
+            name="message"
             placeholder="Tell us about your healthcare needs"
+            required
           ></textarea>
 
         </div>
@@ -1629,6 +1876,8 @@ footer a:hover{
           >
             Submit Inquiry
           </button>
+
+          <div class="form-status" id="formStatus"></div>
 
         </div>
 
@@ -1656,6 +1905,10 @@ footer a:hover{
 
         <div class="footer-brand">
           Alaric Health Services
+        </div>
+
+        <div class="footer-tagline">
+          Where Care Becomes Results.
         </div>
 
         <p>
@@ -1700,6 +1953,11 @@ footer a:hover{
           Houston, Texas
         </p>
 
+        <ul class="footer-hours">
+          <li><span>Mon – Fri</span><span>9AM – 6PM</span></li>
+          <li><span>Sat – Sun</span><span>Closed</span></li>
+        </ul>
+
       </div>
 
 
@@ -1721,6 +1979,50 @@ footer a:hover{
   </div>
 
 </footer>
+
+<div class="to-top" id="toTop" title="Back to top">↑</div>
+
+<script>
+// Mobile menu toggle
+var menuToggle = document.getElementById('menuToggle');
+var mainNav = document.getElementById('mainNav');
+
+menuToggle.addEventListener('click', function () {
+  mainNav.classList.toggle('open');
+});
+
+mainNav.querySelectorAll('a').forEach(function (link) {
+  link.addEventListener('click', function () {
+    mainNav.classList.remove('open');
+  });
+});
+
+// Back to top button
+var toTop = document.getElementById('toTop');
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 400) {
+    toTop.classList.add('show');
+  } else {
+    toTop.classList.remove('show');
+  }
+});
+
+toTop.addEventListener('click', function () {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Contact form (front-end confirmation only)
+var contactForm = document.getElementById('contactForm');
+var formStatus = document.getElementById('formStatus');
+
+contactForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  formStatus.textContent = "Thank you! Your inquiry has been received. We'll get back to you soon.";
+  formStatus.className = "form-status show ok";
+  contactForm.reset();
+});
+</script>
 
 </body>
 </html>
