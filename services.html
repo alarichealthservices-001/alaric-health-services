@@ -3,1168 +3,790 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Healthcare Services | Alaric Health Services</title>
-
-<meta name="description" content="Alaric Health Services provides healthcare revenue cycle management, medical billing, virtual medical assistance, eligibility, prior authorization, patient support and digital growth solutions.">
-
+<meta name="description" content="Alaric Health Services provides healthcare revenue cycle, practice support and digital growth solutions.">
+<title>Alaric Health Services | Healthcare Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#052b43;
-  --deep:#031b2b;
-  --blue:#087c96;
-  --cyan:#19b9bd;
-  --mint:#78dfc1;
-  --ice:#f3fafc;
-  --text:#536b7a;
-  --line:#dcebed;
+  --navy:#062d46;
+  --blue:#087b95;
+  --teal:#13b8bd;
+  --aqua:#eaf9fa;
+  --light:#f5fafc;
+  --text:#536979;
+  --dark:#102d42;
   --white:#fff;
-  --shadow:0 25px 70px rgba(5,43,67,.13);
+  --line:#dcebef;
+  --radius:16px;
+  --radius-sm:10px;
+  --shadow:0 20px 50px rgba(6,45,70,.10);
+  --shadow-lg:0 30px 70px rgba(6,45,70,.16);
 }
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  color:var(--navy);
-  background:#fff;
-  line-height:1.6;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.container{
-  width:min(1180px,92%);
-  margin:auto;
-}
-
-/* HEADER */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid #e3eef1;
-}
-
-.nav{
-  min-height:88px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
-}
-
-.logo img{
-  width:auto;
-  height:63px;
-  max-width:280px;
-  object-fit:contain;
-}
-
-nav{
-  display:flex;
-  align-items:center;
-  gap:21px;
-}
-
-nav a{
-  color:#405a69;
-  font-size:13px;
-  font-weight:700;
-}
-
-nav a:hover{
-  color:var(--cyan);
-}
-
-.nav-cta{
-  padding:12px 18px;
-  color:#fff!important;
-  background:var(--navy);
-  border-radius:7px;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',Arial,sans-serif;color:var(--dark);line-height:1.65;background:#fff;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.brand-font{font-family:'Sora',Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1180px,92%);margin:auto}
+.topbar{background:var(--navy);color:#dceef3;font-size:13px;padding:9px 0}
+.topbar-in{display:flex;justify-content:space-between}
+header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid #edf3f5;transition:.3s ease}
+header.scrolled{box-shadow:0 8px 30px rgba(6,45,70,.08)}
+#scrollProgress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--teal),var(--blue));z-index:1001;transition:width .1s linear}
+.nav{height:88px;display:flex;align-items:center;justify-content:space-between;transition:.3s ease}
+header.scrolled .nav{height:70px}
+header.scrolled .logo{padding:6px 14px}
+header.scrolled .logo img{height:42px}
+.logo{display:flex;align-items:center;background:var(--navy);padding:8px 16px;border-radius:10px}
+.logo img{width:auto;height:52px;max-width:250px;object-fit:contain;display:block}
+nav{display:flex;align-items:center;gap:26px}
+nav a{font-size:14.5px;font-weight:600;color:#385269;position:relative;padding:6px 0}
+nav a:hover{color:var(--teal)}
+nav a.navlink.active{color:var(--navy)}
+nav a.navlink.active:after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--teal);border-radius:2px}
+.nav-btn{background:var(--navy);color:#fff!important;padding:12px 22px;border-radius:8px;font-weight:700}
+.nav-btn:hover{background:var(--blue)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:transparent;border:0;cursor:pointer;padding:6px;z-index:1002}
+.hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#mobileDrawer{position:fixed;top:0;right:-320px;width:290px;height:100vh;background:#fff;z-index:1001;box-shadow:-20px 0 50px rgba(6,45,70,.2);transition:right .3s ease;padding:100px 28px 28px;display:flex;flex-direction:column;gap:6px}
+#mobileDrawer.open{right:0}
+#mobileDrawer a{padding:14px 4px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--line);font-size:15px}
+#mobileDrawer a.nav-btn{border:0;text-align:center;margin-top:14px;border-radius:8px}
+#drawerOverlay{position:fixed;inset:0;background:rgba(6,45,70,.4);z-index:1000;opacity:0;pointer-events:none;transition:.3s}
+#drawerOverlay.open{opacity:1;pointer-events:auto}
 
 /* HERO */
-
 .hero{
-  position:relative;
-  overflow:hidden;
-  padding:105px 0 115px;
-  color:#fff;
-  background:
-    radial-gradient(circle at 85% 15%,rgba(25,185,189,.32),transparent 28%),
-    linear-gradient(135deg,#052b43,#087c96);
+  position:relative;overflow:hidden;color:#fff;padding:100px 0 130px;
+  background:linear-gradient(120deg,#041f33 0%,#063a54 55%,#0a7e94 130%);
 }
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#bdf0f1;font-size:13px;font-weight:600;margin-bottom:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:7px 14px;border-radius:99px}
+.eyebrow span{width:6px;height:6px;border-radius:50%;background:#4be6e2;display:inline-block}
+.hero h1{font-size:clamp(38px,4.6vw,58px);font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:22px}
+.hero p{font-size:18px;color:#d3e6ed;max-width:560px;margin-bottom:34px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:9px;font-weight:700;font-size:14.5px;border:0;cursor:pointer;font-family:'Inter',sans-serif;transition:.25s}
+.primary{background:var(--teal);color:#fff;box-shadow:0 14px 30px rgba(19,184,189,.28)}
+.primary:hover{background:#0da5aa;transform:translateY(-2px)}
+.outline{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.outline:hover{background:#fff;color:var(--navy)}
 
-.hero:after{
-  content:"";
-  position:absolute;
-  right:-100px;
-  top:-100px;
-  width:580px;
-  height:580px;
-  background:url("alaric_high_contrast_text_4k.png") center/contain no-repeat;
-  opacity:.045;
-  filter:grayscale(1) brightness(4);
-}
+/* Hero visual: orbit / network diagram */
+.hero-visual{position:relative;height:460px;display:grid;place-items:center}
+.orbit-ring{position:absolute;border-radius:50%;border:1px dashed rgba(255,255,255,.22)}
+.orbit-ring.r1{width:300px;height:300px;animation:spin 60s linear infinite}
+.orbit-ring.r2{width:420px;height:420px;animation:spin 90s linear infinite reverse}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.orbit-glow{position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(19,184,189,.5),transparent 70%);filter:blur(10px)}
+.orbit-core{position:relative;width:118px;height:118px;border-radius:50%;background:linear-gradient(150deg,#0d8fa3,#0a5b76);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(255,255,255,.06),0 20px 50px rgba(0,0,0,.35);z-index:3}
+.orbit-core span{font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;text-align:center;line-height:1.25}
+.orbit-node{position:absolute;background:#fff;border-radius:13px;box-shadow:var(--shadow-lg);padding:13px 16px;display:flex;align-items:center;gap:10px;z-index:4;width:max-content}
+.orbit-node .icon{width:34px;height:34px;border-radius:9px;margin:0}
+.orbit-node b{font-size:13px;color:var(--navy);font-family:'Sora',sans-serif;font-weight:700;display:block}
+.orbit-node small{font-size:11px;color:var(--text)}
+.n1{top:6px;left:38%}
+.n2{top:42%;right:0}
+.n3{bottom:6px;left:32%}
+.n4{top:42%;left:0}
+.orbit-line{position:absolute;top:0;left:0;width:100%;height:100%;z-index:2}
 
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:850px;
-}
+.stats-strip{margin-top:-56px;position:relative;z-index:5}
+.stats-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(3,1fr)}
+.stat-item{padding:30px 34px;border-right:1px solid var(--line);display:flex;align-items:center;gap:16px}
+.stat-item:last-child{border:0}
+.stat-icon{width:46px;height:46px;border-radius:11px;background:var(--aqua);color:var(--blue);display:grid;place-items:center;flex:none}
+.stat-item strong{display:block;color:var(--navy);font-size:16px;font-family:'Sora',sans-serif}
+.stat-item span{font-size:13px;color:var(--text)}
 
-.eyebrow{
-  margin-bottom:15px;
-  color:var(--cyan);
-  font-size:11px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:2.5px;
-}
+section{padding:110px 0}
+.eyebrow-sm{display:inline-block;font-size:13px;color:var(--blue);font-weight:700;margin-bottom:14px}
+.head{max-width:680px;margin-bottom:50px}
+.head h2{font-size:clamp(32px,3.6vw,44px);line-height:1.15;letter-spacing:-1.2px;color:var(--navy);margin-bottom:16px;font-weight:800}
+.head p{color:var(--text);font-size:16.5px}
 
-.hero .eyebrow{
-  color:#83e8e7;
-}
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-art{height:460px;border-radius:20px;background:linear-gradient(150deg,#0a3550,#0d7e93);position:relative;overflow:hidden}
+.about-art svg{position:absolute;opacity:.14;right:-40px;bottom:-40px;width:340px;height:340px}
+.about-card{position:absolute;left:28px;bottom:28px;background:#fff;padding:24px;border-radius:14px;box-shadow:var(--shadow);width:270px;z-index:2}
+.about-card b{font-size:22px;color:var(--navy);display:block;font-family:'Sora',sans-serif;margin-bottom:4px}
+.about-copy h3{font-size:29px;color:var(--navy);margin-bottom:15px;font-weight:800}
+.about-copy p{color:var(--text);margin-bottom:16px}
+.checks{list-style:none;margin:25px 0}
+.checks li{margin:12px 0;font-weight:600;color:#29475a;display:flex;align-items:center;gap:10px}
+.checks li svg{flex:none;color:var(--teal)}
 
-.hero h1{
-  margin-bottom:23px;
-  font-size:clamp(45px,6vw,70px);
-  line-height:1.02;
-  letter-spacing:-3px;
-}
+/* Services */
+.services{background:var(--light)}
+.category-row{display:flex;align-items:center;gap:14px;margin:55px 0 22px}
+.category-row h3{color:var(--navy);font-size:21px;font-weight:800}
+.category-row::after{content:"";flex:1;height:1px;background:var(--line)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:28px;transition:.3s}
+.service:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.icon{width:46px;height:46px;border-radius:11px;background:var(--aqua);color:var(--blue);display:grid;place-items:center;margin-bottom:18px}
+.service h3{font-size:18px;color:var(--navy);margin-bottom:9px;font-weight:700}
+.service p{font-size:14px;color:var(--text)}
 
-.hero p{
-  max-width:720px;
-  color:#d8eaee;
-  font-size:18px;
-}
+/* Growth */
+.growth{background:#fff}
+.growth-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.growth-card{background:var(--light);padding:28px;border-radius:var(--radius-sm);border:1px solid var(--line);transition:.3s}
+.growth-card:hover{border-color:var(--teal);box-shadow:var(--shadow)}
+.growth-card h3{color:var(--navy);margin-bottom:8px;font-size:17.5px;font-weight:700}
+.growth-card p{font-size:14px;color:var(--text)}
 
-.hero-buttons{
-  display:flex;
-  gap:13px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
-
-.btn{
-  padding:14px 21px;
-  border-radius:7px;
-  font-size:13px;
-  font-weight:900;
-}
-
-.btn-primary{
-  color:#fff;
-  background:var(--cyan);
-}
-
-.btn-secondary{
-  color:#fff;
-  border:1px solid rgba(255,255,255,.3);
-}
-
-/* INTRO */
-
-.intro{
-  padding:90px 0 60px;
-}
-
-.intro-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:end;
-}
-
-.intro h2{
-  font-size:clamp(34px,4vw,52px);
-  line-height:1.08;
-  letter-spacing:-2px;
-}
-
-.intro p{
-  color:var(--text);
-  font-size:16px;
-}
-
-/* SERVICES */
-
-.services{
-  padding:50px 0 110px;
-  background:var(--ice);
-}
-
-.section-heading{
-  max-width:780px;
-  margin-bottom:45px;
-}
-
-.section-heading h2{
-  font-size:clamp(34px,4vw,50px);
-  line-height:1.08;
-  letter-spacing:-2px;
-}
-
-.section-heading p{
-  margin-top:15px;
-  color:var(--text);
-}
-
-/* GRID */
-
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-/* CARD */
-
-.service-card{
-  position:relative;
-  min-height:315px;
-  padding:29px;
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:#fff;
-  transition:.28s ease;
-}
-
-.service-card:hover{
-  transform:translateY(-7px);
-  border-color:#b9e5e7;
-  box-shadow:var(--shadow);
-}
-
-.service-card:after{
-  content:"";
-  position:absolute;
-  width:170px;
-  height:170px;
-  right:-90px;
-  bottom:-90px;
-  border:1px solid #d9eef0;
-  border-radius:50%;
-}
-
-.number{
-  color:var(--cyan);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1.5px;
-}
-
-.service-icon{
-  width:48px;
-  height:48px;
-  display:grid;
-  place-items:center;
-  margin:23px 0 18px;
-  border-radius:11px;
-  color:#fff;
-  background:linear-gradient(135deg,var(--blue),var(--cyan));
-  font-size:11px;
-  font-weight:900;
-}
-
-.service-card h3{
-  margin-bottom:9px;
-  font-size:19px;
-  line-height:1.2;
-}
-
-.service-card p{
-  min-height:67px;
-  color:var(--text);
-  font-size:12.5px;
-}
-
-.service-link{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  margin-top:19px;
-  color:var(--blue);
-  font-size:11px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.8px;
-}
-
-.service-link span{
-  transition:.2s;
-}
-
-.service-card:hover .service-link span{
-  transform:translateX(4px);
-}
-
-/* FEATURED */
-
-.featured{
-  grid-column:span 2;
-  color:#fff;
-  background:
-    radial-gradient(circle at 85% 20%,rgba(25,185,189,.25),transparent 32%),
-    linear-gradient(135deg,#052b43,#087c96);
-  border:0;
-}
-
-.featured p{
-  color:#c9e3e8;
-}
-
-.featured .number{
-  color:#83e8e7;
-}
-
-.featured .service-link{
-  color:#8ce8e6;
-}
-
-.featured:after{
-  border-color:rgba(255,255,255,.12);
-}
-
-/* WORKFLOW */
-
-.workflow{
-  padding:105px 0;
-}
-
-.workflow-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:75px;
-  align-items:center;
-}
-
-.workflow h2{
-  font-size:clamp(34px,4vw,50px);
-  line-height:1.08;
-  letter-spacing:-2px;
-}
-
-.workflow p{
-  margin-top:16px;
-  color:var(--text);
-}
-
-.flow-box{
-  padding:28px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:#fff;
-  box-shadow:var(--shadow);
-}
-
-.flow-row{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  padding:16px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.flow-row:last-child{
-  border-bottom:0;
-}
-
-.flow-number{
-  width:34px;
-  height:34px;
-  display:grid;
-  place-items:center;
-  flex:none;
-  border-radius:9px;
-  color:#fff;
-  background:var(--navy);
-  font-size:10px;
-  font-weight:900;
-}
-
-.flow-row strong{
-  display:block;
-  font-size:13px;
-}
-
-.flow-row span{
-  color:var(--text);
-  font-size:10px;
-}
+/* Why */
+.why{background:var(--light)}
+.why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.why-box{background:var(--navy);color:#fff;border-radius:var(--radius);padding:46px}
+.why-box .eyebrow-sm{color:#7fe3e3}
+.why-box h2{font-size:33px;line-height:1.2;margin-bottom:16px;font-weight:800}
+.why-box p{color:#c8dce5}
+.benefits{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.benefit{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px;display:flex;gap:14px}
+.benefit .icon{margin-bottom:0;flex:none}
+.benefit b{display:block;color:var(--navy);margin-bottom:5px;font-size:15px}
+.benefit p{font-size:13.5px;color:var(--text)}
+.benefit-row{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.benefit-row:nth-last-child(-n+1),.benefit-row:nth-last-child(2){border-bottom:0}
+.benefit-row .icon{width:40px;height:40px;background:transparent;color:var(--teal);border-radius:0;margin-bottom:0;flex:none;border:1.5px solid var(--line);display:grid;place-items:center;border-radius:10px}
+.benefit-row b{display:block;color:var(--navy);margin-bottom:4px;font-size:15px}
+.benefit-row p{font-size:13.5px;color:var(--text)}
 
 /* CTA */
+.cta{background:linear-gradient(120deg,#052e47,#087c91)}
+.cta-in{display:flex;justify-content:space-between;align-items:center;gap:35px;color:#fff}
+.cta h2{font-size:clamp(30px,3.6vw,42px);line-height:1.15;margin-bottom:10px;font-weight:800}
+.cta p{color:#d2e8ed;max-width:600px}
 
-.cta{
-  padding:100px 0;
-  color:#fff;
-  background:
-    radial-gradient(circle at 85% 25%,rgba(25,185,189,.2),transparent 30%),
-    var(--deep);
+/* Help band */
+.help{background:#fff}
+.help-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.help-card{border:1px solid var(--line);border-radius:var(--radius);padding:32px;transition:.3s}
+.help-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.help-icon{width:52px;height:52px;border-radius:13px;background:var(--navy);color:#7fe3e3;display:grid;place-items:center;margin-bottom:20px}
+.help-card h3{color:var(--navy);font-size:19px;margin-bottom:8px;font-weight:700}
+.help-card p{font-size:14px;color:var(--text);margin-bottom:16px}
+.help-link{font-size:14px;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:6px}
+.help-link:hover{color:var(--teal)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.contact h2{font-size:40px;line-height:1.15;color:var(--navy);margin-bottom:15px;font-weight:800}
+.contact-info p{color:var(--text)}
+.contact-line{margin:22px 0;display:flex;gap:14px;align-items:flex-start}
+.contact-line .icon{margin-bottom:0;flex:none}
+.contact-line b{display:block;color:var(--navy)}
+.contact-line span{color:var(--text);font-size:14px}
+.form{background:var(--light);border:1px solid var(--line);padding:35px;border-radius:var(--radius)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12.5px;font-weight:700;color:var(--navy)}
+.field input,.field textarea{border:1px solid #d4e4e9;background:#fff;border-radius:8px;padding:14px;font:inherit;outline:none}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--teal)}
+
+footer{background:#041e30;color:#fff;padding:65px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:60px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer h3{margin-bottom:14px;font-size:15px}
+footer p,footer a{color:#a9c1cc;font-size:14px}
+footer a{display:block;margin:8px 0}
+.footer-brand{font-size:22px;font-weight:800;margin-bottom:12px;font-family:'Sora',sans-serif}
+.copy{display:flex;justify-content:space-between;padding-top:20px;color:#76919d;font-size:12px}
+
+/* Chat widget */
+#chatToggle{position:fixed;bottom:26px;right:26px;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--blue));border:0;box-shadow:0 14px 32px rgba(6,45,70,.32);cursor:pointer;display:grid;place-items:center;z-index:1000;color:#fff}
+#chatToggle:hover{transform:translateY(-2px)}
+#chatToggle svg{width:26px;height:26px}
+#chatDot{position:absolute;top:6px;right:6px;width:11px;height:11px;background:#ff5a5f;border-radius:50%;border:2px solid #fff}
+#chatPanel{position:fixed;bottom:100px;right:26px;width:360px;max-width:calc(100vw - 32px);height:500px;max-height:calc(100vh - 140px);background:#fff;border-radius:18px;box-shadow:0 30px 80px rgba(6,45,70,.35);display:flex;flex-direction:column;overflow:hidden;z-index:1000;opacity:0;transform:translateY(16px) scale(.97);pointer-events:none;transition:.22s ease}
+#chatPanel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.chat-head{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px}
+.chat-avatar{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);display:grid;place-items:center;flex:none}
+.chat-head b{font-size:14.5px;font-family:'Sora',sans-serif}
+.chat-head span{font-size:12px;color:#bfe4e8;display:flex;align-items:center;gap:5px}
+.chat-head span:before{content:"";width:7px;height:7px;background:#4be6a0;border-radius:50%;display:inline-block}
+.chat-close{margin-left:auto;background:transparent;border:0;color:#fff;cursor:pointer;opacity:.8;padding:4px}
+.chat-close:hover{opacity:1}
+.chat-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--light)}
+.msg{max-width:82%;padding:11px 14px;border-radius:13px;font-size:13.5px;line-height:1.5}
+.msg.bot{background:#fff;border:1px solid var(--line);color:var(--dark);align-self:flex-start;border-bottom-left-radius:4px}
+.msg.user{background:var(--teal);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;font-weight:600}
+.chat-quick{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 12px;background:var(--light)}
+.chat-chip{background:#fff;border:1px solid var(--line);color:var(--navy);font-size:12px;font-weight:600;padding:8px 12px;border-radius:99px;cursor:pointer;transition:.2s}
+.chat-chip:hover{border-color:var(--teal);color:var(--teal)}
+.chat-input{display:flex;gap:8px;padding:14px;border-top:1px solid var(--line);background:#fff}
+.chat-input input{flex:1;border:1px solid var(--line);border-radius:10px;padding:11px 14px;font:inherit;font-size:13.5px;outline:none}
+.chat-input input:focus{border-color:var(--teal)}
+.chat-send{width:42px;height:42px;border-radius:10px;background:var(--navy);color:#fff;border:0;cursor:pointer;display:grid;place-items:center;flex:none}
+.chat-send:hover{background:var(--blue)}
+@media(max-width:600px){
+  #chatPanel{right:16px;bottom:88px;width:calc(100vw - 32px)}
+  #chatToggle{right:16px;bottom:16px}
 }
 
-.cta-grid{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:50px;
+@media(prefers-reduced-motion:reduce){
+  .orbit-ring{animation:none}
 }
 
-.cta h2{
-  max-width:750px;
-  font-size:clamp(35px,4vw,52px);
-  line-height:1.08;
-  letter-spacing:-2px;
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in-view{opacity:1;transform:translateY(0)}
+.reveal-group>*{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal-group.in-view>*{opacity:1;transform:translateY(0)}
+.reveal-group.in-view>*:nth-child(1){transition-delay:.05s}
+.reveal-group.in-view>*:nth-child(2){transition-delay:.12s}
+.reveal-group.in-view>*:nth-child(3){transition-delay:.19s}
+.reveal-group.in-view>*:nth-child(4){transition-delay:.26s}
+.reveal-group.in-view>*:nth-child(5){transition-delay:.33s}
+.reveal-group.in-view>*:nth-child(6){transition-delay:.4s}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal-group>*{opacity:1!important;transform:none!important;transition:none!important}
 }
 
-.cta p{
-  max-width:700px;
-  margin-top:14px;
-  color:#b9d3da;
+/* Back to top */
+#toTop{position:fixed;bottom:26px;left:26px;width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 10px 26px rgba(6,45,70,.16);display:grid;place-items:center;cursor:pointer;color:var(--navy);z-index:998;opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s}
+#toTop.show{opacity:1;transform:translateY(0);pointer-events:auto}
+#toTop:hover{background:var(--navy);color:#fff}
+
+@media(max-width:900px){
+  nav{display:none}
+  .hamburger{display:flex}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .about-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
+  .service-grid,.growth-grid,.help-grid{grid-template-columns:1fr 1fr}
+  .stats-card{grid-template-columns:1fr}
+  .stat-item{border-right:0;border-bottom:1px solid var(--line)}
+  .stat-item:last-child{border:0}
+  .cta-in{flex-direction:column;align-items:flex-start}
 }
-
-.cta-button{
-  padding:16px 24px;
-  white-space:nowrap;
-  border-radius:7px;
-  color:#fff;
-  background:var(--cyan);
-  font-size:13px;
-  font-weight:900;
-}
-
-/* FOOTER */
-
-footer{
-  padding:55px 0 25px;
-  color:#fff;
-  background:#031b2b;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr;
-  gap:55px;
-  padding-bottom:35px;
-  border-bottom:1px solid rgba(255,255,255,.12);
-}
-
-.footer-brand{
-  margin-bottom:10px;
-  font-size:22px;
-  font-weight:900;
-}
-
-footer h3{
-  margin-bottom:13px;
-  font-size:15px;
-}
-
-footer p,
-footer a{
-  color:#9ebbc5;
-  font-size:13px;
-}
-
-footer a{
-  display:block;
-  margin:7px 0;
-}
-
-footer a:hover{
-  color:#fff;
-}
-
-.copy{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding-top:20px;
-  color:#718e99;
-  font-size:11px;
-}
-
-/* MOBILE */
-
-@media(max-width:950px){
-
-  nav{
-    display:none;
-  }
-
-  .service-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .featured{
-    grid-column:span 2;
-  }
-
-  .workflow-grid,
-  .intro-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  .cta-grid{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-}
-
-@media(max-width:620px){
-
-  .logo img{
-    height:55px;
-  }
-
-  .hero{
-    padding:75px 0 85px;
-  }
-
-  .hero h1{
-    letter-spacing:-1.5px;
-  }
-
-  .intro,
-  .services,
-  .workflow,
-  .cta{
-    padding:70px 0;
-  }
-
-  .service-grid{
-    grid-template-columns:1fr;
-  }
-
-  .featured{
-    grid-column:span 1;
-  }
-
-  .copy{
-    flex-direction:column;
-  }
+@media(max-width:600px){
+  .topbar-in{justify-content:center}.topbar-in span:last-child{display:none}
+  .logo img{height:48px;max-width:200px}
+  .hero{padding:70px 0 100px}
+  section{padding:75px 0}
+  .service-grid,.growth-grid,.benefits,.form-grid,.footer-grid,.help-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}.about-art{height:320px}.why-box{padding:32px}
+  .copy{flex-direction:column;gap:8px}
 }
 </style>
 </head>
-
 <body>
+<div id="scrollProgress"></div>
 
-<!-- HEADER -->
-
-<header>
-
-<div class="container nav">
-
-<a href="index.html" class="logo">
-<img src="alaric_high_contrast_text_4k.png"
-     alt="Alaric Health Services">
-</a>
-
-<nav>
-
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="index.html#growth">Digital Growth</a>
-<a href="index.html#why">Why Alaric</a>
-<a href="index.html#contact" class="nav-cta">Get Started</a>
-
-</nav>
-
+<div class="topbar">
+  <div class="container topbar-in">
+    <span>Professional Healthcare Solutions</span>
+    <span>Focused on Better Care &amp; Better Results</span>
+  </div>
 </div>
 
+<header id="siteHeader">
+  <div class="container nav">
+    <a class="logo" href="#home">
+      <img src="alaric_high_contrast_text_4k.png" alt="Alaric Health Services">
+    </a>
+    <nav>
+      <a href="#home" class="navlink">Home</a>
+      <a href="#about" class="navlink">About</a>
+      <a href="#services" class="navlink">Services</a>
+      <a href="#growth" class="navlink">Digital Growth</a>
+      <a href="#why" class="navlink">Why Alaric</a>
+      <a href="#contact" class="nav-btn">Get Started</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
+<div id="drawerOverlay"></div>
+<nav id="mobileDrawer">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#growth">Digital Growth</a>
+  <a href="#why">Why Alaric</a>
+  <a href="#contact" class="nav-btn">Get Started</a>
+</nav>
 
-<!-- HERO -->
+<main>
 
-<section class="hero">
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow"><span></span>Healthcare, revenue &amp; growth support</div>
+      <h1>Helping healthcare organizations perform better.</h1>
+      <p>Alaric Health Services provides professional healthcare support, revenue cycle solutions and digital growth services designed to help providers operate efficiently, strengthen performance and focus on patient care.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#contact">Request a Consultation</a>
+        <a class="btn outline" href="#services">Explore Our Services</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="orbit-line" viewBox="0 0 460 460" fill="none">
+        <path d="M230 90 L230 168" stroke="rgba(255,255,255,.28)" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <path d="M340 230 L280 230" stroke="rgba(255,255,255,.28)" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <path d="M230 370 L230 292" stroke="rgba(255,255,255,.28)" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <path d="M120 230 L180 230" stroke="rgba(255,255,255,.28)" stroke-width="1.5" stroke-dasharray="3 5"/>
+      </svg>
+      <div class="orbit-ring r2"></div>
+      <div class="orbit-ring r1"></div>
+      <div class="orbit-glow"></div>
+      <div class="orbit-core"><span>Alaric<br>Health</span></div>
 
-<div class="container">
-
-<div class="hero-content">
-
-<div class="eyebrow">
-Alaric Health Services • Healthcare Operations
-</div>
-
-<h1>
-Healthcare services built around better operations.
-</h1>
-
-<p>
-From revenue cycle management and medical billing to
-virtual medical assistance, patient support, eligibility,
-authorization coordination and digital growth — Alaric
-helps healthcare organizations build stronger workflows.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#services" class="btn btn-primary">
-Explore Services
-</a>
-
-<a href="index.html#contact" class="btn btn-secondary">
-Request a Consultation
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+      <div class="orbit-node n1">
+        <div class="icon" style="background:var(--aqua);color:var(--blue)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <div><b>Medical Billing</b><small>Claims &amp; revenue</small></div>
+      </div>
+      <div class="orbit-node n2">
+        <div class="icon" style="background:var(--aqua);color:var(--blue)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0112 0v2"/></svg></div>
+        <div><b>Credentialing</b><small>Payer enrollment</small></div>
+      </div>
+      <div class="orbit-node n3">
+        <div class="icon" style="background:var(--aqua);color:var(--blue)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div>
+        <div><b>Digital Growth</b><small>Visibility &amp; leads</small></div>
+      </div>
+      <div class="orbit-node n4">
+        <div class="icon" style="background:var(--aqua);color:var(--blue)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><b>Prior Auth</b><small>Faster approvals</small></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<!-- INTRO -->
-
-<section class="intro">
-
-<div class="container intro-grid">
-
-<div>
-
-<div class="eyebrow">
-One Healthcare Partner
+<div class="container stats-strip">
+  <div class="stats-card reveal-group">
+    <div class="stat-item">
+      <div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0112 5.5 5.5 5.5 0 0121.5 12c-2.5 4.65-9.5 9-9.5 9z"/></svg></div>
+      <div><strong>Healthcare Focused</strong><span>Solutions built around modern healthcare operations.</span></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+      <div><strong>Revenue &amp; Operations</strong><span>Structured support designed to improve efficiency.</span></div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div>
+      <div><strong>Growth Mindset</strong><span>Digital strategies that help practices build visibility.</span></div>
+    </div>
+  </div>
 </div>
 
-<h2>
-Connected solutions across the healthcare workflow.
-</h2>
-
-</div>
-
-<p>
-Healthcare operations are interconnected. Patient access
-affects revenue. Billing affects cash flow. Administrative
-work affects provider capacity. Our services are designed
-to support these connected areas through organized,
-professional workflows.
-</p>
-
-</div>
-
+<section id="about">
+  <div class="container about-grid reveal">
+    <div class="about-art">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff"><path d="M12 2L2 7v6c0 5.5 3.8 9.7 10 11 6.2-1.3 10-5.5 10-11V7l-10-5z"/></svg>
+      <div class="about-card"><b>Alaric Health Services</b><span>Professional support for modern healthcare organizations.</span></div>
+    </div>
+    <div class="about-copy">
+      <div class="eyebrow-sm">About Alaric</div>
+      <h3>A dependable partner for healthcare businesses.</h3>
+      <p>Alaric Health Services is focused on helping healthcare organizations manage critical operational functions while creating opportunities for stronger performance and sustainable growth.</p>
+      <p>Our approach combines healthcare support, revenue cycle expertise and digital solutions under one professional service partner.</p>
+      <ul class="checks">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Provider-centered solutions</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Professional and responsive support</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Efficiency-focused workflows</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Long-term partnership approach</li>
+      </ul>
+      <a href="#contact" class="btn primary">Connect With Our Team</a>
+    </div>
+  </div>
 </section>
-
-
-<!-- SERVICES -->
 
 <section class="services" id="services">
-
-<div class="container">
-
-<div class="section-heading">
-
-<div class="eyebrow">
-Our Services
-</div>
-
-<h2>
-A complete healthcare operations ecosystem.
-</h2>
-
-<p>
-Explore each service to see how Alaric can support your
-practice, medical group or healthcare organization.
-</p>
-
-</div>
-
-
-<div class="service-grid">
-
-
-<!-- RCM -->
-
-<a href="rcm.html" class="service-card featured">
-
-<div class="number">01 / REVENUE CYCLE</div>
-
-<div class="service-icon">RCM</div>
-
-<h3>
-Revenue Cycle Management
-</h3>
-
-<p>
-End-to-end revenue cycle support designed to improve
-workflow visibility, billing performance, claims
-management and financial operations.
-</p>
-
-<div class="service-link">
-Explore RCM <span>→</span>
-</div>
-
-</a>
-
-
-<!-- MEDICAL BILLING -->
-
-<a href="medical-billing.html" class="service-card">
-
-<div class="number">02 / BILLING</div>
-
-<div class="service-icon">BIL</div>
-
-<h3>
-Medical Billing
-</h3>
-
-<p>
-Professional medical billing support covering claim
-submission, follow-up, payment posting, denials and
-billing workflow coordination.
-</p>
-
-<div class="service-link">
-Explore Billing <span>→</span>
-</div>
-
-</a>
-
-
-<!-- VMA -->
-
-<a href="vma.html" class="service-card">
-
-<div class="number">03 / VIRTUAL SUPPORT</div>
-
-<div class="service-icon">VMA</div>
-
-<h3>
-Virtual Medical Assistance
-</h3>
-
-<p>
-Virtual support for patient communication, scheduling,
-administrative coordination, referrals, insurance
-workflows and provider support.
-</p>
-
-<div class="service-link">
-Explore VMA <span>→</span>
-</div>
-
-</a>
-
-
-<!-- ELIGIBILITY -->
-
-<a href="eligibility.html" class="service-card">
-
-<div class="number">04 / PATIENT ACCESS</div>
-
-<div class="service-icon">ELG</div>
-
-<h3>
-Eligibility & Benefits Verification
-</h3>
-
-<p>
-Support for insurance eligibility, benefits information,
-coverage verification and patient-access workflows.
-</p>
-
-<div class="service-link">
-Explore Eligibility <span>→</span>
-</div>
-
-</a>
-
-
-<!-- PRIOR AUTH -->
-
-<a href="prior-authorization.html" class="service-card">
-
-<div class="number">05 / AUTHORIZATION</div>
-
-<div class="service-icon">PA</div>
-
-<h3>
-Prior Authorization
-</h3>
-
-<p>
-Organized authorization coordination, documentation
-tracking, status follow-up and workflow support.
-</p>
-
-<div class="service-link">
-Explore Authorization <span>→</span>
-</div>
-
-</a>
-
-
-<!-- PATIENT HELP DESK -->
-
-<a href="patient-help-desk.html" class="service-card">
-
-<div class="number">06 / PATIENT EXPERIENCE</div>
-
-<div class="service-icon">PHD</div>
-
-<h3>
-Patient Help Desk
-</h3>
-
-<p>
-Professional patient-facing administrative support for
-questions, scheduling, communication and routing.
-</p>
-
-<div class="service-link">
-Explore Patient Support <span>→</span>
-</div>
-
-</a>
-
-
-<!-- REFERRALS -->
-
-<a href="referral-management.html" class="service-card">
-
-<div class="number">07 / COORDINATION</div>
-
-<div class="service-icon">REF</div>
-
-<h3>
-Referral Management
-</h3>
-
-<p>
-Referral intake, tracking, documentation coordination,
-status follow-up and specialist scheduling support.
-</p>
-
-<div class="service-link">
-Explore Referrals <span>→</span>
-</div>
-
-</a>
-
-
-<!-- AR -->
-
-<a href="accounts-receivable.html" class="service-card">
-
-<div class="number">08 / REVENUE</div>
-
-<div class="service-icon">AR</div>
-
-<h3>
-Accounts Receivable Management
-</h3>
-
-<p>
-Structured support for outstanding balances, aging
-worklists, claim follow-up and revenue-cycle visibility.
-</p>
-
-<div class="service-link">
-Explore A/R <span>→</span>
-</div>
-
-</a>
-
-
-<!-- DENIALS -->
-
-<a href="denial-management.html" class="service-card">
-
-<div class="number">09 / CLAIMS</div>
-
-<div class="service-icon">DEN</div>
-
-<h3>
-Denial Management
-</h3>
-
-<p>
-Denial identification, categorization, follow-up and
-workflow coordination to help reduce preventable revenue
-leakage.
-</p>
-
-<div class="service-link">
-Explore Denials <span>→</span>
-</div>
-
-</a>
-
-
-<!-- CODING -->
-
-<a href="medical-coding.html" class="service-card">
-
-<div class="number">10 / CODING</div>
-
-<div class="service-icon">COD</div>
-
-<h3>
-Medical Coding Support
-</h3>
-
-<p>
-Coding workflow support and coordination designed to
-strengthen documentation and billing processes.
-</p>
-
-<div class="service-link">
-Explore Coding <span>→</span>
-</div>
-
-</a>
-
-
-<!-- DIGITAL -->
-
-<a href="digital-growth.html" class="service-card">
-
-<div class="number">11 / DIGITAL GROWTH</div>
-
-<div class="service-icon">DIG</div>
-
-<h3>
-Digital Marketing & Growth
-</h3>
-
-<p>
-Healthcare-focused digital growth including website
-development, SEO, social media and professional
-advertising strategy.
-</p>
-
-<div class="service-link">
-Explore Digital Growth <span>→</span>
-</div>
-
-</a>
-
-
-<!-- PRACTICE -->
-
-<a href="practice-support.html" class="service-card">
-
-<div class="number">12 / PRACTICE OPERATIONS</div>
-
-<div class="service-icon">OPS</div>
-
-<h3>
-Practice Administrative Support
-</h3>
-
-<p>
-Operational support for healthcare organizations
-looking to streamline recurring administrative workloads.
-</p>
-
-<div class="service-link">
-Explore Practice Support <span>→</span>
-</div>
-
-</a>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <div class="head">
+      <div class="eyebrow-sm">Our Services</div>
+      <h2>Complete support for the modern healthcare practice.</h2>
+      <p>From revenue cycle operations to provider support, Alaric helps simplify the processes behind successful healthcare organizations.</p>
+    </div>
+
+    <div class="category-row"><h3>Revenue Cycle Management</h3></div>
+    <div class="service-grid reveal-group">
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Medical Billing</h3><p>Professional billing support designed to improve claim accuracy, reduce administrative burden and support healthier revenue cycles.</p></div>
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><h3>Accounts Receivable Management</h3><p>Structured A/R follow-up and account resolution support focused on improving visibility and reducing outstanding balances.</p></div>
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Claims Management &amp; Follow-Up</h3><p>Organized claims workflows and payer follow-up designed to keep revenue moving through the billing cycle.</p></div>
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/><path d="M12 8v5M12 16h.01"/></svg></div><h3>Denial Management &amp; Appeals</h3><p>Identify denial issues, coordinate follow-up and support appropriate appeals to help reduce preventable revenue loss.</p></div>
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div><h3>Payment Posting</h3><p>Accurate payment posting support that helps maintain organized financial records and cleaner revenue cycle reporting.</p></div>
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M14 9h3M14 13h3M6 17h12"/></svg></div><h3>Eligibility &amp; Benefits Verification</h3><p>Insurance verification support designed to improve front-end accuracy and reduce avoidable billing issues.</p></div>
+    </div>
+
+    <div class="category-row"><h3>Provider &amp; Practice Support</h3></div>
+    <div class="service-grid">
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Prior Authorization</h3><p>Organized authorization support, documentation coordination and payer follow-up to help reduce administrative delays.</p></div>
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 7h.01M7 3h11a2 2 0 012 2v11l-7 7-13-13V5a2 2 0 012-2z"/></svg></div><h3>Medical Coding</h3><p>Professional coding support focused on accurate documentation, consistency and compliant billing workflows.</p></div>
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0112 0v2"/><path d="M16 9l1.5 1.5L21 7"/></svg></div><h3>Credentialing &amp; Enrollment</h3><p>Provider credentialing and enrollment assistance designed to support payer participation and practice operations.</p></div>
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div><h3>Practice Administrative Support</h3><p>Flexible administrative assistance designed to help healthcare teams manage day-to-day operational demands.</p></div>
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Insurance Verification</h3><p>Front-end insurance support designed to help practices maintain accurate patient and payer information.</p></div>
+      <div class="service"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="9" r="3"/><path d="M2 20c0-3 2.7-5 6-5s6 2 6 5M13 20c0-2.5 2.2-4.2 4.9-4.2S22 17.5 22 20"/></svg></div><h3>Patient &amp; Payer Coordination</h3><p>Professional coordination support that helps streamline communication across important practice workflows.</p></div>
+    </div>
+  </div>
 </section>
 
-
-<!-- WORKFLOW -->
-
-<section class="workflow">
-
-<div class="container workflow-grid">
-
-<div>
-
-<div class="eyebrow">
-How We Work
-</div>
-
-<h2>
-One workflow. Clear ownership. Better visibility.
-</h2>
-
-<p>
-Alaric solutions can be structured around your existing
-practice workflows, systems and operational requirements.
-</p>
-
-</div>
-
-
-<div class="flow-box">
-
-<div class="flow-row">
-<div class="flow-number">01</div>
-<div>
-<strong>Understand</strong>
-<span>Review your current workflow and operational needs.</span>
-</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-number">02</div>
-<div>
-<strong>Structure</strong>
-<span>Define tasks, ownership and workflow priorities.</span>
-</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-number">03</div>
-<div>
-<strong>Execute</strong>
-<span>Support recurring healthcare administrative operations.</span>
-</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-number">04</div>
-<div>
-<strong>Monitor</strong>
-<span>Track status, follow-ups and operational activity.</span>
-</div>
-</div>
-
-<div class="flow-row">
-<div class="flow-number">05</div>
-<div>
-<strong>Improve</strong>
-<span>Identify opportunities for stronger processes and results.</span>
-</div>
-</div>
-
-</div>
-
-</div>
-
+<section id="growth" class="growth">
+  <div class="container">
+    <div class="head">
+      <div class="eyebrow-sm">Healthcare Digital Growth</div>
+      <h2>Build a stronger digital presence for your practice.</h2>
+      <p>Healthcare organizations need more than operational support. Our digital services help practices strengthen visibility, credibility and growth.</p>
+    </div>
+    <div class="growth-grid reveal-group">
+      <div class="growth-card"><h3>Digital Marketing</h3><p>Healthcare-focused marketing strategies designed to strengthen brand visibility and connect practices with their target audience.</p></div>
+      <div class="growth-card"><h3>Website Design &amp; Development</h3><p>Professional, responsive websites designed to communicate services clearly and create a credible digital experience.</p></div>
+      <div class="growth-card"><h3>Search Engine Optimization</h3><p>Search-focused strategies designed to improve organic visibility and help practices reach relevant audiences.</p></div>
+      <div class="growth-card"><h3>Social Media Management</h3><p>Consistent professional social media management including content planning, publishing and audience engagement.</p></div>
+      <div class="growth-card"><h3>Paid Advertising</h3><p>Targeted digital advertising campaigns designed to increase visibility and generate qualified opportunities.</p></div>
+      <div class="growth-card"><h3>Practice Growth &amp; Lead Generation</h3><p>Integrated digital strategies designed to help healthcare practices build awareness and create new opportunities.</p></div>
+    </div>
+  </div>
 </section>
 
-
-<!-- CTA -->
+<section id="why" class="why">
+  <div class="container why-grid reveal">
+    <div class="why-box">
+      <div class="eyebrow-sm">Why Alaric</div>
+      <h2>Built around your operation. Focused on your results.</h2>
+      <p>We aim to become a reliable extension of your healthcare team by combining professional service, clear communication and practical solutions.</p>
+    </div>
+    <div class="benefits reveal-group">
+      <div class="benefit-row"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".5" fill="currentColor"/></svg></div><div><b>Accuracy First</b><p>Attention to detail across critical healthcare workflows.</p></div></div>
+      <div class="benefit-row"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div><div><b>Clear Communication</b><p>Professional communication keeps your team informed.</p></div></div>
+      <div class="benefit-row"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div><div><b>Scalable Support</b><p>Services designed to adapt as your organization grows.</p></div></div>
+      <div class="benefit-row"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div><b>Efficiency Focused</b><p>Processes designed to reduce unnecessary administrative workload.</p></div></div>
+      <div class="benefit-row"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div><div><b>Professional Mindset</b><p>A service experience built around reliability and accountability.</p></div></div>
+      <div class="benefit-row"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="9" r="3"/><path d="M2 20c0-3 2.7-5 6-5s6 2 6 5M13 20c0-2.5 2.2-4.2 4.9-4.2S22 17.5 22 20"/></svg></div><div><b>Long-Term Partnership</b><p>We focus on building lasting relationships, not one-time transactions.</p></div></div>
+    </div>
+  </div>
+</section>
 
 <section class="cta">
-
-<div class="container cta-grid">
-
-<div>
-
-<div class="eyebrow">
-Let's Build Better Healthcare Operations
-</div>
-
-<h2>
-Tell us where your practice needs support.
-</h2>
-
-<p>
-Whether you need revenue-cycle support, virtual
-assistance, patient access services or digital growth,
-Alaric can help map the right solution for your needs.
-</p>
-
-</div>
-
-<a href="index.html#contact" class="cta-button">
-Request a Consultation
-</a>
-
-</div>
-
+  <div class="container cta-in reveal">
+    <div>
+      <h2>Let's build better results together.</h2>
+      <p>Connect with Alaric Health Services to discuss your healthcare support and growth needs.</p>
+    </div>
+    <a href="#contact" class="btn primary">Get Started</a>
+  </div>
 </section>
 
+<section class="help">
+  <div class="container">
+    <div class="head" style="margin-bottom:38px">
+      <div class="eyebrow-sm">We're Here to Help</div>
+      <h2>A few ways to reach the Alaric team.</h2>
+    </div>
+    <div class="help-grid reveal-group">
+      <div class="help-card">
+        <div class="help-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <h3>Email Our Team</h3>
+        <p>Send us your questions and we'll get back to you as soon as possible.</p>
+        <a class="help-link" href="mailto:alarichealthservcies@gmail.com">Send an email →</a>
+      </div>
+      <div class="help-card">
+        <div class="help-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>Request a Consultation</h3>
+        <p>Tell us about your practice and we'll walk you through how Alaric can help.</p>
+        <a class="help-link" href="#contact">Fill out the form →</a>
+      </div>
+      <div class="help-card">
+        <div class="help-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Explore Our Services</h3>
+        <p>See the full range of revenue cycle and practice support solutions we offer.</p>
+        <a class="help-link" href="#services">View services →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- FOOTER -->
+<section id="contact">
+  <div class="container contact-grid reveal">
+    <div class="contact-info">
+      <div class="eyebrow-sm">Contact Alaric</div>
+      <h2>Let's start a conversation.</h2>
+      <p>Have questions about our services? Our contact details will be updated as additional information becomes available.</p>
+      <div class="contact-line">
+        <div class="icon" style="width:38px;height:38px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <div><b>Email</b><span>alarichealthservcies@gmail.com</span></div>
+      </div>
+      <div class="contact-line">
+        <div class="icon" style="width:38px;height:38px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.6a16 16 0 006.4 6.4l1.1-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
+        <div><b>Phone</b><span>Coming Soon</span></div>
+      </div>
+      <div class="contact-line">
+        <div class="icon" style="width:38px;height:38px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><b>Address</b><span>Coming Soon</span></div>
+      </div>
+    </div>
+    <form class="form">
+      <div class="form-grid">
+        <div class="field">
+          <label>First Name</label>
+          <input type="text" placeholder="Your first name">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" placeholder="Your last name">
+        </div>
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" placeholder="Your email">
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input type="tel" placeholder="Your phone number">
+        </div>
+        <div class="field full">
+          <label>How Can We Help?</label>
+          <textarea placeholder="Tell us about your healthcare needs"></textarea>
+        </div>
+        <div class="field full">
+          <button type="button" class="btn primary">Submit Inquiry</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
 
 <footer>
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-
-<div class="footer-brand">
-Alaric Health Services
-</div>
-
-<p>
-Professional healthcare solutions focused on better
-operations, growth and results.
-</p>
-
-</div>
-
-
-<div>
-
-<h3>Explore</h3>
-
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="services.html">Services</a>
-<a href="rcm.html">Revenue Cycle Management</a>
-<a href="medical-billing.html">Medical Billing</a>
-<a href="vma.html">Virtual Medical Assistance</a>
-
-</div>
-
-
-<div>
-
-<h3>Contact</h3>
-
-<p>alarichealthservcies@gmail.com</p>
-<p>Phone: Coming Soon</p>
-<p>Address: Coming Soon</p>
-
-</div>
-
-</div>
-
-
-<div class="copy">
-
-<span>
-© 2026 Alaric Health Services. All Rights Reserved.
-</span>
-
-<span>
-Where Care Becomes Results.
-</span>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Alaric Health Services</div>
+        <p>Professional healthcare solutions focused on better operations, better growth and better results.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#growth">Digital Growth</a>
+        <a href="#why">Why Alaric</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>alarichealthservcies@gmail.com</p>
+        <p>Phone: Coming Soon</p>
+        <p>Address: Coming Soon</p>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 Alaric Health Services. All Rights Reserved.</span>
+      <span>Where Care Becomes Results.</span>
+    </div>
+  </div>
 </footer>
+
+<!-- Back to top -->
+<button id="toTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Live FAQ Chat Assistant -->
+<button id="chatToggle" aria-label="Open chat assistant">
+  <span id="chatDot"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+</button>
+
+<div id="chatPanel">
+  <div class="chat-head">
+    <div class="chat-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+    <div>
+      <b>Alaric Assistant</b><br>
+      <span>Online &middot; Typically replies instantly</span>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Close chat">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="msg bot">Hi! I'm the Alaric Assistant. Ask me about medical billing, RCM, prior authorization, eligibility, credentialing, or how to book a consultation.</div>
+  </div>
+  <div class="chat-quick" id="chatQuick">
+    <button class="chat-chip" data-q="How does medical billing work?">Medical Billing</button>
+    <button class="chat-chip" data-q="How do I book a consultation?">Book a Consultation</button>
+    <button class="chat-chip" data-q="What is prior authorization?">Prior Authorization</button>
+    <button class="chat-chip" data-q="How can I contact Alaric?">Contact Info</button>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Type your question...">
+    <button class="chat-send" id="chatSend" aria-label="Send message">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var kb = [
+    {k:["bill","billing","invoice","charge","claim submit"],
+     a:"Our Medical Billing service handles claim submission, coding accuracy checks and follow-up to help reduce denials and speed up payments. Want us to walk you through how it works for your practice? Just fill out the contact form and our team will reach out."},
+    {k:["appointment","book","schedule","consultation","meeting","call","demo"],
+     a:"You can request a consultation any time — scroll down to the Contact section, fill in your details and how we can help, and our team will get back to you shortly. We don't take live bookings through this chat yet, but every form submission is reviewed personally."},
+    {k:["prior auth","authorization","pre-auth","preauth"],
+     a:"Our Prior Authorization service handles documentation coordination and payer follow-up so approvals move faster and administrative delays are reduced."},
+    {k:["eligibility","insurance verif","benefits verif","coverage"],
+     a:"We offer Eligibility & Benefits Verification — confirming a patient's insurance coverage upfront so your front-end billing stays accurate and avoidable denials go down."},
+    {k:["denial","appeal","rejected claim"],
+     a:"Denial Management & Appeals is one of our core RCM services — we identify why a claim was denied, coordinate follow-up, and support appropriate appeals to recover revenue that would otherwise be lost."},
+    {k:["credential","enrollment","payer enroll"],
+     a:"Credentialing & Enrollment support helps providers get set up and stay active with payers, handling the paperwork and follow-up that credentialing usually involves."},
+    {k:["coding","cpt","icd"],
+     a:"Our Medical Coding service focuses on accurate, consistent, compliant documentation to support clean claims and fewer billing issues down the line."},
+    {k:["rcm","revenue cycle"],
+     a:"Revenue Cycle Management is at the core of what we do — from claims and A/R follow-up to payment posting and denial management, all designed to keep revenue moving smoothly."},
+    {k:["a/r","accounts receivable","outstanding balance"],
+     a:"Our Accounts Receivable Management service focuses on structured follow-up on outstanding balances, improving visibility into what's owed and speeding up resolution."},
+    {k:["market","seo","website","social media","advertis","lead gen","digital growth"],
+     a:"Beyond operations, we also offer Digital Growth services — marketing, SEO, social media management, paid advertising and website design to help practices build visibility."},
+    {k:["price","cost","how much","fee","rate"],
+     a:"Pricing depends on your practice's size and the specific services you need, so we don't publish flat rates. Send us a quick note through the Contact form and we'll follow up with details suited to your practice."},
+    {k:["contact","email","phone","reach you","address","location"],
+     a:"You can reach us at alarichealthservcies@gmail.com, or fill out the contact form below and we'll get back to you. Phone and office address will be published here soon."},
+    {k:["service","what do you offer","what do you do","help with"],
+     a:"We support healthcare practices with two main areas: Revenue Cycle Management (billing, claims, A/R, denials, coding) and Provider & Practice Support (credentialing, prior auth, eligibility, admin support) — plus Digital Growth services. Check the Services section above for the full list."},
+    {k:["hi","hello","hey","salam","assalam"],
+     a:"Hello! Happy to help — ask me anything about billing, prior authorization, eligibility, RCM, or how to get started with Alaric."},
+    {k:["thank","thanks","shukriya"],
+     a:"You're welcome! If anything else comes up, I'm right here."},
+    {k:["human","real person","agent","talk to someone"],
+     a:"Of course — the fastest way to reach our team directly is by emailing alarichealthservcies@gmail.com or filling out the Contact form below."}
+  ];
+
+  function findAnswer(text){
+    var t = text.toLowerCase();
+    var best = null, bestScore = 0;
+    kb.forEach(function(entry){
+      var score = 0;
+      entry.k.forEach(function(kw){ if(t.indexOf(kw) !== -1) score++; });
+      if(score > bestScore){ bestScore = score; best = entry; }
+    });
+    if(best) return best.a;
+    return "I don't have a specific answer for that yet, but our team will. Please fill out the Contact form below, or email alarichealthservcies@gmail.com and we'll get back to you directly.";
+  }
+
+  var toggle = document.getElementById('chatToggle');
+  var panel = document.getElementById('chatPanel');
+  var closeBtn = document.getElementById('chatClose');
+  var body = document.getElementById('chatBody');
+  var input = document.getElementById('chatInput');
+  var sendBtn = document.getElementById('chatSend');
+  var dot = document.getElementById('chatDot');
+  var quick = document.getElementById('chatQuick');
+
+  function addMsg(text, who){
+    var d = document.createElement('div');
+    d.className = 'msg ' + who;
+    d.textContent = text;
+    body.appendChild(d);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function ask(text){
+    if(!text.trim()) return;
+    addMsg(text, 'user');
+    input.value = '';
+    setTimeout(function(){
+      addMsg(findAnswer(text), 'bot');
+    }, 450);
+  }
+
+  toggle.addEventListener('click', function(){
+    panel.classList.toggle('open');
+    if(dot) dot.style.display = 'none';
+    if(panel.classList.contains('open')) input.focus();
+  });
+  closeBtn.addEventListener('click', function(){ panel.classList.remove('open'); });
+  sendBtn.addEventListener('click', function(){ ask(input.value); });
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') ask(input.value); });
+  quick.addEventListener('click', function(e){
+    var btn = e.target.closest('.chat-chip');
+    if(btn) ask(btn.getAttribute('data-q'));
+  });
+})();
+
+/* Site interactions: scroll progress, header shrink, mobile drawer, scrollspy, reveal-on-scroll, back-to-top */
+(function(){
+  var header = document.getElementById('siteHeader');
+  var progress = document.getElementById('scrollProgress');
+  var toTop = document.getElementById('toTop');
+  var hamburger = document.getElementById('hamburgerBtn');
+  var drawer = document.getElementById('mobileDrawer');
+  var overlay = document.getElementById('drawerOverlay');
+
+  function onScroll(){
+    var st = window.scrollY || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if(progress) progress.style.width = (height > 0 ? (st / height) * 100 : 0) + '%';
+    if(header){ if(st > 30) header.classList.add('scrolled'); else header.classList.remove('scrolled'); }
+    if(toTop){ if(st > 500) toTop.classList.add('show'); else toTop.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  function openDrawer(){ drawer.classList.add('open'); overlay.classList.add('open'); hamburger.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow=''; }
+  if(hamburger){
+    hamburger.addEventListener('click', function(){
+      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    });
+    overlay.addEventListener('click', closeDrawer);
+    drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeDrawer); });
+  }
+
+  /* Scrollspy */
+  var sections = ['home','about','services','growth','why','contact'];
+  var navlinks = document.querySelectorAll('.navlink');
+  if('IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var id = entry.target.id;
+          navlinks.forEach(function(link){
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) spy.observe(el);
+    });
+
+    /* Reveal on scroll */
+    var revealEls = document.querySelectorAll('.reveal, .reveal-group');
+    var reveal = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    revealEls.forEach(function(el){ reveal.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal, .reveal-group').forEach(function(el){ el.classList.add('in-view'); });
+  }
+})();
+</script>
 
 </body>
 </html>
