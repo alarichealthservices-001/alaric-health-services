@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Healthcare Services | Alaric Health Services</title>
+
+<meta name="description" content="Alaric Health Services provides Revenue Cycle Management, Virtual Medical Assistance, Provider Support and Healthcare Digital Growth solutions.">
+
+<style>
+:root{
+  --navy:#062d46;
+  --blue:#087b95;
+  --cyan:#18b9bf;
+  --mint:#dff7f7;
+  --bg:#f5fafc;
+  --text:#536979;
+  --white:#fff;
+  --line:#dcebef;
+  --shadow:0 25px 70px rgba(6,45,70,.10);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--navy);
+  line-height:1.6;
+  background:#fff;
+}
+
+a{text-decoration:none;color:inherit}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #e8f0f3;
+}
+
+.nav{
+  height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo img{
+  height:70px;
+  width:auto;
+  max-width:285px;
+  object-fit:contain;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+
+nav a{
+  font-size:14px;
+  font-weight:700;
+  color:#385269;
+}
+
+nav a:hover{color:var(--cyan)}
+
+.nav-btn{
+  background:var(--navy);
+  color:#fff!important;
+  padding:12px 20px;
+  border-radius:7px;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:115px 0 125px;
+  background:
+    radial-gradient(circle at 85% 25%,rgba(24,185,191,.25),transparent 30%),
+    linear-gradient(135deg,#052d46,#087b95);
+  color:#fff;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  right:-170px;
+  top:-190px;
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:2.5px;
+  font-size:12px;
+  font-weight:800;
+  color:var(--cyan);
+  margin-bottom:14px;
+}
+
+.hero .eyebrow{color:#76e5e6}
+
+.hero h1{
+  max-width:900px;
+  font-size:clamp(45px,6vw,72px);
+  line-height:1.02;
+  letter-spacing:-3px;
+  margin-bottom:23px;
+}
+
+.hero p{
+  max-width:760px;
+  font-size:18px;
+  color:#d9ebef;
+}
+
+/* INTRO */
+
+.intro{
+  padding:90px 0 70px;
+}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:70px;
+  align-items:end;
+}
+
+h2{
+  font-size:clamp(35px,4vw,52px);
+  line-height:1.08;
+  letter-spacing:-2px;
+}
+
+.intro p{
+  color:var(--text);
+  font-size:16px;
+}
+
+/* SERVICE SECTION */
+
+.service{
+  padding:95px 0;
+  border-top:1px solid #edf3f5;
+}
+
+.service:nth-child(even){
+  background:var(--bg);
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.service.reverse .service-grid{
+  direction:rtl;
+}
+
+.service.reverse .service-copy,
+.service.reverse .visual{
+  direction:ltr;
+}
+
+.service-copy h2{
+  margin-bottom:18px;
+}
+
+.service-copy > p{
+  color:var(--text);
+  margin-bottom:27px;
+}
+
+.service-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 25px;
+  list-style:none;
+}
+
+.service-list li{
+  color:#304e60;
+  font-size:14px;
+  font-weight:700;
+  padding:8px 0;
+  border-bottom:1px solid #e5eef1;
+}
+
+.service-list li:before{
+  content:"✓";
+  color:var(--cyan);
+  font-weight:900;
+  margin-right:8px;
+}
+
+/* VISUAL */
+
+.visual{
+  min-height:430px;
+  position:relative;
+  border-radius:22px;
+  padding:28px;
+  background:
+    linear-gradient(145deg,#062d46,#087b95);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.visual:before{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  right:-90px;
+  bottom:-100px;
+}
+
+/* KPI */
+
+.kpis{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  position:relative;
+  z-index:2;
+}
+
+.kpi{
+  padding:15px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+}
+
+.kpi small{
+  display:block;
+  color:#a9d4dc;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.kpi strong{
+  display:block;
+  color:#fff;
+  font-size:22px;
+  margin-top:3px;
+}
+
+/* FLOW */
+
+.flow{
+  position:absolute;
+  left:30px;
+  right:30px;
+  bottom:35px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  z-index:3;
+}
+
+.flow-step{
+  width:68px;
+  height:68px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  font-size:10px;
+  font-weight:800;
+  color:#fff;
+  background:rgba(255,255,255,.11);
+  border:2px solid rgba(116,228,230,.7);
+}
+
+.flow-line{
+  height:2px;
+  flex:1;
+  background:linear-gradient(90deg,var(--cyan),rgba(255,255,255,.25));
+}
+
+/* BAR GRAPH */
+
+.chart{
+  position:absolute;
+  left:35px;
+  right:35px;
+  bottom:35px;
+  height:210px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-around;
+  gap:14px;
+  z-index:2;
+}
+
+.bar{
+  width:12%;
+  border-radius:8px 8px 0 0;
+  background:linear-gradient(to top,#13b8bd,#8ce8e8);
+  box-shadow:0 0 22px rgba(24,185,191,.18);
+}
+
+.bar:nth-child(1){height:42%}
+.bar:nth-child(2){height:58%}
+.bar:nth-child(3){height:48%}
+.bar:nth-child(4){height:72%}
+.bar:nth-child(5){height:65%}
+.bar:nth-child(6){height:88%}
+
+/* FUNNEL */
+
+.funnel{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:35px;
+  width:82%;
+  z-index:3;
+}
+
+.funnel-row{
+  margin:7px auto;
+  height:39px;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  background:linear-gradient(90deg,#13b8bd,#64d8d9);
+}
+
+.funnel-row:nth-child(1){width:100%}
+.funnel-row:nth-child(2){width:82%}
+.funnel-row:nth-child(3){width:64%}
+.funnel-row:nth-child(4){width:46%}
+
+/* TIMELINE */
+
+.timeline{
+  position:absolute;
+  left:38px;
+  right:38px;
+  bottom:60px;
+  z-index:3;
+}
+
+.timeline-line{
+  height:3px;
+  background:linear-gradient(90deg,var(--cyan),rgba(255,255,255,.2));
+}
+
+.timeline-items{
+  display:flex;
+  justify-content:space-between;
+}
+
+.t-dot{
+  width:22px;
+  height:22px;
+  margin-top:-12px;
+  border-radius:50%;
+  background:var(--cyan);
+  border:5px solid #087b95;
+}
+
+.t-labels{
+  display:flex;
+  justify-content:space-between;
+  color:#d5edf0;
+  font-size:10px;
+  margin-top:13px;
+}
+
+/* VMA */
+
+.vma-panel{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  position:absolute;
+  left:30px;
+  right:30px;
+  bottom:30px;
+}
+
+.vma-box{
+  padding:19px;
+  border-radius:12px;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.vma-box strong{
+  color:#fff;
+  display:block;
+  font-size:15px;
+}
+
+.vma-box span{
+  color:#b9dbe1;
+  font-size:11px;
+}
+
+/* CTA */
+
+.cta{
+  padding:90px 0;
+  background:#062d46;
+  color:#fff;
+}
+
+.cta-grid{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
+}
+
+.cta h2{
+  max-width:700px;
+}
+
+.cta p{
+  color:#c8dce4;
+  margin-top:13px;
+  max-width:680px;
+}
+
+.cta-btn{
+  background:var(--cyan);
+  color:#fff;
+  padding:16px 25px;
+  border-radius:7px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+/* FOOTER */
+
+footer{
+  background:#041e30;
+  color:#fff;
+  padding:55px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:55px;
+  padding-bottom:35px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.footer-brand{
+  font-size:23px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+footer h3{margin-bottom:13px}
+
+footer p,
+footer a{
+  color:#a9c1cc;
+  font-size:14px;
+}
+
+footer a{
+  display:block;
+  margin:7px 0;
+}
+
+.copy{
+  display:flex;
+  justify-content:space-between;
+  padding-top:20px;
+  color:#76919d;
+  font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  nav{display:none}
+
+  .intro-grid,
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .service.reverse .service-grid{
+    direction:ltr;
+  }
+
+  .visual{
+    min-height:390px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cta-grid{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:600px){
+
+  .nav{height:80px}
+
+  .logo img{height:58px}
+
+  .hero{
+    padding:75px 0 85px;
+  }
+
+  .hero h1{
+    letter-spacing:-1.5px;
+  }
+
+  .intro,
+  .service{
+    padding:70px 0;
+  }
+
+  .service-list{
+    grid-template-columns:1fr;
+  }
+
+  .kpis{
+    grid-template-columns:1fr;
+  }
+
+  .kpi{
+    padding:10px;
+  }
+
+  .flow{
+    left:15px;
+    right:15px;
+  }
+
+  .flow-step{
+    width:54px;
+    height:54px;
+    font-size:8px;
+  }
+
+  .vma-panel{
+    left:18px;
+    right:18px;
+    bottom:20px;
+  }
+
+  .vma-box{
+    padding:13px;
+  }
+
+  .copy{
+    flex-direction:column;
+    gap:8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+
+<a href="index.html" class="logo">
+<img src="alaric_high_contrast_text_4k.png"
+alt="Alaric Health Services">
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="index.html#growth">Digital Growth</a>
+<a href="index.html#why">Why Alaric</a>
+<a href="index.html#contact" class="nav-btn">Get Started</a>
+</nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+<div class="container">
+
+<div class="eyebrow">Healthcare • Revenue • Growth</div>
+
+<h1>
+Comprehensive healthcare solutions designed around performance.
+</h1>
+
+<p>
+Alaric Health Services combines Revenue Cycle Management,
+Virtual Medical Assistance, provider support and digital
+growth solutions to help healthcare organizations operate
+more efficiently and grow with confidence.
+</p>
+
+</div>
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+<div class="container intro-grid">
+
+<div>
+<div class="eyebrow">Our Capabilities</div>
+<h2>
+Support across the healthcare business cycle.
+</h2>
+</div>
+
+<p>
+From the first patient interaction to claims, payments,
+A/R and digital growth, our services are designed to support
+the workflows that matter to modern healthcare organizations.
+</p>
+
+</div>
+</section>
+
+
+<!-- RCM -->
+
+<section class="service">
+<div class="container service-grid">
+
+<div class="service-copy">
+
+<div class="eyebrow">01 • Revenue Cycle Management</div>
+
+<h2>
+End-to-end RCM support.
+</h2>
+
+<p>
+A comprehensive approach to revenue cycle operations,
+covering critical front-end, billing, claims, payment,
+A/R and denial workflows.
+</p>
+
+<ul class="service-list">
+<li>Patient Registration</li>
+<li>Eligibility & Benefits</li>
+<li>Insurance Verification</li>
+<li>Prior Authorization</li>
+<li>Referral Management</li>
+<li>Medical Coding</li>
+<li>Charge Capture</li>
+<li>Claims Submission</li>
+<li>Claim Scrubbing</li>
+<li>Clearinghouse Rejections</li>
+<li>Claims Follow-Up</li>
+<li>Insurance A/R</li>
+<li>Patient A/R</li>
+<li>Denial Management</li>
+<li>Denial Appeals</li>
+<li>Payment Posting</li>
+<li>ERA / EOB Processing</li>
+<li>Reconciliation</li>
+<li>Patient Statements</li>
+<li>Credit Balance Support</li>
+<li>RCM Reporting</li>
+<li>Revenue Optimization</li>
+</ul>
+
+</div>
+
+
+<div class="visual">
+
+<div class="kpis">
+<div class="kpi">
+<small>Front End</small>
+<strong>01</strong>
+</div>
+<div class="kpi">
+<small>Claims</small>
+<strong>02</strong>
+</div>
+<div class="kpi">
+<small>A/R</small>
+<strong>03</strong>
+</div>
+</div>
+
+<div class="flow">
+
+<div class="flow-step">PATIENT</div>
+<div class="flow-line"></div>
+<div class="flow-step">ELIGIBILITY</div>
+<div class="flow-line"></div>
+<div class="flow-step">CLAIM</div>
+<div class="flow-line"></div>
+<div class="flow-step">PAYMENT</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- BILLING -->
+
+<section class="service">
+<div class="container service-grid">
+
+<div class="visual">
+
+<div class="kpis">
+<div class="kpi">
+<small>Workflow</small>
+<strong>24/7</strong>
+</div>
+<div class="kpi">
+<small>Process</small>
+<strong>01</strong>
+</div>
+<div class="kpi">
+<small>Focus</small>
+<strong>AR</strong>
+</div>
+</div>
+
+<div class="chart">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
+
+</div>
+
+
+<div class="service-copy">
+
+<div class="eyebrow">02 • Medical Billing</div>
+
+<h2>
+A cleaner path from charge to payment.
+</h2>
+
+<p>
+Billing support focused on organized charge entry,
+claim preparation, submission, follow-up and payment
+workflows.
+</p>
+
+<ul class="service-list">
+<li>Charge Entry</li>
+<li>Charge Capture</li>
+<li>Claim Preparation</li>
+<li>Electronic Claims</li>
+<li>Claim Status</li>
+<li>Payer Follow-Up</li>
+<li>Corrected Claims</li>
+<li>Secondary Claims</li>
+<li>Rejections</li>
+<li>Billing Review</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- DENIAL -->
+
+<section class="service">
+<div class="container service-grid">
+
+<div class="service-copy">
+
+<div class="eyebrow">03 • Denial Management</div>
+
+<h2>
+Turn denial data into better workflows.
+</h2>
+
+<p>
+Denial management support designed around identification,
+categorization, follow-up, appeals and prevention.
+</p>
+
+<ul class="service-list">
+<li>Denial Identification</li>
+<li>Denial Categorization</li>
+<li>Root Cause Review</li>
+<li>Eligibility Denials</li>
+<li>Authorization Denials</li>
+<li>Coding Denials</li>
+<li>Documentation Issues</li>
+<li>Appeal Support</li>
+<li>Payer Follow-Up</li>
+<li>Denial Prevention</li>
+</ul>
+
+</div>
+
+
+<div class="visual">
+
+<div class="kpis">
+<div class="kpi">
+<small>Identify</small>
+<strong>01</strong>
+</div>
+<div class="kpi">
+<small>Analyze</small>
+<strong>02</strong>
+</div>
+<div class="kpi">
+<small>Resolve</small>
+<strong>03</strong>
+</div>
+</div>
+
+<div class="flow">
+
+<div class="flow-step">DENIAL</div>
+<div class="flow-line"></div>
+<div class="flow-step">REVIEW</div>
+<div class="flow-line"></div>
+<div class="flow-step">APPEAL</div>
+<div class="flow-line"></div>
+<div class="flow-step">RESOLVE</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- AR -->
+
+<section class="service">
+<div class="container service-grid">
+
+<div class="visual">
+
+<div class="kpis">
+<div class="kpi">
+<small>Current</small>
+<strong>01</strong>
+</div>
+<div class="kpi">
+<small>30–60</small>
+<strong>02</strong>
+</div>
+<div class="kpi">
+<small>60+</small>
+<strong>03</strong>
+</div>
+</div>
+
+<div class="chart">
+<div class="bar" style="height:78%"></div>
+<div class="bar" style="height:58%"></div>
+<div class="bar" style="height:43%"></div>
+<div class="bar" style="height:68%"></div>
+<div class="bar" style="height:36%"></div>
+<div class="bar" style="height:25%"></div>
+</div>
+
+</div>
+
+
+<div class="service-copy">
+
+<div class="eyebrow">04 • Accounts Receivable</div>
+
+<h2>
+Focused A/R management.
+</h2>
+
+<p>
+Structured follow-up across insurance and patient A/R
+to help healthcare organizations maintain visibility
+over outstanding balances.
+</p>
+
+<ul class="service-list">
+<li>Insurance A/R</li>
+<li>Patient A/R</li>
+<li>Aging Review</li>
+<li>Payer Follow-Up</li>
+<li>Outstanding Claims</li>
+<li>Underpayment Follow-Up</li>
+<li>Balance Review</li>
+<li>Collection Workflow</li>
+<li>A/R Reporting</li>
+<li>Revenue Leakage Review</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ELIGIBILITY -->
+
+<section class="service">
+<div class="container service-grid">
+
+<div class="service-copy">
+
+<div class="eyebrow">05 • Patient Access</div>
+
+<h2>
+Better front-end processes.
+</h2>
+
+<p>
+Front-end support designed to improve information accuracy
+before services are delivered and claims are submitted.
+</p>
+
+<ul class="service-list">
+<li>Patient Registration</li>
+<li>Demographic Verification</li>
+<li>Eligibility Verification</li>
+<li>Benefits Verification</li>
+<li>Insurance Verification</li>
+<li>Pre-Registration</li>
+<li>Referral Management</li>
+<li>Prior Authorization</li>
+<li>Payer Information</li>
+<li>Patient Communication</li>
+</ul>
+
+</div>
+
+
+<div class="visual">
+
+<div class="kpis">
+<div class="kpi">
+<small>Patient</small>
+<strong>01</strong>
+</div>
+<div class="kpi">
+<small>Coverage</small>
+<strong>02</strong>
+</div>
+<div class="kpi">
+<small>Ready</small>
+<strong>03</strong>
+</div>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-items">
+<div class="t-dot"></div>
+<div class="t-dot"></div>
+<div class="t-dot"></div>
+<div class="t-dot"></div>
+</div>
+
+<div class="timeline-line"></div>
+
+<div class="t-labels">
+<span>Register</span>
+<span>Verify</span>
+<span>Authorize</span>
+<span>Ready</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- VMA -->
+
+<section class="service">
+<div class="container service-grid">
+
+<div class="visual">
+
+<div class="kpis">
+<div class="kpi">
+<small>Remote</small>
+<strong>VMA</strong>
+</div>
+<div class="kpi">
+<small>Support</small>
+<strong>24/7</strong>
+</div>
+<div class="kpi">
+<small>Care</small>
+<strong>01</strong>
+</div>
+</div>
+
+<div class="vma-panel">
+
+<div class="vma-box">
+<strong>Patient Help Desk</strong>
+<span>Patient communication</span>
+</div>
+
+<div class="vma-box">
+<strong>Scheduling</strong>
+<span>Appointment coordination</span>
+</div>
+
+<div class="vma-box">
+<strong>Follow-Up</strong>
+<span>Patient workflow support</span>
+</div>
+
+<div class="vma-box">
+<strong>Administration</strong>
+<span>Remote practice support</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="service-copy">
+
+<div class="eyebrow">06 • Virtual Medical Assistance</div>
+
+<h2>
+A virtual extension of your practice.
+</h2>
+
+<p>
+Remote administrative and patient-support services designed
+to help practices handle everyday workloads efficiently.
+</p>
+
+<ul class="service-list">
+<li>Virtual Medical Assistant</li>
+<li>Patient Help Desk</li>
+<li>Appointment Scheduling</li>
+<li>Patient Calls</li>
+<li>Patient Follow-Up</li>
+<li>Front Desk Support</li>
+<li>Insurance Verification</li>
+<li>Referral Coordination</li>
+<li>Documentation Support</li>
+<li>Provider Assistance</li>
+<li>Data Entry</li>
+<li>Administrative Support</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- PROVIDER -->
+
+<section class="service">
+<div class="container service-grid">
+
+<div class="service-copy">
+
+<div class="eyebrow">07 • Provider & Practice Support</div>
+
+<h2>
+Supporting the people behind the practice.
+</h2>
+
+<p>
+Administrative support for provider credentialing,
+enrollment and other practice operations.
+</p>
+
+<ul class="service-list">
+<li>Provider Credentialing</li>
+<li>Provider Enrollment</li>
+<li>CAQH Support</li>
+<li>Payer Enrollment</li>
+<li>Revalidation Support</li>
+<li>Practice Administration</li>
+<li>Documentation Organization</li>
+<li>Enrollment Follow-Up</li>
+</ul>
+
+</div>
+
+
+<div class="visual">
+
+<div class="kpis">
+<div class="kpi">
+<small>Provider</small>
+<strong>01</strong>
+</div>
+<div class="kpi">
+<small>CAQH</small>
+<strong>02</strong>
+</div>
+<div class="kpi">
+<small>Payer</small>
+<strong>03</strong>
+</div>
+</div>
+
+<div class="flow">
+
+<div class="flow-step">PROVIDER</div>
+<div class="flow-line"></div>
+<div class="flow-step">CAQH</div>
+<div class="flow-line"></div>
+<div class="flow-step">PAYER</div>
+<div class="flow-line"></div>
+<div class="flow-step">ENROLL</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- DIGITAL GROWTH -->
+
+<section class="service">
+<div class="container service-grid">
+
+<div class="visual">
+
+<div class="kpis">
+<div class="kpi">
+<small>Reach</small>
+<strong>01</strong>
+</div>
+<div class="kpi">
+<small>Leads</small>
+<strong>02</strong>
+</div>
+<div class="kpi">
+<small>Growth</small>
+<strong>03</strong>
+</div>
+</div>
+
+<div class="funnel">
+
+<div class="funnel-row">VISIBILITY</div>
+<div class="funnel-row">ENGAGEMENT</div>
+<div class="funnel-row">LEADS</div>
+<div class="funnel-row">GROWTH</div>
+
+</div>
+
+</div>
+
+
+<div class="service-copy">
+
+<div class="eyebrow">08 • Healthcare Digital Growth</div>
+
+<h2>
+Build visibility. Create opportunities.
+</h2>
+
+<p>
+Digital services designed to help healthcare organizations
+strengthen their online presence and compete in a modern
+digital marketplace.
+</p>
+
+<ul class="service-list">
+<li>Healthcare Digital Marketing</li>
+<li>SEO</li>
+<li>Website Development</li>
+<li>Website Design</li>
+<li>Social Media Management</li>
+<li>Content Strategy</li>
+<li>Paid Advertising</li>
+<li>Lead Generation</li>
+<li>Practice Growth</li>
+<li>Digital Brand Strategy</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- FINAL CTA -->
+
+<section class="cta">
+
+<div class="container cta-grid">
+
+<div>
+<div class="eyebrow">Let's Work Together</div>
+
+<h2>
+Build a stronger healthcare operation with Alaric.
+</h2>
+
+<p>
+Tell us where your organization needs support and let's
+explore the right solution for your practice.
+</p>
+</div>
+
+<a href="index.html#contact" class="cta-btn">
+Request a Consultation
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<div class="footer-brand">
+Alaric Health Services
+</div>
+
+<p>
+Professional healthcare solutions focused on better
+operations, growth and results.
+</p>
+</div>
+
+<div>
+<h3>Explore</h3>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="index.html#growth">Digital Growth</a>
+<a href="index.html#why">Why Alaric</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>alarichealthservcies@gmail.com</p>
+<p>Phone: Coming Soon</p>
+<p>Address: Coming Soon</p>
+</div>
+
+</div>
+
+<div class="copy">
+<span>© 2026 Alaric Health Services. All Rights Reserved.</span>
+<span>Where Care Becomes Results.</span>
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
