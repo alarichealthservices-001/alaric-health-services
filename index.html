@@ -991,7 +991,9 @@ footer a:hover{
   justify-content:space-between;
   align-items:center;
   gap:20px;
+  margin-top:35px;
   padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.12);
 }
 
 .professional-footer .footer-bottom p{
@@ -1012,6 +1014,8 @@ footer a:hover{
   margin:0;
   color:#8fa9b4;
   font-size:12px;
+  text-decoration:none;
+  transition:color .2s ease;
 }
 
 .professional-footer .footer-bottom-links a:hover{
@@ -1019,7 +1023,65 @@ footer a:hover{
 }
 
 
-/* MOBILE */
+/* =========================================================
+   PROFESSIONAL FOOTER BOTTOM
+   ========================================================= */
+
+.professional-footer .footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-top:35px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.professional-footer .footer-bottom p{
+  margin:0;
+  color:#718c98;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.professional-footer .footer-bottom-links{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.professional-footer .footer-bottom-links a{
+  display:inline-block;
+  margin:0;
+  color:#8fa9b4;
+  font-size:12px;
+  text-decoration:none;
+}
+
+.professional-footer .footer-bottom-links a:hover{
+  color:#ffffff;
+}
+
+
+/* =========================================================
+   PROFESSIONAL FOOTER DISCLAIMER
+   ========================================================= */
+
+.professional-footer .footer-disclaimer{
+  max-width:850px;
+  margin:22px auto 0;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  color:#718c98;
+  font-size:11px;
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   MOBILE FOOTER
+   ========================================================= */
 
 @media(max-width:600px){
 
@@ -1035,7 +1097,16 @@ footer a:hover{
     gap:5px;
   }
 
+  .professional-footer .footer-disclaimer{
+    text-align:left;
+    margin-top:20px;
+    padding-top:15px;
+    font-size:10.5px;
+  }
+
 }
+
+
 
 
 
