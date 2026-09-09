@@ -529,6 +529,80 @@ section{
   font-size:22px;
 }
 
+/* SOFTWARE - EHR/EMR */
+
+.software{
+  background:var(--light);
+}
+
+.software-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.software-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:26px 20px;
+  text-align:center;
+  transition:.3s ease;
+}
+
+.software-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:transparent;
+}
+
+.software-card .tag-badge{
+  display:inline-block;
+  background:var(--aqua);
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  padding:4px 10px;
+  border-radius:20px;
+  margin-bottom:12px;
+}
+
+.software-card h3{
+  font-size:16px;
+  color:var(--navy);
+}
+
+/* SPECIALTIES */
+
+.specialties{
+  background:#fff;
+}
+
+.specialties-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.specialty-chip{
+  background:var(--light);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:18px 10px;
+  text-align:center;
+  font-weight:700;
+  color:var(--navy);
+  font-size:14px;
+  transition:.3s ease;
+}
+
+.specialty-chip:hover{
+  background:var(--navy);
+  color:#fff;
+  transform:translateY(-4px);
+}
+
 /* GROWTH */
 
 .growth{
@@ -1222,6 +1296,11 @@ footer a:hover{
     grid-template-columns:1fr 1fr;
   }
 
+  .software-grid,
+  .specialties-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
   .trust-grid{
     grid-template-columns:1fr;
   }
@@ -1295,6 +1374,11 @@ footer a:hover{
   .benefits,
   .form-grid,
   .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .software-grid,
+  .specialties-grid{
     grid-template-columns:1fr;
   }
 
@@ -1385,6 +1469,8 @@ footer a:hover{
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#software">Software</a>
+      <a href="#specialties">Specialties</a>
       <a href="#growth">Digital Growth</a>
       <a href="#why">Why Alaric</a>
       <a href="#contact" class="nav-btn">Get Started</a>
@@ -1686,6 +1772,124 @@ footer a:hover{
           communication across important practice workflows.
         </p>
       </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SOFTWARE / EHR-EMR -->
+
+<section id="software" class="software">
+
+  <div class="container">
+
+    <div class="head">
+
+      <div class="label">
+        Software We Work With
+      </div>
+
+      <h2>
+        Compatible with leading EHR &amp; EMR systems.
+      </h2>
+
+      <p>
+        Our billing and revenue cycle team works directly within the EHR
+        and EMR platforms your practice already uses — no workflow
+        disruption, no extra software to manage.
+      </p>
+
+    </div>
+
+    <div class="software-grid">
+
+      <div class="software-card">
+        <span class="tag-badge">EHR</span>
+        <h3>Epic</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EHR</span>
+        <h3>Cerner (Oracle Health)</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EMR</span>
+        <h3>eClinicalWorks</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EMR</span>
+        <h3>Athenahealth</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EHR</span>
+        <h3>Kareo (Tebra)</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EMR</span>
+        <h3>AdvancedMD</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EHR</span>
+        <h3>NextGen Healthcare</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EMR</span>
+        <h3>DrChrono</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SPECIALTIES -->
+
+<section id="specialties" class="specialties">
+
+  <div class="container">
+
+    <div class="head">
+
+      <div class="label">
+        Who We Serve
+      </div>
+
+      <h2>
+        Specialties we support.
+      </h2>
+
+      <p>
+        Our revenue cycle expertise spans across a wide range of medical
+        specialties and practice types.
+      </p>
+
+    </div>
+
+    <div class="specialties-grid">
+
+      <div class="specialty-chip">Family Medicine</div>
+      <div class="specialty-chip">Internal Medicine</div>
+      <div class="specialty-chip">Cardiology</div>
+      <div class="specialty-chip">Dermatology</div>
+      <div class="specialty-chip">Orthopedics</div>
+      <div class="specialty-chip">Pediatrics</div>
+      <div class="specialty-chip">OB-GYN</div>
+      <div class="specialty-chip">Mental &amp; Behavioral Health</div>
+      <div class="specialty-chip">Physical Therapy</div>
+      <div class="specialty-chip">Urgent Care</div>
+      <div class="specialty-chip">Chiropractic</div>
+      <div class="specialty-chip">Dental</div>
 
     </div>
 
@@ -2147,6 +2351,8 @@ footer a:hover{
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
         <a href="#services">Our Services</a>
+        <a href="#software">Software</a>
+        <a href="#specialties">Specialties</a>
         <a href="#growth">Digital Growth</a>
         <a href="#why">Why Alaric</a>
         <a href="#contact">Contact Us</a>
