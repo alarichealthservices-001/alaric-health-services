@@ -1220,6 +1220,150 @@ footer a:hover{
 }
 
 
+/* SOCIAL ICONS - shared style for topbar and footer */
+
+.social-links{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.social-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  color:#fff;
+  transition:.25s ease;
+}
+
+.topbar .social-icon{
+  background:rgba(255,255,255,.12);
+}
+
+.topbar .social-icon:hover{
+  background:var(--teal);
+  transform:translateY(-2px);
+}
+
+.topbar .social-icon svg{
+  width:15px;
+  height:15px;
+}
+
+footer .social-icon{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+}
+
+footer .social-icon:hover{
+  background:var(--teal);
+  border-color:var(--teal);
+  transform:translateY(-3px);
+}
+
+footer .social-icon svg{
+  width:16px;
+  height:16px;
+}
+
+.footer-social{
+  margin-top:18px;
+}
+
+/* FOLLOW & SCAN */
+
+.follow{
+  background:var(--light);
+}
+
+.follow-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+
+.qr-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:34px;
+  display:flex;
+  align-items:center;
+  gap:26px;
+  transition:.3s ease;
+}
+
+.qr-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:transparent;
+}
+
+.qr-card a.qr-link{
+  flex-shrink:0;
+  display:block;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--line);
+}
+
+.qr-card img{
+  display:block;
+  width:150px;
+  height:auto;
+}
+
+.qr-card-info .platform-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:10px;
+}
+
+.qr-card-info .platform-badge .social-icon{
+  background:var(--aqua);
+  color:var(--blue);
+}
+
+.qr-card-info h3{
+  font-size:20px;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+.qr-card-info p{
+  font-size:13.5px;
+  color:var(--text);
+  margin-bottom:16px;
+}
+
+.qr-card-info .btn{
+  padding:11px 18px;
+  font-size:13px;
+}
+
+@media(max-width:900px){
+  .follow-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  .qr-card{
+    flex-direction:column;
+    text-align:center;
+    padding:28px 22px;
+  }
+}
+
 /* MOBILE MENU TOGGLE */
 
 .menu-toggle{
@@ -1346,7 +1490,7 @@ footer a:hover{
     text-align:center;
   }
 
-  .topbar-in span:last-child{
+  .topbar-tagline{
     display:none;
   }
 
@@ -1454,7 +1598,15 @@ footer a:hover{
 <div class="topbar">
   <div class="container topbar-in">
     <span class="topbar-hours"><span class="dot"></span>Mon–Fri: 9:00 AM – 6:00 PM | Sat–Sun: Closed</span>
-    <span>Focused on Better Care &amp; Better Results</span>
+    <span class="topbar-tagline">Focused on Better Care &amp; Better Results</span>
+    <div class="social-links">
+      <a class="social-icon" href="https://www.facebook.com/profile.php?id=61594362928284" target="_blank" rel="noopener" aria-label="Alaric Health Services on Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg>
+      </a>
+      <a class="social-icon" href="https://www.instagram.com/alarichealthservices/" target="_blank" rel="noopener" aria-label="Alaric Health Services on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -1487,6 +1639,7 @@ footer a:hover{
       <a href="#specialties">Specialties</a>
       <a href="#growth">Digital Growth</a>
       <a href="#why">Why Alaric</a>
+      <a href="#follow">Follow Us</a>
       <a href="#contact" class="nav-btn">Get Started</a>
     </nav>
 
@@ -2207,6 +2360,78 @@ footer a:hover{
 </section>
 
 
+<!-- FOLLOW & SCAN -->
+
+<section id="follow" class="follow">
+
+  <div class="container">
+
+    <div class="head">
+
+      <div class="label">
+        Stay Connected
+      </div>
+
+      <h2>
+        Follow &amp; scan us on social media.
+      </h2>
+
+      <p>
+        Tap a card or scan the QR code with your phone camera to go
+        straight to our Facebook and Instagram pages.
+      </p>
+
+    </div>
+
+    <div class="follow-grid">
+
+      <div class="qr-card">
+
+        <a class="qr-link" href="https://www.facebook.com/profile.php?id=61594362928284" target="_blank" rel="noopener" aria-label="Open Alaric Health Services on Facebook">
+          <img src="facebook-qr.png" alt="Scan to open Alaric Health Services on Facebook">
+        </a>
+
+        <div class="qr-card-info">
+          <span class="platform-badge">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg>
+            </span>
+            Facebook
+          </span>
+          <h3>Alaric Health Services</h3>
+          <p>Scan the code or tap the button to visit our Facebook page.</p>
+          <a class="btn primary" href="https://www.facebook.com/profile.php?id=61594362928284" target="_blank" rel="noopener">Visit Facebook Page</a>
+        </div>
+
+      </div>
+
+      <div class="qr-card">
+
+        <a class="qr-link" href="https://www.instagram.com/alarichealthservices/" target="_blank" rel="noopener" aria-label="Open Alaric Health Services on Instagram">
+          <img src="instagram-qr.png" alt="Scan to open Alaric Health Services on Instagram">
+        </a>
+
+        <div class="qr-card-info">
+          <span class="platform-badge">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </span>
+            Instagram
+          </span>
+          <h3>Alaric Health Services</h3>
+          <p>Scan the code or tap the button to visit our Instagram profile.</p>
+          <a class="btn primary" href="https://www.instagram.com/alarichealthservices/" target="_blank" rel="noopener">Visit Instagram Profile</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 <!-- CONTACT -->
 
 <section id="contact">
@@ -2469,6 +2694,15 @@ footer a:hover{
           operations, privacy and long-term client relationships.
         </p>
 
+        <div class="social-links footer-social">
+          <a class="social-icon" href="https://www.facebook.com/profile.php?id=61594362928284" target="_blank" rel="noopener" aria-label="Alaric Health Services on Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg>
+          </a>
+          <a class="social-icon" href="https://www.instagram.com/alarichealthservices/" target="_blank" rel="noopener" aria-label="Alaric Health Services on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+
       </div>
 
 
@@ -2484,6 +2718,7 @@ footer a:hover{
         <a href="#specialties">Specialties</a>
         <a href="#growth">Digital Growth</a>
         <a href="#why">Why Alaric</a>
+        <a href="#follow">Follow Us</a>
         <a href="#contact">Contact Us</a>
 
       </div>
