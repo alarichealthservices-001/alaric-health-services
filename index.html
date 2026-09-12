@@ -537,8 +537,8 @@ section{
 
 .software-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:18px;
 }
 
 .software-card{
@@ -560,12 +560,13 @@ section{
   display:inline-block;
   background:var(--aqua);
   color:var(--blue);
-  font-size:11px;
+  font-size:10.5px;
   font-weight:800;
-  letter-spacing:1px;
+  letter-spacing:.5px;
   padding:4px 10px;
   border-radius:20px;
   margin-bottom:12px;
+  white-space:normal;
 }
 
 .software-card h3{
@@ -581,8 +582,8 @@ section{
 
 .specialties-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
+  grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+  gap:14px;
 }
 
 .specialty-chip{
@@ -919,6 +920,19 @@ section{
 .field textarea:focus{
   border-color:var(--teal);
   box-shadow:0 0 0 3px rgba(19,184,189,.08);
+}
+
+/* Prevent the browser's autofill highlight (the yellow/green tint
+   that appears behind a saved email/name/phone once the browser
+   fills the field in) from breaking the input's look. */
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover,
+.field input:-webkit-autofill:focus,
+.field textarea:-webkit-autofill{
+  -webkit-text-fill-color:var(--dark);
+  caret-color:var(--dark);
+  transition:background-color 600000s 0s, color 600000s 0s;
+  box-shadow:0 0 0 1000px #fff inset;
 }
 
 .form-status{
@@ -1793,13 +1807,13 @@ footer a:hover{
       </div>
 
       <h2>
-        Compatible with leading EHR &amp; EMR systems.
+        Compatible with leading EHR, EMR &amp; RCM platforms.
       </h2>
 
       <p>
-        Our billing and revenue cycle team works directly within the EHR
-        and EMR platforms your practice already uses — no workflow
-        disruption, no extra software to manage.
+        Our billing and revenue cycle team works directly within the EHR,
+        EMR, clearinghouse and RCM platforms your practice already uses —
+        no workflow disruption, no extra software to manage.
       </p>
 
     </div>
@@ -1807,43 +1821,118 @@ footer a:hover{
     <div class="software-grid">
 
       <div class="software-card">
+        <span class="tag-badge">EHR / PM / Billing</span>
+        <h3>AdvancedMD</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EHR / PM</span>
+        <h3>athenaOne</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EHR / PM</span>
+        <h3>CareCloud</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">Billing</span>
+        <h3>CollaborateMD</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EHR / PM</span>
+        <h3>DrChrono</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EHR / PM</span>
+        <h3>eClinicalWorks</h3>
+      </div>
+
+      <div class="software-card">
         <span class="tag-badge">EHR</span>
         <h3>Epic</h3>
       </div>
 
       <div class="software-card">
-        <span class="tag-badge">EHR</span>
-        <h3>Cerner (Oracle Health)</h3>
+        <span class="tag-badge">EHR / PM</span>
+        <h3>Greenway Health / Intergy</h3>
       </div>
 
       <div class="software-card">
-        <span class="tag-badge">EMR</span>
-        <h3>eClinicalWorks</h3>
-      </div>
-
-      <div class="software-card">
-        <span class="tag-badge">EMR</span>
-        <h3>Athenahealth</h3>
+        <span class="tag-badge">EHR / PM / Billing</span>
+        <h3>Kareo / Tebra</h3>
       </div>
 
       <div class="software-card">
         <span class="tag-badge">EHR</span>
-        <h3>Kareo (Tebra)</h3>
+        <h3>MEDITECH Expanse</h3>
       </div>
 
       <div class="software-card">
-        <span class="tag-badge">EMR</span>
-        <h3>AdvancedMD</h3>
+        <span class="tag-badge">Specialty EHR / PM</span>
+        <h3>ModMed</h3>
       </div>
 
       <div class="software-card">
-        <span class="tag-badge">EHR</span>
+        <span class="tag-badge">EHR / PM</span>
         <h3>NextGen Healthcare</h3>
       </div>
 
       <div class="software-card">
-        <span class="tag-badge">EMR</span>
-        <h3>DrChrono</h3>
+        <span class="tag-badge">EHR</span>
+        <h3>Oracle Health / Millennium</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EHR</span>
+        <h3>Practice Fusion</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">PM / Billing</span>
+        <h3>PracticeSuite</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">EHR / PM</span>
+        <h3>Veradigm</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">Clearinghouse</span>
+        <h3>Availity</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">Clearinghouse</span>
+        <h3>Claim.MD</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">Clearinghouse</span>
+        <h3>Office Ally</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">Claims Tech</span>
+        <h3>TriZetto</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">RCM</span>
+        <h3>Waystar</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">RCM</span>
+        <h3>Experian Health</h3>
+      </div>
+
+      <div class="software-card">
+        <span class="tag-badge">Claims Tech</span>
+        <h3>Change Healthcare</h3>
       </div>
 
     </div>
@@ -1878,18 +1967,51 @@ footer a:hover{
 
     <div class="specialties-grid">
 
-      <div class="specialty-chip">Family Medicine</div>
-      <div class="specialty-chip">Internal Medicine</div>
+      <div class="specialty-chip">Addiction Medicine</div>
+      <div class="specialty-chip">Allergy &amp; Immunology</div>
+      <div class="specialty-chip">Anesthesiology</div>
+      <div class="specialty-chip">Bariatric Medicine / Surgery</div>
       <div class="specialty-chip">Cardiology</div>
-      <div class="specialty-chip">Dermatology</div>
-      <div class="specialty-chip">Orthopedics</div>
-      <div class="specialty-chip">Pediatrics</div>
-      <div class="specialty-chip">OB-GYN</div>
-      <div class="specialty-chip">Mental &amp; Behavioral Health</div>
-      <div class="specialty-chip">Physical Therapy</div>
-      <div class="specialty-chip">Urgent Care</div>
+      <div class="specialty-chip">Cardiothoracic Surgery</div>
       <div class="specialty-chip">Chiropractic</div>
-      <div class="specialty-chip">Dental</div>
+      <div class="specialty-chip">Colorectal Surgery</div>
+      <div class="specialty-chip">Dermatology</div>
+      <div class="specialty-chip">Emergency Medicine</div>
+      <div class="specialty-chip">Endocrinology</div>
+      <div class="specialty-chip">Family Medicine</div>
+      <div class="specialty-chip">Gastroenterology</div>
+      <div class="specialty-chip">General Surgery</div>
+      <div class="specialty-chip">Geriatric Medicine</div>
+      <div class="specialty-chip">Hematology</div>
+      <div class="specialty-chip">Hospital Medicine</div>
+      <div class="specialty-chip">Infectious Disease</div>
+      <div class="specialty-chip">Internal Medicine</div>
+      <div class="specialty-chip">Nephrology</div>
+      <div class="specialty-chip">Neurology</div>
+      <div class="specialty-chip">Neurosurgery</div>
+      <div class="specialty-chip">Nuclear Medicine</div>
+      <div class="specialty-chip">Obstetrics &amp; Gynecology (OB/GYN)</div>
+      <div class="specialty-chip">Oncology</div>
+      <div class="specialty-chip">Ophthalmology</div>
+      <div class="specialty-chip">Oral &amp; Maxillofacial Surgery</div>
+      <div class="specialty-chip">Orthopedics</div>
+      <div class="specialty-chip">Otolaryngology (ENT)</div>
+      <div class="specialty-chip">Pain Management</div>
+      <div class="specialty-chip">Pathology</div>
+      <div class="specialty-chip">Pediatrics</div>
+      <div class="specialty-chip">Physical Medicine &amp; Rehabilitation</div>
+      <div class="specialty-chip">Physical Therapy</div>
+      <div class="specialty-chip">Plastic Surgery</div>
+      <div class="specialty-chip">Podiatry</div>
+      <div class="specialty-chip">Psychiatry</div>
+      <div class="specialty-chip">Psychology / Behavioral Health</div>
+      <div class="specialty-chip">Pulmonology</div>
+      <div class="specialty-chip">Radiology</div>
+      <div class="specialty-chip">Rheumatology</div>
+      <div class="specialty-chip">Sleep Medicine</div>
+      <div class="specialty-chip">Sports Medicine</div>
+      <div class="specialty-chip">Urology</div>
+      <div class="specialty-chip">Vascular Surgery</div>
 
     </div>
 
@@ -2306,6 +2428,13 @@ footer a:hover{
   </div>
 
 </form>
+
+  </div>
+
+</section>
+
+</main>
+
 <!-- =========================================================
      PROFESSIONAL FOOTER
      ========================================================= -->
