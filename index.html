@@ -1433,16 +1433,16 @@ footer .social-icon svg{
 /* Alaric mascot */
 #alaric-mascot-wrap{
   position:fixed;
-  right:18px;
+  right:16px;
   bottom:78px;
   z-index:997;
-  width:110px;
-  height:110px;
+  width:92px;
+  height:92px;
 }
 #alaric-mascot-wrap .mascot-tip{
   position:absolute;
   right:0;
-  bottom:118px;
+  bottom:100px;
   background:#062d46;
   color:#fff;
   font-size:12px;
@@ -1461,11 +1461,13 @@ footer .social-icon svg{
   transform:translateY(0);
 }
 #alaric-mascot{
-  width:110px;
-  height:110px;
+  width:92px;
+  height:92px;
   cursor:pointer;
-  filter:drop-shadow(0 10px 20px rgba(6,45,70,.18));
+  filter:drop-shadow(0 10px 22px rgba(19,184,189,.28));
+  transition:transform .2s ease;
 }
+#alaric-mascot:hover{transform:scale(1.06)}
 #alaric-mascot svg{width:100%!important;height:100%!important;display:block}
 
 /* AI Assistant panel */
@@ -1570,25 +1572,25 @@ footer .social-icon svg{
 }
 #alaric-ai-btn{
   position:fixed;
-  right:140px;
-  bottom:88px;
+  right:118px;
+  bottom:86px;
   z-index:997;
   background:#062d46;
   color:#fff;
   border:0;
   border-radius:99px;
-  padding:12px 16px;
+  padding:9px 13px;
   font-weight:800;
-  font-size:13px;
+  font-size:12px;
   cursor:pointer;
-  box-shadow:0 12px 30px rgba(6,45,70,.25);
+  box-shadow:0 10px 24px rgba(6,45,70,.25);
 }
 #alaric-ai-btn:hover{background:#087b95}
 @media(max-width:480px){
-  #alaric-mascot-wrap{width:88px;height:88px;right:12px;bottom:72px}
-  #alaric-mascot{width:88px;height:88px}
-  #alaric-ai-btn{right:12px;bottom:170px;padding:10px 12px;font-size:12px}
-  #alaric-ai{bottom:220px;right:12px}
+  #alaric-mascot-wrap{width:76px;height:76px;right:12px;bottom:72px}
+  #alaric-mascot{width:76px;height:76px}
+  #alaric-ai-btn{right:12px;bottom:160px;padding:8px 11px;font-size:12px}
+  #alaric-ai{bottom:210px;right:12px}
 }
 @media(prefers-reduced-motion:reduce){
   #alaric-mascot-wrap{display:none}
@@ -3184,7 +3186,7 @@ contactForm.addEventListener('submit', async function (e) {
     b.addEventListener('click', function () { answer(b.getAttribute('data-q')); });
   });
 
-  // --- Kirby mascot ---
+  // --- Kirby / Alaric mascot (situation moods) ---
   try {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var mod = await import('https://esm.sh/@bible-strong/avatar-web@0.1.0');
@@ -3195,29 +3197,41 @@ contactForm.addEventListener('submit', async function (e) {
     var avatar = createAvatar('#alaric-mascot', {
       definition: definition,
       defaultAnimation: 'idle',
-      size: 110
+      size: 92
     });
+    window.__alaricAvatar = avatar;
     var wrap = document.getElementById('alaric-mascot-wrap');
     var tip = document.getElementById('mascotTip');
-    try { avatar.play('waking'); } catch (e) {}
-    setTimeout(function () { try { avatar.play('idle'); } catch (e) {} }, 2200);
-    setTimeout(function () { if (wrap) wrap.classList.add('show-tip'); }, 700);
-    setTimeout(function () { if (wrap) wrap.classList.remove('show-tip'); }, 5500);
 
+    function mood(name, ms) {
+      try { avatar.play(name); } catch (e) {}
+      if (ms) setTimeout(function () { try { avatar.play('idle'); } catch (e) {} }, ms);
+    }
+
+    // Page open: wake → happy wave → idle
+    mood('waking', 0);
+    setTimeout(function () { mood('happy', 2600); }, 1800);
+    setTimeout(function () { mood('idle', 0); }, 4800);
+    setTimeout(function () { if (wrap) wrap.classList.add('show-tip'); }, 900);
+    setTimeout(function () { if (wrap) wrap.classList.remove('show-tip'); }, 6000);
+
+    // Idle too long → drowsy → sleep; any activity wakes
     var idleTimer;
     function bumpIdle() {
       clearTimeout(idleTimer);
       idleTimer = setTimeout(function () {
-        try { avatar.play('drowsy'); } catch (e) {}
-        setTimeout(function () { try { avatar.play('sleeping'); } catch (e) {} }, 4000);
-      }, 30000);
+        mood('bored', 0);
+        setTimeout(function () { mood('drowsy', 0); }, 5000);
+        setTimeout(function () { mood('sleeping', 0); }, 10000);
+      }, 28000);
     }
     ['mousemove', 'scroll', 'keydown', 'touchstart'].forEach(function (ev) {
       window.addEventListener(ev, function () {
         try {
           if (avatar.getState) {
             var st = avatar.getState();
-            if (st && (st.animation === 'sleeping' || st.animation === 'drowsy')) avatar.play('idle');
+            var a = st && st.animation;
+            if (a === 'sleeping' || a === 'drowsy' || a === 'bored') mood('curious', 1800);
           }
         } catch (e) {}
         bumpIdle();
@@ -3225,21 +3239,71 @@ contactForm.addEventListener('submit', async function (e) {
     });
     bumpIdle();
 
+    // Click mascot → playful + open assistant
     var host = document.getElementById('alaric-mascot');
     if (host) {
       host.addEventListener('click', function () {
-        try { avatar.play('playful'); } catch (e) {}
+        mood('laughing', 2200);
         if (aiPanel) aiPanel.classList.add('open');
-        if (tip) tip.textContent = '✅ Assistant opened — ask a question.';
+        if (tip) tip.textContent = '😄 Assistant open — ask me anything!';
         if (wrap) wrap.classList.add('show-tip');
-        setTimeout(function () { try { avatar.play('idle'); } catch (e) {} }, 2800);
+        setTimeout(function () { if (wrap) wrap.classList.remove('show-tip'); }, 3500);
       });
     }
 
+    // Primary / CTA hover
     document.querySelectorAll('.primary, .nav-btn').forEach(function (btn) {
-      btn.addEventListener('mouseenter', function () { try { avatar.play('excited'); } catch (e) {} });
-      btn.addEventListener('mouseleave', function () { try { avatar.play('idle'); } catch (e) {} });
+      btn.addEventListener('mouseenter', function () { mood('excited', 0); });
+      btn.addEventListener('mouseleave', function () { mood('idle', 0); });
     });
+
+    // Form focus → listening; error → confused; success path celebrates before redirect
+    var contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.querySelectorAll('input, textarea').forEach(function (inp) {
+        inp.addEventListener('focus', function () { mood('listening', 0); });
+        inp.addEventListener('blur', function () { mood('idle', 0); });
+      });
+      // Hook after existing submit handler via capture of status text mutations is heavy;
+      // wrap fetch success is already in page — observe formStatus class
+      var formStatus = document.getElementById('formStatus');
+      if (formStatus && window.MutationObserver) {
+        new MutationObserver(function () {
+          if (formStatus.classList.contains('error') || /wrong|error/i.test(formStatus.textContent || '')) {
+            mood('confused', 3200);
+          }
+          if (/Sending/i.test(formStatus.textContent || '')) {
+            mood('thinking', 0);
+          }
+        }).observe(formStatus, { attributes: true, childList: true, characterData: true, subtree: true });
+      }
+    }
+
+    // Sections in view → curious / proud
+    if ('IntersectionObserver' in window) {
+      var seen = {};
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          var id = en.target.id;
+          if (seen[id]) return;
+          seen[id] = true;
+          if (id === 'services' || id === 'software') mood('curious', 2400);
+          else if (id === 'why' || id === 'growth') mood('proud', 2400);
+          else if (id === 'contact') mood('happy', 2400);
+          else if (id === 'follow') mood('playful', 2400);
+        });
+      }, { threshold: 0.35 });
+      ['services', 'software', 'growth', 'why', 'follow', 'contact'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) io.observe(el);
+      });
+    }
+
+    // When Ask Alaric opens → listening
+    if (aiBtn) {
+      aiBtn.addEventListener('click', function () { mood('listening', 0); });
+    }
   } catch (err) {
     console.warn('Alaric mascot:', err);
   }
