@@ -1,13 +1,13 @@
 {
   "schema": "bible-strong/avatar-definition",
   "schemaVersion": 1,
-  "name": "Alaric",
+  "name": "Kirby",
   "body": {
     "primary": {
       "type": "sphere",
       "width": 240,
       "height": 240,
-      "depth": 280,
+      "depth": 240,
       "roundness": 1
     },
     "nodes": [
@@ -16,13 +16,13 @@
           "type": "sphere",
           "width": 108.11015625000002,
           "height": 81.60000000000001,
-          "depth": 100,
+          "depth": 81.60000000000001,
           "roundness": 1
         },
         "position": [
           -103.30437876033604,
           30.4449714479682,
-          -18
+          -9.784765625
         ],
         "rotation": [
           0,
@@ -35,13 +35,13 @@
           "type": "sphere",
           "width": 108.11015625000002,
           "height": 81.60000000000001,
-          "depth": 100,
+          "depth": 81.60000000000001,
           "roundness": 1
         },
         "position": [
           98.15429266544173,
           32.55003025735345,
-          -18
+          -9.784765625
         ],
         "rotation": [
           0,
@@ -52,8 +52,8 @@
     ]
   },
   "colors": {
-    "body": "#5EEAD4",
-    "eyes": "#134E4A"
+    "body": "#ffc2e9",
+    "eyes": "#3e4e65"
   },
   "expressions": {
     "neutral": {
@@ -79,10 +79,10 @@
         },
         "spacing": 28.749218749999997
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
-        "body": "breathe"
+        "body": "none"
       }
     },
     "upward-side-glance": {
@@ -108,7 +108,7 @@
         },
         "spacing": 48.049218749999994
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -137,7 +137,7 @@
         },
         "spacing": 51.44921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -166,7 +166,7 @@
         },
         "spacing": 50.049218749999994
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -195,10 +195,10 @@
         },
         "spacing": 44.64921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
-        "body": "breathe"
+        "body": "none"
       }
     },
     "wide-downward-gaze": {
@@ -224,7 +224,7 @@
         },
         "spacing": 63.24921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -253,7 +253,7 @@
         },
         "spacing": 64.64921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -282,7 +282,7 @@
         },
         "spacing": 57.621484374999994
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -311,7 +311,7 @@
         },
         "spacing": 45.808984374999994
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -340,7 +340,7 @@
         },
         "spacing": 48.64921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -369,7 +369,7 @@
         },
         "spacing": 55.44921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -398,10 +398,10 @@
         },
         "spacing": 50.549218749999994
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
-        "body": "breathe"
+        "body": "none"
       }
     },
     "joyful-wide": {
@@ -427,7 +427,7 @@
         },
         "spacing": 53.163671875000006
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -456,7 +456,7 @@
         },
         "spacing": 63.025390625
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -485,7 +485,7 @@
         },
         "spacing": 62.44921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -514,7 +514,7 @@
         },
         "spacing": 55.967578125
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -543,7 +543,7 @@
         },
         "spacing": 47.64921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -572,7 +572,7 @@
         },
         "spacing": 48.849218750000006
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -601,7 +601,7 @@
         },
         "spacing": 45.48046875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -630,7 +630,7 @@
         },
         "spacing": 54.14921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -659,10 +659,10 @@
         },
         "spacing": 49.94921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
-        "body": "breathe"
+        "body": "none"
       }
     },
     "wide-down-left": {
@@ -688,7 +688,7 @@
         },
         "spacing": 64.54921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -717,7 +717,7 @@
         },
         "spacing": 62.74921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -746,7 +746,7 @@
         },
         "spacing": 62.166015625
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -775,7 +775,7 @@
         },
         "spacing": 53.692968750000006
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -804,7 +804,7 @@
         },
         "spacing": 44.94921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "none"
@@ -833,7 +833,7 @@
         },
         "spacing": 62.44921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "none",
         "body": "shake"
@@ -866,7 +866,7 @@
         },
         "spacing": 48.64921875
       },
-      "perspective": 1.15,
+      "perspective": 1,
       "motion": {
         "eyes": "shake",
         "body": "slowDrift"
@@ -938,7 +938,7 @@
       },
       "metadata": {
         "label": "sleeping",
-        "description": "Yeux presque ferm\u00e9s, respiration lente et expression de sommeil.",
+        "description": "Yeux presque fermés, respiration lente et expression de sommeil.",
         "group": "Cycle de vie"
       }
     },
@@ -961,7 +961,7 @@
       },
       "metadata": {
         "label": "waking",
-        "description": "S\u00e9quence courte de r\u00e9veil avant retour vers une expression neutre.",
+        "description": "Séquence courte de réveil avant retour vers une expression neutre.",
         "group": "Cycle de vie"
       }
     },
@@ -1072,7 +1072,7 @@
       },
       "metadata": {
         "label": "thinking",
-        "description": "Regard haut et lat\u00e9ral, expressions asym\u00e9triques et changements fr\u00e9quents.",
+        "description": "Regard haut et latéral, expressions asymétriques et changements fréquents.",
         "group": "Cycle de vie"
       }
     },
@@ -1125,7 +1125,7 @@
       },
       "metadata": {
         "label": "searching",
-        "description": "Balayage rapide et changements tr\u00e8s fr\u00e9quents.",
+        "description": "Balayage rapide et changements très fréquents.",
         "group": "Cycle de vie"
       }
     },
@@ -1166,7 +1166,7 @@
       },
       "metadata": {
         "label": "working",
-        "description": "Rythme r\u00e9gulier et expressions concentr\u00e9es.",
+        "description": "Rythme régulier et expressions concentrées.",
         "group": "Cycle de vie"
       }
     },
@@ -1214,7 +1214,7 @@
       "metadata": {
         "label": "excited",
         "description": "Grandes expressions et transitions rapides.",
-        "group": "R\u00e9actions"
+        "group": "Réactions"
       }
     },
     "bored": {
@@ -1248,8 +1248,8 @@
       },
       "metadata": {
         "label": "bored",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "suspicious": {
@@ -1283,8 +1283,8 @@
       },
       "metadata": {
         "label": "suspicious",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "angry": {
@@ -1312,8 +1312,8 @@
       },
       "metadata": {
         "label": "angry",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "drowsy": {
@@ -1347,8 +1347,8 @@
       },
       "metadata": {
         "label": "drowsy",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "happy": {
@@ -1388,8 +1388,8 @@
       },
       "metadata": {
         "label": "happy",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "curious": {
@@ -1429,8 +1429,8 @@
       },
       "metadata": {
         "label": "curious",
-        "description": "Inclinaisons et forte asym\u00e9trie.",
-        "group": "R\u00e9actions"
+        "description": "Inclinaisons et forte asymétrie.",
+        "group": "Réactions"
       }
     },
     "confused": {
@@ -1464,8 +1464,8 @@
       },
       "metadata": {
         "label": "confused",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "surprised": {
@@ -1493,8 +1493,8 @@
       },
       "metadata": {
         "label": "surprised",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "proud": {
@@ -1528,8 +1528,8 @@
       },
       "metadata": {
         "label": "proud",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "shy": {
@@ -1563,8 +1563,8 @@
       },
       "metadata": {
         "label": "shy",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "sad": {
@@ -1598,8 +1598,8 @@
       },
       "metadata": {
         "label": "sad",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "laughing": {
@@ -1633,8 +1633,8 @@
       },
       "metadata": {
         "label": "laughing",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "scared": {
@@ -1662,8 +1662,8 @@
       },
       "metadata": {
         "label": "scared",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "playful": {
@@ -1703,8 +1703,8 @@
       },
       "metadata": {
         "label": "playful",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     },
     "celebrate": {
@@ -1738,8 +1738,8 @@
       },
       "metadata": {
         "label": "celebrate",
-        "description": "Cet \u00e9tat encha\u00eene un pool de presets et des clignements.",
-        "group": "R\u00e9actions"
+        "description": "Cet état enchaîne un pool de presets et des clignements.",
+        "group": "Réactions"
       }
     }
   },
