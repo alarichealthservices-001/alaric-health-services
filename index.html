@@ -1460,14 +1460,42 @@ footer .social-icon svg{
   opacity:1;
   transform:translateY(0);
 }
+#alaric-mascot-wrap{
+  /* keep position rules above; enhance 3D stage */
+}
 #alaric-mascot{
   width:92px;
   height:92px;
   cursor:pointer;
-  filter:drop-shadow(0 10px 22px rgba(19,184,189,.28));
-  transition:transform .2s ease;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,.75), transparent 40%),
+    radial-gradient(circle at 65% 70%, rgba(15,118,110,.15), transparent 55%),
+    linear-gradient(160deg, #99F6E4, #2DD4BF 55%, #14B8A6);
+  box-shadow:
+    0 14px 28px rgba(6,45,70,.22),
+    0 4px 10px rgba(19,184,189,.25),
+    inset 0 -6px 14px rgba(6,45,70,.12),
+    inset 0 8px 16px rgba(255,255,255,.35);
+  filter: drop-shadow(0 12px 18px rgba(6,45,70,.2));
+  transform: perspective(420px) rotateY(-12deg) rotateX(8deg);
+  transform-style: preserve-3d;
+  transition: transform .35s ease, box-shadow .35s ease;
 }
-#alaric-mascot:hover{transform:scale(1.06)}
+#alaric-mascot:hover{
+  transform: perspective(420px) rotateY(-4deg) rotateX(4deg) scale(1.07);
+  box-shadow:
+    0 18px 34px rgba(6,45,70,.28),
+    0 6px 14px rgba(19,184,189,.3),
+    inset 0 -6px 14px rgba(6,45,70,.12),
+    inset 0 8px 16px rgba(255,255,255,.4);
+}
+#alaric-mascot svg{
+  width:100%!important;
+  height:100%!important;
+  display:block;
+  border-radius:50%;
+}
 #alaric-mascot svg{width:100%!important;height:100%!important;display:block}
 
 /* AI Assistant panel */
@@ -3046,7 +3074,7 @@ footer .social-icon svg{
 </div>
 
 <div id="alaric-mascot-wrap" aria-label="Alaric helper mascot">
-  <div class="mascot-tip" id="mascotTip">👋 Hi! Need help? Tap me or Ask Alaric.</div>
+  <div class="mascot-tip" id="mascotTip">😊 Hi! I change moods every few seconds — tap me!</div>
   <div id="alaric-mascot"></div>
 </div>
 
@@ -3208,22 +3236,43 @@ contactForm.addEventListener('submit', async function (e) {
       if (ms) setTimeout(function () { try { avatar.play('idle'); } catch (e) {} }, ms);
     }
 
-    // Page open: wake → happy wave → idle
-    mood('waking', 0);
-    setTimeout(function () { mood('happy', 2600); }, 1800);
-    setTimeout(function () { mood('idle', 0); }, 4800);
-    setTimeout(function () { if (wrap) wrap.classList.add('show-tip'); }, 900);
-    setTimeout(function () { if (wrap) wrap.classList.remove('show-tip'); }, 6000);
+    // Attractive smile cycle every ~5s (happy faces — no mouth in Studio, eyes show joy)
+    var smileCycle = ['happy', 'playful', 'curious', 'excited', 'laughing', 'celebrate', 'proud', 'idle'];
+    var smileIdx = 0;
+    var smileTimer = null;
+    var userLockedUntil = 0; // pause auto-cycle during strong reactions
 
-    // Idle too long → drowsy → sleep; any activity wakes
+    function startSmileLoop() {
+      clearInterval(smileTimer);
+      smileTimer = setInterval(function () {
+        if (Date.now() < userLockedUntil) return;
+        smileIdx = (smileIdx + 1) % smileCycle.length;
+        mood(smileCycle[smileIdx], 0);
+      }, 5000);
+    }
+
+    function lockMood(name, ms) {
+      userLockedUntil = Date.now() + (ms || 3000);
+      mood(name, 0);
+    }
+
+    // Page open: wake → big happy → start smile loop
+    mood('waking', 0);
+    setTimeout(function () { lockMood('happy', 2500); }, 1600);
+    setTimeout(function () { startSmileLoop(); }, 4000);
+    setTimeout(function () { if (wrap) wrap.classList.add('show-tip'); }, 900);
+    setTimeout(function () { if (wrap) wrap.classList.remove('show-tip'); }, 6500);
+
+    // Long idle → sleepy; activity resumes smile loop
     var idleTimer;
     function bumpIdle() {
       clearTimeout(idleTimer);
       idleTimer = setTimeout(function () {
-        mood('bored', 0);
-        setTimeout(function () { mood('drowsy', 0); }, 5000);
-        setTimeout(function () { mood('sleeping', 0); }, 10000);
-      }, 28000);
+        clearInterval(smileTimer);
+        lockMood('bored', 4000);
+        setTimeout(function () { lockMood('drowsy', 4000); }, 4500);
+        setTimeout(function () { lockMood('sleeping', 8000); }, 9000);
+      }, 45000);
     }
     ['mousemove', 'scroll', 'keydown', 'touchstart'].forEach(function (ev) {
       window.addEventListener(ev, function () {
@@ -3231,7 +3280,10 @@ contactForm.addEventListener('submit', async function (e) {
           if (avatar.getState) {
             var st = avatar.getState();
             var a = st && st.animation;
-            if (a === 'sleeping' || a === 'drowsy' || a === 'bored') mood('curious', 1800);
+            if (a === 'sleeping' || a === 'drowsy' || a === 'bored') {
+              lockMood('curious', 2000);
+              startSmileLoop();
+            }
           }
         } catch (e) {}
         bumpIdle();
@@ -3243,7 +3295,7 @@ contactForm.addEventListener('submit', async function (e) {
     var host = document.getElementById('alaric-mascot');
     if (host) {
       host.addEventListener('click', function () {
-        mood('laughing', 2200);
+        lockMood('laughing', 2800);
         if (aiPanel) aiPanel.classList.add('open');
         if (tip) tip.textContent = '😄 Assistant open — ask me anything!';
         if (wrap) wrap.classList.add('show-tip');
@@ -3253,16 +3305,16 @@ contactForm.addEventListener('submit', async function (e) {
 
     // Primary / CTA hover
     document.querySelectorAll('.primary, .nav-btn').forEach(function (btn) {
-      btn.addEventListener('mouseenter', function () { mood('excited', 0); });
-      btn.addEventListener('mouseleave', function () { mood('idle', 0); });
+      btn.addEventListener('mouseenter', function () { lockMood('excited', 2000); });
+      btn.addEventListener('mouseleave', function () { /* smile loop continues */ });
     });
 
     // Form focus → listening; error → confused; success path celebrates before redirect
     var contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.querySelectorAll('input, textarea').forEach(function (inp) {
-        inp.addEventListener('focus', function () { mood('listening', 0); });
-        inp.addEventListener('blur', function () { mood('idle', 0); });
+        inp.addEventListener('focus', function () { lockMood('listening', 4000); });
+        inp.addEventListener('blur', function () {});
       });
       // Hook after existing submit handler via capture of status text mutations is heavy;
       // wrap fetch success is already in page — observe formStatus class
@@ -3270,10 +3322,10 @@ contactForm.addEventListener('submit', async function (e) {
       if (formStatus && window.MutationObserver) {
         new MutationObserver(function () {
           if (formStatus.classList.contains('error') || /wrong|error/i.test(formStatus.textContent || '')) {
-            mood('confused', 3200);
+            lockMood('confused', 3200);
           }
           if (/Sending/i.test(formStatus.textContent || '')) {
-            mood('thinking', 0);
+            lockMood('thinking', 5000);
           }
         }).observe(formStatus, { attributes: true, childList: true, characterData: true, subtree: true });
       }
@@ -3288,10 +3340,10 @@ contactForm.addEventListener('submit', async function (e) {
           var id = en.target.id;
           if (seen[id]) return;
           seen[id] = true;
-          if (id === 'services' || id === 'software') mood('curious', 2400);
-          else if (id === 'why' || id === 'growth') mood('proud', 2400);
-          else if (id === 'contact') mood('happy', 2400);
-          else if (id === 'follow') mood('playful', 2400);
+          if (id === 'services' || id === 'software') lockMood('curious', 2400);
+          else if (id === 'why' || id === 'growth') lockMood('proud', 2400);
+          else if (id === 'contact') lockMood('happy', 2400);
+          else if (id === 'follow') lockMood('playful', 2400);
         });
       }, { threshold: 0.35 });
       ['services', 'software', 'growth', 'why', 'follow', 'contact'].forEach(function (id) {
@@ -3302,7 +3354,7 @@ contactForm.addEventListener('submit', async function (e) {
 
     // When Ask Alaric opens → listening
     if (aiBtn) {
-      aiBtn.addEventListener('click', function () { mood('listening', 0); });
+      aiBtn.addEventListener('click', function () { lockMood('listening', 3500); });
     }
   } catch (err) {
     console.warn('Alaric mascot:', err);
