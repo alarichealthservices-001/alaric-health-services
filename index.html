@@ -29,7 +29,7 @@
   "url": "https://alarichealthservices.com/",
   "logo": "https://alarichealthservices.com/alaric_high_contrast_text_4k.png",
   "description": "Alaric Health Services provides healthcare revenue cycle management, practice support and digital growth solutions.",
-  "email": "alarichealthservices@gmail.com",
+  "email": "info@alarichealthservices.com",
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
@@ -759,6 +759,10 @@ section{
 .contact-line span{
   color:var(--text);
   font-size:14px;
+}
+
+.contact-line span a:hover{
+  color:var(--teal);
 }
 
 /* BUSINESS HOURS */
@@ -2734,7 +2738,7 @@ footer .social-icon svg{
       <div class="contact-line">
 
         <b>Email</b>
-<span>alarichealthservices@gmail.com</span>
+<span><a href="mailto:info@alarichealthservices.com">info@alarichealthservices.com</a></span>
       </div>
 
 
@@ -2959,8 +2963,8 @@ footer .social-icon svg{
 
         <h3>Contact</h3>
 
-        <a href="mailto:alarichealthservices@gmail.com">
-          alarichealthservices@gmail.com
+        <a href="mailto:info@alarichealthservices.com">
+          info@alarichealthservices.com
         </a>
 
         <p class="footer-contact">
@@ -3171,15 +3175,15 @@ contactForm.addEventListener('submit', async function (e) {
     if (!q) return;
     addMsg(q, 'user');
     var reply =
-      '💡 Thanks for asking. For a detailed plan, use Contact on this page or email alarichealthservices@gmail.com. We support medical billing, RCM, credentialing, prior auth and digital growth.';
+      '💡 Thanks for asking. For a detailed plan, use Contact on this page or email info@alarichealthservices.com. We support medical billing, RCM, credentialing, prior auth and digital growth.';
     if (q.indexOf('bill') > -1 || q === 'billing' || q.indexOf('claim') > -1 || q.indexOf('denial') > -1) {
-      reply = '💳 Medical billing at Alaric covers coding support, claims, denials, payment posting and A/R follow-up so your team can focus on patients. Want a walkthrough? Scroll to Contact or email alarichealthservices@gmail.com.';
+      reply = '💳 Medical billing at Alaric covers coding support, claims, denials, payment posting and A/R follow-up so your team can focus on patients. Want a walkthrough? Scroll to Contact or email info@alarichealthservices.com.';
     } else if (q.indexOf('rcm') > -1 || q.indexOf('revenue') > -1 || q.indexOf('cycle') > -1) {
       reply = '📊 Revenue Cycle Management (RCM) means the full path from eligibility to payment. We help tighten workflows, reduce leakage and keep reporting clearer. Tell us your specialty via the contact form for next steps.';
     } else if (q.indexOf('credent') > -1 || q.indexOf('enroll') > -1 || q.indexOf('payer') > -1) {
       reply = '📋 Credentialing & enrollment includes document collection, CAQH, payer applications, Medicare/Medicaid enrollment and follow-up. Share your practice details in Contact and our team will respond.';
     } else if (q.indexOf('contact') > -1 || q.indexOf('human') > -1 || q.indexOf('call') > -1 || q.indexOf('email') > -1) {
-      reply = '📧 You can reach us at alarichealthservices@gmail.com or use the Contact form on this page. Hours: Mon–Fri 9:00 AM – 6:00 PM.';
+      reply = '📧 You can reach us at info@alarichealthservices.com or use the Contact form on this page. Hours: Mon–Fri 9:00 AM – 6:00 PM.';
       var el = document.getElementById('contact');
       if (el) setTimeout(function () { el.scrollIntoView({ behavior: 'smooth' }); }, 400);
     } else if (q.indexOf('price') > -1 || q.indexOf('cost') > -1 || q.indexOf('fee') > -1) {
